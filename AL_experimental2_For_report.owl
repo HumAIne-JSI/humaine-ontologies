@@ -1,0 +1,252 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+    <!-- Define Classes -->
+    <owl:Class rdf:about="#CRISP_DM_Phase"/>
+    <owl:Class rdf:about="#BusinessUnderstanding">
+        <rdfs:subClassOf rdf:resource="#CRISP_DM_Phase"/>
+    </owl:Class>
+    <owl:Class rdf:about="#DataUnderstanding">
+        <rdfs:subClassOf rdf:resource="#CRISP_DM_Phase"/>
+    </owl:Class>
+    <owl:Class rdf:about="#DataPreparation">
+        <rdfs:subClassOf rdf:resource="#CRISP_DM_Phase"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Modeling">
+        <rdfs:subClassOf rdf:resource="#CRISP_DM_Phase"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Evaluation">
+        <rdfs:subClassOf rdf:resource="#CRISP_DM_Phase"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Deployment">
+        <rdfs:subClassOf rdf:resource="#CRISP_DM_Phase"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OptimizationGoals">
+        <rdfs:subClassOf rdf:resource="#BusinessUnderstanding"/>
+    </owl:Class>
+    <owl:Class rdf:about="#DataAvailability">
+        <rdfs:subClassOf rdf:resource="#DataUnderstanding"/>
+    </owl:Class>
+    <owl:Class rdf:about="#LabelingCosts">
+        <rdfs:subClassOf rdf:resource="#DataUnderstanding"/>
+    </owl:Class>
+    <owl:Class rdf:about="#DomainExpertise">
+        <rdfs:subClassOf rdf:resource="#DataUnderstanding"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Infrastructure">
+        <rdfs:subClassOf rdf:resource="#DataUnderstanding"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ALContribution">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#PerformanceMetrics">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ALStrategies">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#IterationSchedule">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#StoppingCriteria">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#FeedbackLoops">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ModelSuitability">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#TechniqueSelection">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#IterativeEvaluation">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#BaselineModel">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#UncertaintyMeasures">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#QueryStrategyEffectiveness">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#DataQuality">
+        <rdfs:subClassOf rdf:resource="#DataPreparation"/>
+    </owl:Class>
+    <owl:Class rdf:about="#BalancedSubset">
+        <rdfs:subClassOf rdf:resource="#DataPreparation"/>
+    </owl:Class>
+    <owl:Class rdf:about="#FeatureEngineering">
+        <rdfs:subClassOf rdf:resource="#DataPreparation"/>
+    </owl:Class>
+    <owl:Class rdf:about="#IncrementalTraining">
+        <rdfs:subClassOf rdf:resource="#Modeling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#RegularUpdates">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ALPerformanceMetrics">
+        <rdfs:subClassOf rdf:resource="#Evaluation"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ContinuousIntegration">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#WorkflowAutomation">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#EndUserFeedback">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#DeploymentPlanning">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ModelDeployment">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#MonitoringMaintenance">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ReviewUpdate">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#DocumentationCommunication">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#AutomatedLabelingWorkflow">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+    <owl:Class rdf:about="#UserFeedbackIntegration">
+        <rdfs:subClassOf rdf:resource="#Deployment"/>
+    </owl:Class>
+
+    <!-- Define Object Properties -->
+    <owl:ObjectProperty rdf:about="#is_a"/>
+    <owl:ObjectProperty rdf:about="#part_of"/>
+    <owl:ObjectProperty rdf:about="#related_to"/>
+    <owl:ObjectProperty rdf:about="#depends_on"/>
+    <owl:ObjectProperty rdf:about="#supports"/>
+    <owl:ObjectProperty rdf:about="#measures"/>
+    <owl:ObjectProperty rdf:about="#determines"/>
+
+    <!-- Define Relationships -->
+    <!-- Business Understanding -->
+    <rdf:Description rdf:about="#OptimizationGoals">
+        <rdf:type rdf:resource="#BusinessUnderstanding"/>
+        <rdfs:subClassOf rdf:resource="#BusinessObjective"/>
+    </rdf:Description>
+
+    <!-- Data Understanding -->
+    <rdf:Description rdf:about="#DataAvailability">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+        <rdfs:subClassOf rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LabelingCosts">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+        <rdfs:subClassOf rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DomainExpertise">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Infrastructure">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+        <supports rdf:resource="#ContinuousIntegration"/>
+    </rdf:Description>
+
+    <!-- Data Preparation -->
+    <rdf:Description rdf:about="#DataSelection">
+        <rdf:type rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DataCleaning">
+        <rdf:type rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#FeatureEngineering">
+        <rdf:type rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DataQuality">
+        <rdf:type rdf:resource="#DataPreparation"/>
+        <depends_on rdf:resource="#DataCleaning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#BalancedSubset">
+        <rdf:type rdf:resource="#DataPreparation"/>
+        <rdfs:subClassOf rdf:resource="#DataSelection"/>
+    </rdf:Description>
+
+    <!-- Modeling -->
+    <rdf:Description rdf:about="#Modeling">
+        <rdf:type rdf:resource="#CRISP_DM_Phase"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ModelSuitability">
+        <rdf:type rdf:resource="#Modeling"/>
+        <rdfs:subClassOf rdf:resource="#ModelSelectionCriteria"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#TechniqueSelection">
+        <rdf:type rdf:resource="#Modeling"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#IncrementalTraining">
+        <rdf:type rdf:resource="#Modeling"/>
+        <related_to rdf:resource="#ModelBuilding"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ALStrategies">
+        <rdf:type rdf:resource="#Modeling"/>
+        <depends_on rdf:resource="#ModelSuitability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#QueryStrategyEffectiveness">
+        <rdf:type rdf:resource="#Modeling"/>
+        <measures rdf:resource="#ALStrategies"/>
+    </rdf:Description>
+
+    <!-- Evaluation -->
+    <rdf:Description rdf:about="#Evaluation">
+        <rdf:type rdf:resource="#CRISP_DM_Phase"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ResultEvaluation">
+        <rdf:type rdf:resource="#Evaluation"/>
+        <measures rdf:resource="#ALPerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ProcessReview">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#NextStepsDetermination">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#StakeholderValidation">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#EconomicViability">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+
+    <!-- Deployment -->
+    <rdf:Description rdf:about="#Deployment">
+        <rdf:type rdf:resource="#CRISP_DM_Phase"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DeploymentPlanning">
+        <rdf:type rdf:resource="#Deployment"/>
+        <depends_on rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ModelDeployment">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#MonitoringMaintenance">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ReviewUpdate">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DocumentationCommunication">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AutomatedLabelingWorkflow">
+        <rdf:type rdf:resource="#Deployment"/>
+        <supports rdf:resource="#LabelingProcess"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#UserFeedbackIntegration">
+        <rdf:type rdf:resource="#Deployment"/>
+        <related_to rdf:resource="#QueryStrategyAdjustment"/>
+    </rdf:Description>
+
+</rdf:RDF>

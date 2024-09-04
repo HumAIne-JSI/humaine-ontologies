@@ -1,0 +1,472 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+    <!-- Define Classes -->
+    <owl:Class rdf:about="#BusinessUnderstanding"/>
+    <owl:Class rdf:about="#DataUnderstanding"/>
+    <owl:Class rdf:about="#DataPreparation"/>
+    <owl:Class rdf:about="#Modeling"/>
+    <owl:Class rdf:about="#Evaluation"/>
+    <owl:Class rdf:about="#Deployment"/>
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="#OptimizationGoals"/>
+    <owl:Class rdf:about="#Scenarios"/>
+    <owl:Class rdf:about="#Objectives"/>
+    <owl:Class rdf:about="#Impact"/>
+    <owl:Class rdf:about="#DataAvailability"/>
+    <owl:Class rdf:about="#LabelingCosts"/>
+    <owl:Class rdf:about="#DomainExpertise"/>
+    <owl:Class rdf:about="#Infrastructure"/>
+    <owl:Class rdf:about="#DataSelection"/>
+    <owl:Class rdf:about="#DataCleaning"/>
+    <owl:Class rdf:about="#FeatureEngineering"/>
+    <owl:Class rdf:about="#DataQuality"/>
+    <owl:Class rdf:about="#ModelSelection"/>
+    <owl:Class rdf:about="#ModelBuilding"/>
+    <owl:Class rdf:about="#ModelAssessment"/>
+    <owl:Class rdf:about="#QueryStrategyImplementation"/>
+    <owl:Class rdf:about="#ResultEvaluation"/>
+    <owl:Class rdf:about="#ProcessReview"/>
+    <owl:Class rdf:about="#NextStepsDetermination"/>
+    <owl:Class rdf:about="#StakeholderValidation"/>
+    <owl:Class rdf:about="#EconomicViability"/>
+    <owl:Class rdf:about="#DeploymentPlanning"/>
+    <owl:Class rdf:about="#ModelDeployment"/>
+    <owl:Class rdf:about="#MonitoringAndMaintenance"/>
+    <owl:Class rdf:about="#ReviewAndUpdate"/>
+    <owl:Class rdf:about="#DocumentationAndCommunication"/>
+    <owl:Class rdf:about="#AutomatedLabelingWorkflow"/>
+    <owl:Class rdf:about="#UserFeedbackIntegration"/>
+
+    <!-- Define Object Properties -->
+    <owl:ObjectProperty rdf:about="#is_a"/>
+    <owl:ObjectProperty rdf:about="#part_of"/>
+    <owl:ObjectProperty rdf:about="#related_to"/>
+    <owl:ObjectProperty rdf:about="#depends_on"/>
+    <owl:ObjectProperty rdf:about="#supports"/>
+    <owl:ObjectProperty rdf:about="#measures"/>
+    <owl:ObjectProperty rdf:about="#determines"/>
+
+    <!-- Define Relationships -->
+    <!-- Business Understanding -->
+    <rdf:Description rdf:about="#OptimizationGoals">
+        <rdf:type rdf:resource="#BusinessUnderstanding"/>
+        <rdfs:subClassOf rdf:resource="#BusinessObjective"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Scenarios">
+        <rdf:type rdf:resource="#OptimizationGoals"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Objectives">
+        <rdf:type rdf:resource="#OptimizationGoals"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Impact">
+        <rdf:type rdf:resource="#OptimizationGoals"/>
+    </rdf:Description>
+
+    <!-- Data Understanding -->
+    <rdf:Description rdf:about="#DataAvailability">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LabelingCosts">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DomainExpertise">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Infrastructure">
+        <rdf:type rdf:resource="#DataUnderstanding"/>
+        <supports rdf:resource="#ContinuousIntegration"/>
+    </rdf:Description>
+
+    <!-- Data Preparation -->
+    <rdf:Description rdf:about="#DataSelection">
+        <rdf:type rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DataCleaning">
+        <rdf:type rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#FeatureEngineering">
+        <rdf:type rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DataQuality">
+        <rdf:type rdf:resource="#DataPreparation"/>
+    </rdf:Description>
+
+    <!-- Modeling -->
+    <rdf:Description rdf:about="#ModelSelection">
+        <rdf:type rdf:resource="#Modeling"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ModelBuilding">
+        <rdf:type rdf:resource="#Modeling"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ModelAssessment">
+        <rdf:type rdf:resource="#Modeling"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#QueryStrategyImplementation">
+        <rdf:type rdf:resource="#Modeling"/>
+    </rdf:Description>
+
+    <!-- Evaluation -->
+    <rdf:Description rdf:about="#ResultEvaluation">
+        <rdf:type rdf:resource="#Evaluation"/>
+        <measures rdf:resource="#ALPerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ProcessReview">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#NextStepsDetermination">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#StakeholderValidation">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#EconomicViability">
+        <rdf:type rdf:resource="#Evaluation"/>
+    </rdf:Description>
+
+    <!-- Deployment -->
+    <rdf:Description rdf:about="#DeploymentPlanning">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ModelDeployment">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#MonitoringAndMaintenance">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ReviewAndUpdate">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DocumentationAndCommunication">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AutomatedLabelingWorkflow">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#UserFeedbackIntegration">
+        <rdf:type rdf:resource="#Deployment"/>
+    </rdf:Description>
+
+    <!-- Define Instances and Examples -->
+    <!-- Business Understanding Instances -->
+    <rdf:Description rdf:about="#ReducingLabelingCosts">
+        <rdf:type rdf:resource="#Scenarios"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ImprovingModelAccuracy">
+        <rdf:type rdf:resource="#Scenarios"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AcceleratingTimeToDeployment">
+        <rdf:type rdf:resource="#Scenarios"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#IncreaseEfficiency">
+        <rdf:type rdf:resource="#Objectives"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#EnhancePerformance">
+        <rdf:type rdf:resource="#Objectives"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#MinimizeCosts">
+        <rdf:type rdf:resource="#Objectives"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#CostSavings">
+        <rdf:type rdf:resource="#Impact"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ImprovedDecisionMaking">
+        <rdf:type rdf:resource="#Impact"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#CompetitiveAdvantage">
+        <rdf:type rdf:resource="#Impact"/>
+    </rdf:Description>
+
+    <!-- Data Understanding Instances -->
+    <rdf:Description rdf:about="#InternalDatabases">
+        <rdf:type rdf:resource="#DataAvailability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ExternalDatasets">
+        <rdf:type rdf:resource="#DataAvailability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#WebScraping">
+        <rdf:type rdf:resource="#DataAvailability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#HighFinancialCost">
+        <rdf:type rdf:resource="#LabelingCosts"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#MediumFinancialCost">
+        <rdf:type rdf:resource="#LabelingCosts"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LowFinancialCost">
+        <rdf:type rdf:resource="#LabelingCosts"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#HighTimeCost">
+        <rdf:type rdf:resource="#LabelingCosts"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#MediumTimeCost">
+        <rdf:type rdf:resource="#LabelingCosts"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LowTimeCost">
+        <rdf:type rdf:resource="#LabelingCosts"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Novice">
+        <rdf:type rdf:resource="#DomainExpertise"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Intermediate">
+        <rdf:type rdf:resource="#DomainExpertise"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Expert">
+        <rdf:type rdf:resource="#DomainExpertise"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#FullTime">
+        <rdf:type rdf:resource="#DomainExpertise"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#PartTime">
+        <rdf:type rdf:resource="#DomainExpertise"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AdHoc">
+        <rdf:type rdf:resource="#DomainExpertise"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Servers">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Workstations">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#CloudComputing">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DataManagementTools">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#MachineLearningLibraries">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LabelingPlatforms">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DataScientists">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Analysts">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DomainExperts">
+        <rdf:type rdf:resource="#Infrastructure"/>
+    </rdf:Description>
+
+    <!-- Data Preparation Instances -->
+    <rdf:Description rdf:about="#ClassBalance">
+        <rdf:type rdf:resource="#BalancedSubset"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#FeatureVariability">
+        <rdf:type rdf:resource="#BalancedSubset"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#PopulationSampling">
+        <rdf:type rdf:resource="#BalancedSubset"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#StratifiedSampling">
+        <rdf:type rdf:resource="#BalancedSubset"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ManualVerification">
+        <rdf:type rdf:resource="#DataCleaning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#CrossValidation">
+        <rdf:type rdf:resource="#DataCleaning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AutomatedChecks">
+        <rdf:type rdf:resource="#DataCleaning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#RemovingDuplicates">
+        <rdf:type rdf:resource="#DataCleaning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#HandlingMissingValues">
+        <rdf:type rdf:resource="#DataCleaning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#StandardizingFormats">
+        <rdf:type rdf:resource="#DataCleaning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#InteractionTerms">
+        <rdf:type rdf:resource="#FeatureEngineering"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#PolynomialFeatures">
+        <rdf:type rdf:resource="#FeatureEngineering"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DomainSpecificFeatures">
+        <rdf:type rdf:resource="#FeatureEngineering"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ImprovedAccuracy">
+        <rdf:type rdf:resource="#FeatureEngineering"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#BetterInterpretability">
+        <rdf:type rdf:resource="#FeatureEngineering"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ReducedOverfitting">
+        <rdf:type rdf:resource="#FeatureEngineering"/>
+    </rdf:Description>
+
+    <!-- Modeling Instances -->
+    <rdf:Description rdf:about="#SupportForUncertaintyEstimates">
+        <rdf:type rdf:resource="#ModelSuitability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Scalability">
+        <rdf:type rdf:resource="#ModelSuitability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Interpretability">
+        <rdf:type rdf:resource="#ModelSuitability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DecisionTrees">
+        <rdf:type rdf:resource="#TechniqueSelection"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SupportVectorMachines">
+        <rdf:type rdf:resource="#TechniqueSelection"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#NeuralNetworks">
+        <rdf:type rdf:resource="#TechniqueSelection"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#EnsembleMethods">
+        <rdf:type rdf:resource="#TechniqueSelection"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#OnlineLearning">
+        <rdf:type rdf:resource="#IncrementalTraining"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#BatchLearning">
+        <rdf:type rdf:resource="#IncrementalTraining"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#TransferLearning">
+        <rdf:type rdf:resource="#IncrementalTraining"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SupervisedLearning">
+        <rdf:type rdf:resource="#Techniques"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#UnsupervisedLearning">
+        <rdf:type rdf:resource="#Techniques"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SemiSupervisedLearning">
+        <rdf:type rdf:resource="#Techniques"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Accuracy">
+        <rdf:type rdf:resource="#PerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Precision">
+        <rdf:type rdf:resource="#PerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Recall">
+        <rdf:type rdf:resource="#PerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#F1Score">
+        <rdf:type rdf:resource="#PerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#InitialPerformance">
+        <rdf:type rdf:resource="#BaselineModel"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#TrainingDataSize">
+        <rdf:type rdf:resource="#BaselineModel"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ConfidenceScores">
+        <rdf:type rdf:resource="#UncertaintyMeasures"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ProbabilityEstimates">
+        <rdf:type rdf:resource="#UncertaintyMeasures"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#CrossValidation">
+        <rdf:type rdf:resource="#IterativeEvaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#HoldoutSet">
+        <rdf:type rdf:resource="#IterativeEvaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#BootstrapSampling">
+        <rdf:type rdf:resource="#IterativeEvaluation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#UncertaintySampling">
+        <rdf:type rdf:resource="#ALStrategies"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#QueryByCommittee">
+        <rdf:type rdf:resource="#ALStrategies"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DiversitySampling">
+        <rdf:type rdf:resource="#ALStrategies"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ExpectedModelChange">
+        <rdf:type rdf:resource="#ALStrategies"/>
+    </rdf:Description>
+
+    <!-- Evaluation Instances -->
+    <rdf:Description rdf:about="#LabelingEffortReduction">
+        <rdf:type rdf:resource="#ALPerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ImprovementPerLabeledInstance">
+        <rdf:type rdf:resource="#ALPerformanceMetrics"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ReviewFrequency">
+        <rdf:type rdf:resource="#ALCycleReview"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AdjustmentMechanisms">
+        <rdf:type rdf:resource="#ALCycleReview"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#FurtherIterations">
+        <rdf:type rdf:resource="#NextStepsDetermination"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#DeploymentReadiness">
+        <rdf:type rdf:resource="#NextStepsDetermination"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#StakeholderFeedback">
+        <rdf:type rdf:resource="#StakeholderValidation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#BusinessAlignment">
+        <rdf:type rdf:resource="#StakeholderValidation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#CostSavings">
+        <rdf:type rdf:resource="#EconomicViability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#InvestmentComparison">
+        <rdf:type rdf:resource="#EconomicViability"/>
+    </rdf:Description>
+
+    <!-- Deployment Instances -->
+    <rdf:Description rdf:about="#ContinuousIntegration">
+        <rdf:type rdf:resource="#DeploymentPlanning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#InfrastructureSupport">
+        <rdf:type rdf:resource="#DeploymentPlanning"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ActiveLearningImplementation">
+        <rdf:type rdf:resource="#ModelDeployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#FeedbackMechanisms">
+        <rdf:type rdf:resource="#ModelDeployment"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#PerformanceTracking">
+        <rdf:type rdf:resource="#MonitoringAndMaintenance"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#RegularUpdates">
+        <rdf:type rdf:resource="#MonitoringAndMaintenance"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#PeriodicRetraining">
+        <rdf:type rdf:resource="#MonitoringAndMaintenance"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ModelAssessment">
+        <rdf:type rdf:resource="#ReviewAndUpdate"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ContinuousImprovement">
+        <rdf:type rdf:resource="#ReviewAndUpdate"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ALProcessDocumentation">
+        <rdf:type rdf:resource="#DocumentationAndCommunication"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#StakeholderCommunication">
+        <rdf:type rdf:resource="#DocumentationAndCommunication"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#WorkflowAutomation">
+        <rdf:type rdf:resource="#AutomatedLabelingWorkflow"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LabelingTaskManagement">
+        <rdf:type rdf:resource="#AutomatedLabelingWorkflow"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#EndUserFeedback">
+        <rdf:type rdf:resource="#UserFeedbackIntegration"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#QueryStrategyAdjustment">
+        <rdf:type rdf:resource="#UserFeedbackIntegration"/>
+    </rdf:Description>
+
+</rdf:RDF>
+

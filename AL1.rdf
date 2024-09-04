@@ -1,0 +1,907 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18/"
+     xml:base="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_02b02d50_22dd_40d2_a1d6_b93c663397e0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_02b02d50_22dd_40d2_a1d6_b93c663397e0">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bc58baaa_3cd8_4bb6_a951_e96b0f071bec"/>
+        <rdfs:label>Data Processing Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_03089698_ad3f_462d_9d64_8e5ab183e9f7 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_03089698_ad3f_462d_9d64_8e5ab183e9f7">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_fc1e7b93_c078_4d1d_a172_92ed63743776"/>
+        <rdfs:label>Data Collection Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_036e83ce_f604_427c_885d_c12ec4f74e6f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_036e83ce_f604_427c_885d_c12ec4f74e6f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Query Strategy Implementation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_04b21070_7870_4fce_8c29_69c38edfa3e3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_04b21070_7870_4fce_8c29_69c38edfa3e3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_062ca09a_e8da_48b8_ab9a_875a0d84401f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_062ca09a_e8da_48b8_ab9a_875a0d84401f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Model Update Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_0f267156_178f_41c3_b447_96bed9640444 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_0f267156_178f_41c3_b447_96bed9640444">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_3f5237f6_fff7_4d9b_8df4_7eedf52fb392"/>
+        <rdfs:label>Unlabeled Instances</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1133f521_25e2_410c_a27f_0b830dc88a78 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1133f521_25e2_410c_a27f_0b830dc88a78">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Selection Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_147ae156_22ca_45fc_a19b_0d5df6d9cb5f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_147ae156_22ca_45fc_a19b_0d5df6d9cb5f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Tools</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_15723ec7_08b7_4656_98a9_cc832569d353 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_15723ec7_08b7_4656_98a9_cc832569d353">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Human-In-The-Loop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_15c71496_cb95_442d_b481_df699d08fdf2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_15c71496_cb95_442d_b481_df699d08fdf2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1db564c0_a200_4ddf_a2ac_4a5fdeeb4131"/>
+        <rdfs:label>Active Learning Evaluation Metrics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1900fee3_9b33_48ed_a692_b41fd08150ae -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1900fee3_9b33_48ed_a692_b41fd08150ae">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_3f5237f6_fff7_4d9b_8df4_7eedf52fb392"/>
+        <rdfs:label>Labeled Instances</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1a049019_d5b2_419d_9177_61712146f82f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1a049019_d5b2_419d_9177_61712146f82f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Sampling Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1a751ff4_2ad3_4594_a2eb_00b135e0da5a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1a751ff4_2ad3_4594_a2eb_00b135e0da5a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Machine Learning Algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1a88af3f_0cb7_4ee5_8912_182c999cbdb2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1a88af3f_0cb7_4ee5_8912_182c999cbdb2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_02b02d50_22dd_40d2_a1d6_b93c663397e0"/>
+        <rdfs:label>Data Acquisition Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1db564c0_a200_4ddf_a2ac_4a5fdeeb4131 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1db564c0_a200_4ddf_a2ac_4a5fdeeb4131">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Evaluation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_22cd9248_9c43_4c4f_b809_34ced0f43233 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_22cd9248_9c43_4c4f_b809_34ced0f43233">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_27ac2105_3a72_4662_ab78_09c939794a0e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_27ac2105_3a72_4662_ab78_09c939794a0e">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_fc1e7b93_c078_4d1d_a172_92ed63743776"/>
+        <rdfs:label>Model Evaluation Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_27e349a2_6a48_44d0_afb2_f3d007193630 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_27e349a2_6a48_44d0_afb2_f3d007193630">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Classification Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2ae52ed6_0a2c_480e_b32d_1bde3d5edb2a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2ae52ed6_0a2c_480e_b32d_1bde3d5edb2a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Diversity Sampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2b9f74d1_e6d5_4f22_8d77_1e0df1c1d8b2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2b9f74d1_e6d5_4f22_8d77_1e0df1c1d8b2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Best Practices</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2f877562_22bb_482b_adfa_eb2d4eecb7f7 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2f877562_22bb_482b_adfa_eb2d4eecb7f7">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Machine Learning Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2ff5b9be_ca65_42e3_8448_993a618f6db3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_2ff5b9be_ca65_42e3_8448_993a618f6db3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Model Update Strategy Implementation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_321fe86c_588f_4585_9d59_eb5e2318b9f4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_321fe86c_588f_4585_9d59_eb5e2318b9f4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_03089698_ad3f_462d_9d64_8e5ab183e9f7"/>
+        <rdfs:label>Data Sampling Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_3a77d15c_3ce1_41aa_ae73_9bfdc089492c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_3a77d15c_3ce1_41aa_ae73_9bfdc089492c">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Maintenance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_3f5237f6_fff7_4d9b_8df4_7eedf52fb392 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_3f5237f6_fff7_4d9b_8df4_7eedf52fb392">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_63d705ae_bb6f_4bcc_a091_fd8cacbb1106"/>
+        <rdfs:label>Instances</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_40a6bf5a_c36f_4237_8697_f2eadb9c9332 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_40a6bf5a_c36f_4237_8697_f2eadb9c9332">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Selection Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_40f2e6c4_bb76_42c9_89c1_867700ef0cab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_40f2e6c4_bb76_42c9_89c1_867700ef0cab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Model Update Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_46782391_588e_4025_815e_519a5526394f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_46782391_588e_4025_815e_519a5526394f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1db564c0_a200_4ddf_a2ac_4a5fdeeb4131"/>
+        <rdfs:label>Active Learning Evaluation Criteria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_467a3c60_ddf5_4604_a63f_8eaebe9941bd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_467a3c60_ddf5_4604_a63f_8eaebe9941bd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Software Framework</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_48799adb_ce9f_4a8e_8e8c_b9e7de20047b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_48799adb_ce9f_4a8e_8e8c_b9e7de20047b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Governance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_4a35a59b_21b9_46fd_b6e3_8abb793fec38 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_4a35a59b_21b9_46fd_b6e3_8abb793fec38">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Privacy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_538507b6_598b_4f36_8f52_592ebe15393f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_538507b6_598b_4f36_8f52_592ebe15393f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Algorithm Implementation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_5a178aaa_6550_43aa_8010_daed695c5ecd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_5a178aaa_6550_43aa_8010_daed695c5ecd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7afc64f7_64ea_4cab_824f_90f15a8ebb88"/>
+        <rdfs:label xml:lang="ru">Query Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_6241a477_398d_4201_aca7_06de1a90ba1f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_6241a477_398d_4201_aca7_06de1a90ba1f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Progression</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_63d705ae_bb6f_4bcc_a091_fd8cacbb1106 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_63d705ae_bb6f_4bcc_a091_fd8cacbb1106">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_67558919_1c1b_4492_afe1_dcbdc72890d0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_67558919_1c1b_4492_afe1_dcbdc72890d0">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_68037a7f_312d_4ffa_8cc0_4339321be84a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_68037a7f_312d_4ffa_8cc0_4339321be84a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Research Areas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_68747399_cb38_45e4_a9ec_9a734b628715 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_68747399_cb38_45e4_a9ec_9a734b628715">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Training Scenario</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_6b937f5b_7243_4532_8492_3ee3d0517067 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_6b937f5b_7243_4532_8492_3ee3d0517067">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Deployment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_6d6ccbf8_4079_446c_8f3e_2904d6bc9fd5 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_6d6ccbf8_4079_446c_8f3e_2904d6bc9fd5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_27ac2105_3a72_4662_ab78_09c939794a0e"/>
+        <rdfs:label>Model Training Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_731d3ed5_f49e_496d_9666_b43b82384dca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_731d3ed5_f49e_496d_9666_b43b82384dca">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bc58baaa_3cd8_4bb6_a951_e96b0f071bec"/>
+        <rdfs:label>Model Evaluation Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7519d9a1_e6d5_4b19_b5d2_4880c00fb89d -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7519d9a1_e6d5_4b19_b5d2_4880c00fb89d">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Security</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7533ae1f_3709_46a7_91b3_20de4fd9f333 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7533ae1f_3709_46a7_91b3_20de4fd9f333">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Model Initialization Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_75db9fba_13a3_4505_ba90_0b723656705b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_75db9fba_13a3_4505_ba90_0b723656705b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Machine Learning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_77e0db41_de23_4f9a_a200_86312fb26bde -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_77e0db41_de23_4f9a_a200_86312fb26bde">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Data Annotation Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7859bd6a_1d24_4ee1_82c8_ade17c95e9b0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7859bd6a_1d24_4ee1_82c8_ade17c95e9b0">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Knowledge Base</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_78ada3da_8890_4dbf_9930_4286a7028624 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_78ada3da_8890_4dbf_9930_4286a7028624">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Selection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_78c3c845_ca14_4726_9580_1e95918d0e76 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_78c3c845_ca14_4726_9580_1e95918d0e76">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Scenario</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7afc64f7_64ea_4cab_824f_90f15a8ebb88 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7afc64f7_64ea_4cab_824f_90f15a8ebb88">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ae57ae9c_f253_4957_bf51_fcc1406e75a9"/>
+        <rdfs:label>Selection Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7ea0a097_2a01_4547_bd11_862cc2d7da82 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7ea0a097_2a01_4547_bd11_862cc2d7da82">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bf2fb5b2_ec74_4763_a365_8aee16355ba3"/>
+        <rdfs:label xml:lang="ru">Model Update Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7efaafe0_4c89_49a4_af65_b2f3845ea6d5 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_7efaafe0_4c89_49a4_af65_b2f3845ea6d5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Query Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_812d27e2_4c51_4cf0_82cd_ec3fa5a4a2b5 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_812d27e2_4c51_4cf0_82cd_ec3fa5a4a2b5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_63d705ae_bb6f_4bcc_a091_fd8cacbb1106"/>
+        <rdfs:label>Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_83eee642_e457_440d_8f02_ecb0a660cdcd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_83eee642_e457_440d_8f02_ecb0a660cdcd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_731d3ed5_f49e_496d_9666_b43b82384dca"/>
+        <rdfs:label>Model Training Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880">
+        <rdfs:label>Active Learning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84e500b4_8fbb_4324_bced_d43060adaada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84e500b4_8fbb_4324_bced_d43060adaada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Model Training Scenario</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_868fc7fe_be27_4ab0_a5e0_ff0be62db4ee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_868fc7fe_be27_4ab0_a5e0_ff0be62db4ee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1db564c0_a200_4ddf_a2ac_4a5fdeeb4131"/>
+        <rdfs:label>Active Learning Evaluation Methods</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_89e023b1_44e3_43cd_9ded_a8388c21533c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_89e023b1_44e3_43cd_9ded_a8388c21533c">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Framework</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_8afc0c02_cf4f_4107_9869_d08a5f28d6e9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_8afc0c02_cf4f_4107_9869_d08a5f28d6e9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Data Collection Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_93c8c9c7_6b88_447d_a02c_4f2d7d50c90a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_93c8c9c7_6b88_447d_a02c_4f2d7d50c90a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_94d708ed_4d1f_4faa_993b_1466c9286b08 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_94d708ed_4d1f_4faa_993b_1466c9286b08">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Metrics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_95c258dd_93e2_4756_a1ad_4e536b28b263 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_95c258dd_93e2_4756_a1ad_4e536b28b263">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Model Evaluation Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9982f5a1_e1e0_4120_bdce_5ed3370e8245 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9982f5a1_e1e0_4120_bdce_5ed3370e8245">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bed7fbdf_cffc_4a73_af4b_da25b1811643"/>
+        <rdfs:label>Data Source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9c0b2bb8_5b99_4cc9_ad5e_df4376613778 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9c0b2bb8_5b99_4cc9_ad5e_df4376613778">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Fairness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9d3568fe_1884_4ed1_a276_d9b54a398631 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9d3568fe_1884_4ed1_a276_d9b54a398631">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Monitoring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9f6c5556_fb88_4fe4_a3e8_c71420adf545 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_9f6c5556_fb88_4fe4_a3e8_c71420adf545">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Regression Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_a03b2fb2_b365_4d4c_af5d_81c7e61c49ff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_a03b2fb2_b365_4d4c_af5d_81c7e61c49ff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_adaff354_32fa_48b7_93bd_056694c5feb5"/>
+        <rdfs:label>Learning Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_a2524858_5517_43f9_bdd6_4ae442bfb35e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_a2524858_5517_43f9_bdd6_4ae442bfb35e">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Uncertainty Sampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_a6c523d1_e49f_4140_b688_62538d412625 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_a6c523d1_e49f_4140_b688_62538d412625">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Use Cases</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_adaff354_32fa_48b7_93bd_056694c5feb5 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_adaff354_32fa_48b7_93bd_056694c5feb5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Machine Learning Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_adb69cf3_f7f7_4aac_807f_4900f8106e5e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_adb69cf3_f7f7_4aac_807f_4900f8106e5e">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Evaluation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ae57ae9c_f253_4957_bf51_fcc1406e75a9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ae57ae9c_f253_4957_bf51_fcc1406e75a9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Learning Cycle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b0cf4c2f_9f91_43da_9d5a_1a2832d983ff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b0cf4c2f_9f91_43da_9d5a_1a2832d983ff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Update Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b60ca2d2_0147_46e4_9b57_bf5463d638f4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b60ca2d2_0147_46e4_9b57_bf5463d638f4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Outcome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b8e37498_6560_47a9_a1c9_57f81d1049dc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b8e37498_6560_47a9_a1c9_57f81d1049dc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Instance Selection Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b9ce11b6_28e4_42b2_ba9f_3d7c0e13066f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_b9ce11b6_28e4_42b2_ba9f_3d7c0e13066f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Cycle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bc58baaa_3cd8_4bb6_a951_e96b0f071bec -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bc58baaa_3cd8_4bb6_a951_e96b0f071bec">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bed7fbdf_cffc_4a73_af4b_da25b1811643 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bed7fbdf_cffc_4a73_af4b_da25b1811643">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bf2fb5b2_ec74_4763_a365_8aee16355ba3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bf2fb5b2_ec74_4763_a365_8aee16355ba3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ae57ae9c_f253_4957_bf51_fcc1406e75a9"/>
+        <rdfs:label>Training Phase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c31d8eed_cac3_433d_ab14_2a8180b82d75 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c31d8eed_cac3_433d_ab14_2a8180b82d75">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Interpretation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c82f258b_dba8_4677_8dc4_942dd6267abd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c82f258b_dba8_4677_8dc4_942dd6267abd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Data Labeling Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c983e5f3_8bef_4af7_919a_43d2adc592e2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c983e5f3_8bef_4af7_919a_43d2adc592e2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Instance Selection Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c9ae3d23_1c2f_4b80_ace9_13e559f1260e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_c9ae3d23_1c2f_4b80_ace9_13e559f1260e">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Classification Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_d23dad15_0135_473e_928e_00c1ba094c90 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_d23dad15_0135_473e_928e_00c1ba094c90">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_1a049019_d5b2_419d_9177_61712146f82f"/>
+        <rdfs:label>Specific Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_d250249f_c7f4_42d0_a54c_c6f7b0abe3a1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_d250249f_c7f4_42d0_a54c_c6f7b0abe3a1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Supervised_Learning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_d4fde328_0d76_4aa9_a960_0d83872038a8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_d4fde328_0d76_4aa9_a960_0d83872038a8">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Model Explainability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_dc0f5df7_7a74_4030_bae3_9e4242455dce -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_dc0f5df7_7a74_4030_bae3_9e4242455dce">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Sampling Scenario</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e06aa8a9_7b57_49d0_b3c4_6659447671d0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e06aa8a9_7b57_49d0_b3c4_6659447671d0">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Data Sampling Scenario</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e1dfdb42_ae0a_4e35_bb4b_20883de1652b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e1dfdb42_ae0a_4e35_bb4b_20883de1652b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_bed7fbdf_cffc_4a73_af4b_da25b1811643"/>
+        <rdfs:label>Model Architecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e2900b1f_147f_44a0_9b2a_8325afc30d0e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e2900b1f_147f_44a0_9b2a_8325afc30d0e">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Machine Learning Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e2ee6dca_d6e8_4afd_9f81_c59082207121 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e2ee6dca_d6e8_4afd_9f81_c59082207121">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Computational Environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e2f7dd39_0328_4074_9b39_0f9c994dbf34 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_e2f7dd39_0328_4074_9b39_0f9c994dbf34">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Machine Learning Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ead4e9e4_5c3e_4bbb_9d19_12ede972e2a8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ead4e9e4_5c3e_4bbb_9d19_12ede972e2a8">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ed96308c_9ce8_47d3_b9fa_c015ee4b8a78 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_ed96308c_9ce8_47d3_b9fa_c015ee4b8a78">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Benchmarks</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f00734f5_27ff_407a_b095_38799bd2ae57 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f00734f5_27ff_407a_b095_38799bd2ae57">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f6c20519_2ae4_4819_88a0_465429675b5a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f6c20519_2ae4_4819_88a0_465429675b5a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Techniques</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f7510384_eb77_443d_91c7_33b99b8037e2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f7510384_eb77_443d_91c7_33b99b8037e2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Challenges</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f8449c15_998c_40c0_8f21_c6e4650fc1a8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_f8449c15_998c_40c0_8f21_c6e4650fc1a8">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Opportunities</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_fc1e7b93_c078_4d1d_a172_92ed63743776 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_fc1e7b93_c078_4d1d_a172_92ed63743776">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/untitled-ontology-18#OWLClass_84688a1f_2625_4673_b322_688353ea4880"/>
+        <rdfs:label>Active Learning Task</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,668 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20/"
+     xml:base="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLObjectProperty_415ac432_6d04_4977_a546_4819b459d1f0 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLObjectProperty_415ac432_6d04_4977_a546_4819b459d1f0">
+        <rdfs:label xml:lang="ru">DatasetModality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_03548e07_4985_4355_bf15_c3d113f33436 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_03548e07_4985_4355_bf15_c3d113f33436">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800"/>
+        <rdfs:comment>A strategy that selects instances based on Gaussian Mixture Models. Value: Number of components</rdfs:comment>
+        <rdfs:label xml:lang="en">GaussianMixtureModelSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_098e6aad_354a_4eb4_b318_aff91ddfa631 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_098e6aad_354a_4eb4_b318_aff91ddfa631">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0"/>
+        <rdfs:comment xml:lang="en">A strategy that combines query synthesis and traditional active learning methods. Value: Synthesis method (e.g., membership querying)</rdfs:comment>
+        <rdfs:label xml:lang="en">QuerySynthesisHybrid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_0b89c530_f673_48f4_92d5_9cfbedee3776 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_0b89c530_f673_48f4_92d5_9cfbedee3776">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da97fd0b_a17c_4ecb_be57_d12afa99ff07"/>
+        <rdfs:comment>A strategy that selects the top instances with the highest margin ranks. Value:Number of top instances to select</rdfs:comment>
+        <rdfs:label xml:lang="ru">TopMarginRankingSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_0dbc8814_f314_4e28_8f20_4785023e09cb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_0dbc8814_f314_4e28_8f20_4785023e09cb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699"/>
+        <rdfs:comment>A strategy that selects instances with a balanced margin distribution.</rdfs:comment>
+        <rdfs:label xml:lang="ru">BalancedMarginSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_0deb7bbc_7452_4fc3_b65c_f57dbd3c2935 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_0deb7bbc_7452_4fc3_b65c_f57dbd3c2935">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances based on cluster centroids. Value: Number of centroids, clustering algorithm</rdfs:comment>
+        <rdfs:label xml:lang="en">ClusterCentroidSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_100f945c_10e2_4957_a71e_6d8ed203ee7f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_100f945c_10e2_4957_a71e_6d8ed203ee7f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699"/>
+        <rdfs:comment>A strategy that handles margin uncertainty in multi-class classification.</rdfs:comment>
+        <rdfs:label xml:lang="ru">MultiClassMarginSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_176d801d_88c5_475f_8446_ebf877b6c384 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_176d801d_88c5_475f_8446_ebf877b6c384">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0"/>
+        <rdfs:comment xml:lang="en">A strategy that combines model-based and query-based active learning.</rdfs:comment>
+        <rdfs:label xml:lang="en">ModelBasedActiveHybrid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_17fadee5_89bf_42f0_bd3e_265ddcfcb4af -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_17fadee5_89bf_42f0_bd3e_265ddcfcb4af">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c8b11866_3183_47ae_be50_a8e1a8186d37"/>
+        <rdfs:comment>A strategy that selects instances with high entropy.</rdfs:comment>
+        <rdfs:label xml:lang="en">HighEntropySampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_187efe7f_96a3_44e2_aba1_bc3572664fb9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_187efe7f_96a3_44e2_aba1_bc3572664fb9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630"/>
+        <rdfs:comment xml:lang="en">A strategy that selects representative instances based on data density. Value: Density threshold, distance metric</rdfs:comment>
+        <rdfs:label xml:lang="en">DensityBasedSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_19084a6d_45d5_4ca2_b0e5_1f26c52bcd2f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_19084a6d_45d5_4ca2_b0e5_1f26c52bcd2f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b476dd4b_0380_4dca_9da6_1bd7e8cd574f"/>
+        <rdfs:comment>A strategy that selects instances based on variation ratio uncertainty.</rdfs:comment>
+        <rdfs:label xml:lang="en">VariationRatioSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_1d814d5b_e4fa_40db_bf4b_3d43ee31a2d7 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_1d814d5b_e4fa_40db_bf4b_3d43ee31a2d7">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8"/>
+        <rdfs:label xml:lang="ru">ActiveLearningDataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d143ecd_7aae_4019_bb17_2ae24c0fce82 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d143ecd_7aae_4019_bb17_2ae24c0fce82">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_1d814d5b_e4fa_40db_bf4b_3d43ee31a2d7"/>
+        <rdfs:comment xml:lang="en">A dataset containing data from multiple modalities.</rdfs:comment>
+        <rdfs:label xml:lang="en">MultiModalDataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9f328153_8e29_4394_857a_48f04d38d710"/>
+        <rdfs:comment>A strategy that selects instances based on margin uncertainty.</rdfs:comment>
+        <rdfs:label xml:lang="en">MarginBasedInstanceSelection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2eabbe26_6569_4248_a4ec_6899d5cfe478 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2eabbe26_6569_4248_a4ec_6899d5cfe478">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da97fd0b_a17c_4ecb_be57_d12afa99ff07"/>
+        <rdfs:comment>A strategy that selects the bottom instances with the lowest margin ranks. Value: Number of bottom instances to select</rdfs:comment>
+        <rdfs:label xml:lang="ru">BottomMarginRankingSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_34ff58de_062c_4e73_8bf7_3299f7ec9b94 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_34ff58de_062c_4e73_8bf7_3299f7ec9b94">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0"/>
+        <rdfs:comment>A strategy that combines instance selection and model update approaches. Value: Update frequency, selection criteria</rdfs:comment>
+        <rdfs:label xml:lang="en">InstanceSelectionUpdateHybrid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3b0030cc_7a96_45fa_8363_c8c60ab1a0ea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3b0030cc_7a96_45fa_8363_c8c60ab1a0ea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8"/>
+        <rdfs:label xml:lang="ru">ActiveLearningScenario</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e2f4525_72af_4015_86d2_72bc7df6240c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e2f4525_72af_4015_86d2_72bc7df6240c">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699"/>
+        <rdfs:comment>A strategy that dynamically adjusts the margin threshold based on model performance.</rdfs:comment>
+        <rdfs:label xml:lang="ru">AdaptiveMarginSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8">
+        <rdfs:label xml:lang="ru">ActiveLearning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_47cb5da5_9dde_4805_ac2c_baee1fe0399c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_47cb5da5_9dde_4805_ac2c_baee1fe0399c">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630"/>
+        <rdfs:comment xml:lang="en">A strategy that selects representative instances from strata. Value: Strata definition, number of instances per strata</rdfs:comment>
+        <rdfs:label xml:lang="en">StratifiedSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_48a72743_be39_4bbe_b5d2_9c40286910d1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_48a72743_be39_4bbe_b5d2_9c40286910d1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8"/>
+        <rdfs:label xml:lang="ru">QueryStrategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_4b546552_bb11_4d6f_a2ea_7222b205898a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_4b546552_bb11_4d6f_a2ea_7222b205898a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699"/>
+        <rdfs:comment>A strategy that selects instances with a positive margin.</rdfs:comment>
+        <rdfs:label xml:lang="ru">PositiveMarginSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_5949f4eb_04af_4e5f_a45b_67e5c4d21427 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_5949f4eb_04af_4e5f_a45b_67e5c4d21427">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8"/>
+        <rdfs:label xml:lang="ru">ModelUpdateStrategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_5c32c93e_1b78_48d7_b141_331a571f6f47 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_5c32c93e_1b78_48d7_b141_331a571f6f47">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_6ad58405_d290_4fc5_a401_c2e4b77343eb"/>
+        <rdfs:comment>A strategy that adaptively updates the margin threshold during the learning process.</rdfs:comment>
+        <rdfs:label xml:lang="ru">AdaptiveThresholdSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_65d97c3f_0985_4cc3_8fe1_c08ed98db7d4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_65d97c3f_0985_4cc3_8fe1_c08ed98db7d4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c8b11866_3183_47ae_be50_a8e1a8186d37"/>
+        <rdfs:comment>A strategy that selects instances with low entropy.</rdfs:comment>
+        <rdfs:label xml:lang="en">LowEntropySampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_6ad58405_d290_4fc5_a401_c2e4b77343eb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_6ad58405_d290_4fc5_a401_c2e4b77343eb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9f328153_8e29_4394_857a_48f04d38d710"/>
+        <rdfs:comment>A strategy that selects instances based on a predefined margin threshold.</rdfs:comment>
+        <rdfs:label xml:lang="ru">MarginThresholdSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_6e05a615_c28f_4a12_bc4e_18eab0ff35a5 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_6e05a615_c28f_4a12_bc4e_18eab0ff35a5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances based on hierarchical clustering. Value: Cluster linkage method (e.g., single, complete)</rdfs:comment>
+        <rdfs:label xml:lang="ru">HierarchicalSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_7221d6a3_cea1_4532_8672_005b94aaf26a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_7221d6a3_cea1_4532_8672_005b94aaf26a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_19084a6d_45d5_4ca2_b0e5_1f26c52bcd2f"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances with high variation ratios.</rdfs:comment>
+        <rdfs:label xml:lang="en">HighVariationRatioSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_76f9b46e_6406_485c_91b9_8fe23f1da1b4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_76f9b46e_6406_485c_91b9_8fe23f1da1b4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_19084a6d_45d5_4ca2_b0e5_1f26c52bcd2f"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances with balanced variation ratios.</rdfs:comment>
+        <rdfs:label xml:lang="ru">BalancedVariationRatioSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_77b2dedc_e0b3_44f5_b46f_ebbfb9aafd93 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_77b2dedc_e0b3_44f5_b46f_ebbfb9aafd93">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances based on DBSCAN clustering. Value: Minimum cluster size, epsilon value</rdfs:comment>
+        <rdfs:label xml:lang="ru">DBSCANSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_78554545_e115_4ae4_9f5f_9b14e0808387 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_78554545_e115_4ae4_9f5f_9b14e0808387">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da97fd0b_a17c_4ecb_be57_d12afa99ff07"/>
+        <rdfs:comment>A strategy that selects instances with margin ranks above a certain threshold. Value:Margin rank threshold value (e.g., 0.8)</rdfs:comment>
+        <rdfs:label xml:lang="ru">ThresholdedMarginRankingSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_79accebf_1c3a_45e5_bf9c_e4fb7ae53538 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_79accebf_1c3a_45e5_bf9c_e4fb7ae53538">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_1d814d5b_e4fa_40db_bf4b_3d43ee31a2d7"/>
+        <rdfs:comment xml:lang="en">A dataset with labeled instances</rdfs:comment>
+        <rdfs:label xml:lang="en">LabeledDataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_869fe8b2_903d_4195_9699_c9f12fe26c7f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_869fe8b2_903d_4195_9699_c9f12fe26c7f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_6ad58405_d290_4fc5_a401_c2e4b77343eb"/>
+        <rdfs:comment>A strategy that dynamically adjusts the margin threshold based on data characteristics.</rdfs:comment>
+        <rdfs:label xml:lang="ru">DynamicThresholdSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_88b2ff0b_e42d_4e0e_99a0_ec37ab4c742f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_88b2ff0b_e42d_4e0e_99a0_ec37ab4c742f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b26a3692_a66f_4c78_81f6_fd893eda3095"/>
+        <rdfs:comment>A strategy that selects instances to reduce uncertainty in the model.</rdfs:comment>
+        <rdfs:label xml:lang="ru">UncertaintyReduction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_8c17eef7_bded_47fe_9121_88360fcce2da -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_8c17eef7_bded_47fe_9121_88360fcce2da">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0"/>
+        <rdfs:comment xml:lang="en">A strategy that combines active and passive learning approaches.</rdfs:comment>
+        <rdfs:label xml:lang="en">ActivePassiveHybrid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_97849fb2_d699_48bb_b61f_df0147958e90 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_97849fb2_d699_48bb_b61f_df0147958e90">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_1d814d5b_e4fa_40db_bf4b_3d43ee31a2d7"/>
+        <rdfs:comment xml:lang="en">A dataset with a combination of labeled and unlabeled instances.</rdfs:comment>
+        <rdfs:label xml:lang="en">SemiSupervisedDataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9d48eb9f_e250_40d7_a2cb_e850829127f2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9d48eb9f_e250_40d7_a2cb_e850829127f2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_1d814d5b_e4fa_40db_bf4b_3d43ee31a2d7"/>
+        <rdfs:comment xml:lang="en">A dataset that is continuously updated or streamed.</rdfs:comment>
+        <rdfs:label xml:lang="en">StreamingDataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9dea17b2_2b70_46ea_ac82_8494b9e2b8d9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9dea17b2_2b70_46ea_ac82_8494b9e2b8d9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_48a72743_be39_4bbe_b5d2_9c40286910d1"/>
+        <rdfs:comment>A strategy that selects instances to maximize diversity in the training set.</rdfs:comment>
+        <rdfs:label xml:lang="ru">DiversitySampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9f328153_8e29_4394_857a_48f04d38d710 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9f328153_8e29_4394_857a_48f04d38d710">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b476dd4b_0380_4dca_9da6_1bd7e8cd574f"/>
+        <rdfs:comment>A strategy that selects instances based on margin uncertainty.</rdfs:comment>
+        <rdfs:label xml:lang="en">MarginSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ae559204_5311_4ca4_9a41_a26f435fb162 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ae559204_5311_4ca4_9a41_a26f435fb162">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630"/>
+        <rdfs:comment xml:lang="en">A strategy that selects representative instances based on prototype selection techniques. Value: Number of prototypes, similarity threshold</rdfs:comment>
+        <rdfs:label xml:lang="en">PrototypeSelection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b26a3692_a66f_4c78_81f6_fd893eda3095 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b26a3692_a66f_4c78_81f6_fd893eda3095">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_48a72743_be39_4bbe_b5d2_9c40286910d1"/>
+        <rdfs:comment>A strategy that selects instances based on expected changes in the model.</rdfs:comment>
+        <rdfs:label xml:lang="ru">ExpectedModelChange</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b476dd4b_0380_4dca_9da6_1bd7e8cd574f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b476dd4b_0380_4dca_9da6_1bd7e8cd574f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_48a72743_be39_4bbe_b5d2_9c40286910d1"/>
+        <rdfs:comment>A strategy that selects instances based on their uncertainty in prediction.</rdfs:comment>
+        <rdfs:label xml:lang="ru">UncertaintySampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b5b25f53_0cc1_4d4c_a048_5281226d59f9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b5b25f53_0cc1_4d4c_a048_5281226d59f9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699"/>
+        <rdfs:comment>A strategy that selects instances with a negative margin.</rdfs:comment>
+        <rdfs:label xml:lang="ru">NegativeMarginSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b67da060_5416_4507_b69a_90214af54f68 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b67da060_5416_4507_b69a_90214af54f68">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_6ad58405_d290_4fc5_a401_c2e4b77343eb"/>
+        <rdfs:comment>A strategy that selects instances with a fixed margin threshold. Value: Fixed margin threshold value (e.g., 0.1)</rdfs:comment>
+        <rdfs:label xml:lang="ru">FixedThresholdSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b8e3e03e_b55a_4da3_9bcc_af4c663c793a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b8e3e03e_b55a_4da3_9bcc_af4c663c793a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_1d814d5b_e4fa_40db_bf4b_3d43ee31a2d7"/>
+        <rdfs:comment xml:lang="en">A dataset with unlabeled instances.</rdfs:comment>
+        <rdfs:label xml:lang="en">UnlabeledDataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9dea17b2_2b70_46ea_ac82_8494b9e2b8d9"/>
+        <rdfs:comment xml:lang="en">A strategy that selects representative instances to maximize diversity.</rdfs:comment>
+        <rdfs:label xml:lang="ru">RepresentativeSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c8b11866_3183_47ae_be50_a8e1a8186d37 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c8b11866_3183_47ae_be50_a8e1a8186d37">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b476dd4b_0380_4dca_9da6_1bd7e8cd574f"/>
+        <rdfs:comment>A strategy that selects instances based on entropy uncertainty.</rdfs:comment>
+        <rdfs:label xml:lang="en">EntropySampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ca4abc97_1e1c_4e36_8a8c_104751624977 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ca4abc97_1e1c_4e36_8a8c_104751624977">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances based on K-means clustering. Value:Number of clusters (e.g., K value)</rdfs:comment>
+        <rdfs:label xml:lang="ru">KMeansSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da2ff119_8485_4bc8_962a_253ca838a76b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da2ff119_8485_4bc8_962a_253ca838a76b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b26a3692_a66f_4c78_81f6_fd893eda3095"/>
+        <rdfs:comment>A strategy that detects changes in the model and selects instances accordingly.</rdfs:comment>
+        <rdfs:label xml:lang="ru">ModelChangeDetection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da7c7c19_a006_477f_b569_6dda0dbcc31d -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da7c7c19_a006_477f_b569_6dda0dbcc31d">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800"/>
+        <rdfs:comment>A strategy that selects instances based on agglomerative clustering. Value: Linkage criterion (e.g., ward, average)</rdfs:comment>
+        <rdfs:label xml:lang="en">AgglomerativeClustering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da97fd0b_a17c_4ecb_be57_d12afa99ff07 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_da97fd0b_a17c_4ecb_be57_d12afa99ff07">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9f328153_8e29_4394_857a_48f04d38d710"/>
+        <rdfs:comment>A strategy that selects instances based on ranking by margin uncertainty.</rdfs:comment>
+        <rdfs:label xml:lang="ru">MarginRankingSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_dbee48b7_3478_4592_ae24_39a0bbab029f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_dbee48b7_3478_4592_ae24_39a0bbab029f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances based on spectral clustering. Value: Number of clusters, affinity matrix</rdfs:comment>
+        <rdfs:label xml:lang="en">SpectralClustering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_dc75c289_af1b_45ae_8f81_0376a3fd8ec9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_dc75c289_af1b_45ae_8f81_0376a3fd8ec9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_b26a3692_a66f_4c78_81f6_fd893eda3095"/>
+        <rdfs:comment>A strategy that selects instances to reduce error in the model.</rdfs:comment>
+        <rdfs:label xml:lang="ru">ErrorReduction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_dd6e9950_59ef_4b16_a4bc_14abd173f2d6 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_dd6e9950_59ef_4b16_a4bc_14abd173f2d6">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0"/>
+        <rdfs:comment xml:lang="en">A strategy that combines multiple active learning models or classifiers. Value: Number of models, aggregation method</rdfs:comment>
+        <rdfs:label xml:lang="en">CommitteeBasedHybrid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_48a72743_be39_4bbe_b5d2_9c40286910d1"/>
+        <rdfs:comment>A strategy that combines multiple query strategies for improved performance.</rdfs:comment>
+        <rdfs:label xml:lang="en">HybridStrategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ded6530d_092b_4d4f_94a3_a965c66818f4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ded6530d_092b_4d4f_94a3_a965c66818f4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630"/>
+        <rdfs:comment xml:lang="en">A strategy that selects representative instances with balanced class distribution. Value: Number of instances per class</rdfs:comment>
+        <rdfs:label xml:lang="en">BalancedSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_e4814474_c89e_40af_9d8f_13a9f3cb5bc5 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_e4814474_c89e_40af_9d8f_13a9f3cb5bc5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_19084a6d_45d5_4ca2_b0e5_1f26c52bcd2f"/>
+        <rdfs:comment xml:lang="en">A strategy that selects instances with low variation ratios.</rdfs:comment>
+        <rdfs:label xml:lang="en">LowVariationRatioSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_e7e26fef_12ca_4b3f_b7fa_ab55335172f7 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_e7e26fef_12ca_4b3f_b7fa_ab55335172f7">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ddcafd3a_7b94_404c_9c2b_c92ebf4f89e0"/>
+        <rdfs:comment xml:lang="en">A strategy that combines diversity and uncertainty sampling approaches.</rdfs:comment>
+        <rdfs:label xml:lang="en">DiversityUncertaintyHybrid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f2a74229_b0e1_41b7_b9b9_feec1458e800">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_9dea17b2_2b70_46ea_ac82_8494b9e2b8d9"/>
+        <rdfs:comment>A strategy that selects instances from diverse clusters.</rdfs:comment>
+        <rdfs:label xml:lang="en">ClusterSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f44e800e_eb5e_461d_8950_086c424f63ee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f44e800e_eb5e_461d_8950_086c424f63ee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_2d55bf6b_29fe_467e_8a00_6d4bab026699"/>
+        <rdfs:comment>A strategy that selects instances with a weighted margin based on importance.
+Value:Weighting factors for instances</rdfs:comment>
+        <rdfs:label xml:lang="ru">WeightedMarginSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f7b4bbe4_aaaf_4fcc_a8e5_9e1dc23fd73b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f7b4bbe4_aaaf_4fcc_a8e5_9e1dc23fd73b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c13d0274_448e_45df_a089_4f811c399630"/>
+        <rdfs:comment xml:lang="en">A strategy that randomly selects representative instances. Value: Number of instances to select</rdfs:comment>
+        <rdfs:label xml:lang="en">RandomSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f9d76460_e9ef_42a9_8aa2_94b6a52b0421 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_f9d76460_e9ef_42a9_8aa2_94b6a52b0421">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8"/>
+        <rdfs:label xml:lang="ru">InstanceSelectionStrategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_fef00ae7_b551_4050_80d4_d530b152590f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_fef00ae7_b551_4050_80d4_d530b152590f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_3e57c330_a8cc_48c0_afa0_daa39ae53ad8"/>
+        <rdfs:label xml:lang="ru">ActiveLearningFramework</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ffdf6a31_fda5_43c2_a011_9de94599f300 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_ffdf6a31_fda5_43c2_a011_9de94599f300">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovot480s/ontologies/2024/1/19/untitled-ontology-20#OWLClass_c8b11866_3183_47ae_be50_a8e1a8186d37"/>
+        <rdfs:comment>A strategy that selects instances with balanced entropy distribution.</rdfs:comment>
+        <rdfs:label xml:lang="en">BalancedEntropySampling</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
