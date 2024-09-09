@@ -31,9 +31,15 @@ graph LR
     oracle --> gui
 
     update_strategy --> retraining
-
-
 ```
+
+Resources:
+
+* https://github.com/RelationRx/pyrelational | https://pyrelational.readthedocs.io/en/stable/
+* https://towardsdatascience.com/towards-a-fully-automated-active-learning-pipeline-29b8f4eb7d73
+* https://towardsdatascience.com/how-to-build-a-fast-iterative-active-learning-data-pipeline-3c83a8838a5a
+
+
 
 
 ## Helper
