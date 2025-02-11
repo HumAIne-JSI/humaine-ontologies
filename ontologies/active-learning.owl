@@ -1,0 +1,3498 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns="http://www.example.org/activelearningontology#">
+ 	    
+		<rdf:Description rdf:nodeID="genid1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	<rdfs:comment>A formal ontology representing generic concepts and processes in Active Learning systems for HumAIne project. V.01</rdfs:comment>
+</rdf:Description>
+		
+		<!-- ActiveLearning Top Class -->
+    <owl:Class rdf:about="#ActiveLearning">
+        <rdfs:comment>This class represents the overarching concept of Active Learning, under which all key components fall.</rdfs:comment>
+    </owl:Class>
+		  <!-- Main Classes -->
+      <!-- ALPipeline Class as Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#ALPipeline">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents the entire Active Learning pipeline, which includes core steps such as data collection, model training, annotation, and feedback.</rdfs:comment>
+    </owl:Class>
+    <!-- Data Collection Step as Subclass -->
+    <owl:Class rdf:about="#DataCollection">
+        <rdfs:subClassOf rdf:resource="#ALPipeline"/>
+        <rdfs:comment>This class represents the process of collecting data for the Active Learning pipeline.</rdfs:comment>
+    </owl:Class>
+    <!-- Subclasses for Data Collection -->
+    <owl:Class rdf:about="#ManualDataCollection">
+        <rdfs:subClassOf rdf:resource="#DataCollection"/>
+        <rdfs:comment>Represents manual methods of collecting data for the Active Learning process.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#WebScrapingDataCollection">
+        <rdfs:subClassOf rdf:resource="#DataCollection"/>
+        <rdfs:comment>Represents data collection through web scraping.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#SensorDataCollection">
+        <rdfs:subClassOf rdf:resource="#DataCollection"/>
+        <rdfs:comment>Represents data collection through sensors in IoT scenarios.</rdfs:comment>
+    </owl:Class>
+    <!-- Model Training Step as Subclass -->
+    <owl:Class rdf:about="#ModelTraining">
+        <rdfs:subClassOf rdf:resource="#ALPipeline"/>
+        <rdfs:comment>This class represents the process of training machine learning models in the pipeline.</rdfs:comment>
+    </owl:Class>
+    <!-- Subclasses for Model Training -->
+    <owl:Class rdf:about="#InitialTraining">
+        <rdfs:subClassOf rdf:resource="#ModelTraining"/>
+        <rdfs:comment>Represents the initial model training process.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#IncrementalTraining">
+        <rdfs:subClassOf rdf:resource="#ModelTraining"/>
+        <rdfs:comment>Represents incremental model training where the model is retrained with new data over time.</rdfs:comment>
+    </owl:Class>
+    <!-- Annotation Step as Subclass -->
+    <owl:Class rdf:about="#Annotation">
+        <rdfs:subClassOf rdf:resource="#ALPipeline"/>
+        <rdfs:comment>This class represents the process of labeling instances in the pipeline.</rdfs:comment>
+    </owl:Class>
+    <!-- Subclasses for Annotation -->
+    <owl:Class rdf:about="#ManualAnnotation">
+        <rdfs:subClassOf rdf:resource="#Annotation"/>
+        <rdfs:comment>Represents manual annotation by human annotators.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#AutomatedPreAnnotation">
+        <rdfs:subClassOf rdf:resource="#Annotation"/>
+        <rdfs:comment>Represents pre-annotation using automated tools, followed by human review.</rdfs:comment>
+    </owl:Class>
+    <!-- Model Update Step as Subclass -->
+    <owl:Class rdf:about="#ModelUpdate">
+        <rdfs:subClassOf rdf:resource="#ALPipeline"/>
+        <rdfs:comment>This class represents the process of updating machine learning models with new labeled data.</rdfs:comment>
+    </owl:Class>
+    <!-- Subclasses for Model Update -->
+    <owl:Class rdf:about="#Retraining">
+        <rdfs:subClassOf rdf:resource="#ModelUpdate"/>
+        <rdfs:comment>Represents retraining the model using newly labeled instances.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#FineTuning">
+        <rdfs:subClassOf rdf:resource="#ModelUpdate"/>
+        <rdfs:comment>Represents fine-tuning the model based on new labeled data.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#IncrementalLearning">
+        <rdfs:subClassOf rdf:resource="#ModelUpdate"/>
+        <rdfs:comment>Represents incremental learning where the model is continuously updated with new data over time.</rdfs:comment>
+    </owl:Class>
+    <!-- Feedback Loop as Subclass -->
+    <owl:Class rdf:about="#FeedbackLoop">
+        <rdfs:subClassOf rdf:resource="#ALPipeline"/>
+        <rdfs:comment>This class represents the feedback loop in the Active Learning pipeline.</rdfs:comment>
+    </owl:Class>
+    <!-- Subclasses for Feedback Loop -->
+    <owl:Class rdf:about="#ModelPerformanceFeedback">
+        <rdfs:subClassOf rdf:resource="#FeedbackLoop"/>
+        <rdfs:comment>This class represents feedback based on the model's performance during real-world deployment.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#UserFeedback">
+        <rdfs:subClassOf rdf:resource="#FeedbackLoop"/>
+        <rdfs:comment>This class represents feedback provided by users or human annotators, helping improve the learning process.</rdfs:comment>
+    </owl:Class> 	
+	    <!-- UserFeedback -->
+    <owl:Class rdf:about="#UserFeedback">
+        <rdfs:subClassOf rdf:resource="#FeedbackLoop"/>
+        <rdfs:comment>This class represents feedback from human annotators or end users, influencing the next steps in the pipeline.</rdfs:comment>
+    </owl:Class>
+    <!-- Model Update Step as Subclass -->
+    <owl:Class rdf:about="#ModelUpdate">
+        <rdfs:subClassOf rdf:resource="#ALPipeline"/>
+        <rdfs:comment>This class represents the process of updating machine learning models with new labeled data.</rdfs:comment>
+    </owl:Class>
+    <!-- Subclasses for Model Update -->
+    <owl:Class rdf:about="#Retraining">
+        <rdfs:subClassOf rdf:resource="#ModelUpdate"/>
+        <rdfs:comment>Represents retraining the model using newly labeled instances.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#FineTuning">
+        <rdfs:subClassOf rdf:resource="#ModelUpdate"/>
+        <rdfs:comment>Represents fine-tuning the model based on new labeled data.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#IncrementalLearning">
+        <rdfs:subClassOf rdf:resource="#ModelUpdate"/>
+        <rdfs:comment>Represents incremental learning where the model is continuously updated with new data over time.</rdfs:comment>
+    </owl:Class>
+    <!-- Feedback Loop as Subclass -->
+    <owl:Class rdf:about="#FeedbackLoop">
+        <rdfs:subClassOf rdf:resource="#ALPipeline"/>
+        <rdfs:comment>This class represents the feedback loop in the Active Learning pipeline.</rdfs:comment>
+    </owl:Class>
+    <!-- Subclasses for Feedback Loop -->
+    <owl:Class rdf:about="#ModelPerformanceFeedback">
+        <rdfs:subClassOf rdf:resource="#FeedbackLoop"/>
+        <rdfs:comment>This class represents feedback based on the model's performance during real-world deployment.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#UserFeedback">
+        <rdfs:subClassOf rdf:resource="#FeedbackLoop"/>
+        <rdfs:comment>This class represents feedback provided by users or human annotators, helping improve the learning process.</rdfs:comment>
+    </owl:Class>
+ <!-- ALScenario as a Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#ALScenario">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents different scenarios of Active Learning, defining how instances are selected for labeling.</rdfs:comment>
+    </owl:Class>
+    <!-- Pool-Based Scenario -->
+    <owl:Class rdf:about="#PoolBasedScenario">
+        <rdfs:subClassOf rdf:resource="#ALScenario"/>
+        <rdfs:comment>Represents a pool-based Active Learning scenario where a large pool of unlabeled data is used for instance selection.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#FixedPoolScenario">
+        <rdfs:subClassOf rdf:resource="#PoolBasedScenario"/>
+        <rdfs:comment>Represents a pool-based scenario where the pool of unlabeled data remains fixed throughout the process.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#DynamicPoolScenario">
+        <rdfs:subClassOf rdf:resource="#PoolBasedScenario"/>
+        <rdfs:comment>Represents a pool-based scenario where the pool of unlabeled data changes dynamically during the process.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#BatchSelectionScenario">
+        <rdfs:subClassOf rdf:resource="#PoolBasedScenario"/>
+        <rdfs:comment>Represents a pool-based scenario where instances are selected in batches for labeling, increasing efficiency.</rdfs:comment>
+    </owl:Class>
+    <!-- Stream-Based Scenario -->
+    <owl:Class rdf:about="#StreamBasedScenario">
+        <rdfs:subClassOf rdf:resource="#ALScenario"/>
+        <rdfs:comment>Represents a stream-based Active Learning scenario where data arrives continuously and the system must decide whether to label or discard each instance.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OnlineLearningScenario">
+        <rdfs:subClassOf rdf:resource="#StreamBasedScenario"/>
+        <rdfs:comment>Represents a stream-based scenario where the model is updated incrementally as new data arrives.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#PeriodicUpdateScenario">
+        <rdfs:subClassOf rdf:resource="#StreamBasedScenario"/>
+        <rdfs:comment>Represents a stream-based scenario where the model is updated periodically with a batch of newly labeled instances.</rdfs:comment>
+    </owl:Class>
+    <!-- Query Synthesis Scenario -->
+    <owl:Class rdf:about="#QuerySynthesisScenario">
+        <rdfs:subClassOf rdf:resource="#ALScenario"/>
+        <rdfs:comment>Represents a query synthesis scenario where synthetic instances are generated by the system for labeling.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#AdversarialQueryScenario">
+        <rdfs:subClassOf rdf:resource="#QuerySynthesisScenario"/>
+        <rdfs:comment>Represents a query synthesis scenario where synthetic instances are generated to challenge the model’s decision boundaries.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#UncertaintyBasedQueryScenario">
+        <rdfs:subClassOf rdf:resource="#QuerySynthesisScenario"/>
+        <rdfs:comment>Represents a query synthesis scenario where synthetic instances are generated in areas where the model is least confident.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#DomainExpansionScenario">
+        <rdfs:subClassOf rdf:resource="#QuerySynthesisScenario"/>
+        <rdfs:comment>Represents a query synthesis scenario where synthetic instances are generated to expand the model's knowledge of the data space.</rdfs:comment>
+    </owl:Class>
+	    <!-- ALTask Class as a Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#ALTask">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents the task performed within Active Learning, such as classification, clustering, or regression.</rdfs:comment>
+    </owl:Class>
+    <!-- Classification Task -->
+    <owl:Class rdf:about="#ClassificationTask">
+        <rdfs:subClassOf rdf:resource="#ALTask"/>
+        <rdfs:comment>This class represents classification tasks in Active Learning.</rdfs:comment>
+    </owl:Class>
+ <owl:Class rdf:about="#BinaryClassificationTask">
+    <rdfs:subClassOf rdf:resource="#ClassificationTask"/>
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasClassCount"/>
+            <owl:allValuesFrom>
+                <rdfs:Datatype>
+                    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                    <owl:withRestrictions rdf:parseType="Collection">
+                        <rdf:Description>
+                            <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</xsd:minInclusive>
+                            <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</xsd:maxInclusive>
+                        </rdf:Description>
+                    </owl:withRestrictions>
+                </rdfs:Datatype>
+            </owl:allValuesFrom>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>This class represents binary classification tasks, where there are exactly two classes.</rdfs:comment>
+</owl:Class>
+	<owl:Class rdf:about="#MultiClassClassificationTask">
+    <rdfs:subClassOf rdf:resource="#ClassificationTask"/>
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasClassCount"/>
+            <owl:allValuesFrom>
+                <rdfs:Datatype>
+                    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                    <owl:withRestrictions rdf:parseType="Collection">
+                        <rdf:Description>
+                            <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</xsd:minInclusive>
+                        </rdf:Description>
+                    </owl:withRestrictions>
+                </rdfs:Datatype>
+            </owl:allValuesFrom>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>This class represents multi-class classification tasks, where there are three or more classes.</rdfs:comment>
+</owl:Class>
+	
+
+    <owl:Class rdf:about="#MultiLabelClassificationTask">
+        <rdfs:subClassOf rdf:resource="#ClassificationTask"/>
+        <rdfs:comment>This class represents multilabel classification tasks, where instances can belong to multiple classes simultaneously.</rdfs:comment>
+    </owl:Class>
+    <!-- Clustering Task -->
+    <owl:Class rdf:about="#ClusteringTask">
+        <rdfs:subClassOf rdf:resource="#ALTask"/>
+        <rdfs:comment>This class represents clustering tasks in Active Learning.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#HardClusteringTask">
+        <rdfs:subClassOf rdf:resource="#ClusteringTask"/>
+        <rdfs:comment>This class represents hard clustering tasks, where each instance belongs to exactly one cluster.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#SoftClusteringTask">
+        <rdfs:subClassOf rdf:resource="#ClusteringTask"/>
+        <rdfs:comment>This class represents soft clustering tasks, where instances can belong to multiple clusters with varying degrees of membership.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#HierarchicalClusteringTask">
+        <rdfs:subClassOf rdf:resource="#ClusteringTask"/>
+        <rdfs:comment>This class represents hierarchical clustering tasks, where clusters are arranged in a hierarchy.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Regression Task -->
+    <owl:Class rdf:about="#RegressionTask">
+        <rdfs:subClassOf rdf:resource="#ALTask"/>
+        <rdfs:comment>This class represents regression tasks in Active Learning.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SimpleRegressionTask">
+        <rdfs:subClassOf rdf:resource="#RegressionTask"/>
+        <rdfs:comment>This class represents simple regression tasks, predicting a single continuous value.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MultiOutputRegressionTask">
+        <rdfs:subClassOf rdf:resource="#RegressionTask"/>
+        <rdfs:comment>This class represents multi-output regression tasks, predicting multiple continuous values simultaneously.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RobustRegressionTask">
+        <rdfs:subClassOf rdf:resource="#RegressionTask"/>
+        <rdfs:comment>This class represents robust regression tasks, designed to handle outliers effectively.</rdfs:comment>
+    </owl:Class>
+
+    <!-- QueryStrategy Class as a Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#QueryStrategy">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents different strategies used for selecting the most informative instances in Active Learning.</rdfs:comment>
+    </owl:Class>
+
+    <!-- UncertaintySampling -->
+    <owl:Class rdf:about="#UncertaintySampling">
+        <rdfs:subClassOf rdf:resource="#QueryStrategy"/>
+        <rdfs:comment>This class represents strategies that select instances based on uncertainty in model predictions.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LeastConfidenceSampling">
+        <rdfs:subClassOf rdf:resource="#UncertaintySampling"/>
+        <rdfs:comment>This class represents least confidence sampling, selecting instances where the model has the lowest confidence.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MarginSampling">
+        <rdfs:subClassOf rdf:resource="#UncertaintySampling"/>
+        <rdfs:comment>This class represents margin sampling, selecting instances with the smallest margin between the top two class probabilities.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#EntropySampling">
+        <rdfs:subClassOf rdf:resource="#UncertaintySampling"/>
+        <rdfs:comment>This class represents entropy-based sampling, selecting instances with the highest prediction entropy.</rdfs:comment>
+    </owl:Class>
+
+    <!-- QueryByCommittee -->
+    <owl:Class rdf:about="#QueryByCommittee">
+        <rdfs:subClassOf rdf:resource="#QueryStrategy"/>
+        <rdfs:comment>This class represents query by committee strategies, where multiple models vote on the most informative instances.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#VoteEntropy">
+        <rdfs:subClassOf rdf:resource="#QueryByCommittee"/>
+        <rdfs:comment>This class represents vote entropy, where instances are selected based on disagreement among committee members.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#KLDivergence">
+        <rdfs:subClassOf rdf:resource="#QueryByCommittee"/>
+        <rdfs:comment>This class represents KL-divergence-based strategies for selecting instances based on committee disagreement.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ExpectedModelChange -->
+    <owl:Class rdf:about="#ExpectedModelChange">
+        <rdfs:subClassOf rdf:resource="#QueryStrategy"/>
+        <rdfs:comment>This class represents strategies that select instances expected to cause the largest change in model parameters.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GradientMagnitude">
+        <rdfs:subClassOf rdf:resource="#ExpectedModelChange"/>
+        <rdfs:comment>This class represents gradient magnitude-based selection, where instances are chosen based on their expected impact on model gradients.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#FisherInformation">
+        <rdfs:subClassOf rdf:resource="#ExpectedModelChange"/>
+        <rdfs:comment>This class represents strategies that select instances based on Fisher Information, measuring the sensitivity of the model parameters.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#InfluenceFunction">
+        <rdfs:subClassOf rdf:resource="#ExpectedModelChange"/>
+        <rdfs:comment>This class represents influence function-based selection, where instances are chosen based on their influence on model parameters.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ExpectedErrorReduction -->
+    <owl:Class rdf:about="#ExpectedErrorReduction">
+        <rdfs:subClassOf rdf:resource="#QueryStrategy"/>
+        <rdfs:comment>This class represents strategies that select instances expected to reduce the model's prediction error the most.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RiskReduction">
+        <rdfs:subClassOf rdf:resource="#ExpectedErrorReduction"/>
+        <rdfs:comment>This class represents risk reduction-based selection, focusing on minimizing future prediction risks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#VarianceReduction">
+        <rdfs:subClassOf rdf:resource="#ExpectedErrorReduction"/>
+        <rdfs:comment>This class represents variance reduction-based selection, focusing on reducing prediction variance for the model.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PosteriorRiskReduction">
+        <rdfs:subClassOf rdf:resource="#ExpectedErrorReduction"/>
+        <rdfs:comment>This class represents posterior risk reduction strategies, selecting instances that reduce posterior risk in a Bayesian model.</rdfs:comment>
+    </owl:Class>
+
+    <!-- DensityWeightedSampling -->
+    <owl:Class rdf:about="#DensityWeightedSampling">
+        <rdfs:subClassOf rdf:resource="#QueryStrategy"/>
+        <rdfs:comment>This class represents strategies that balance uncertainty with data density when selecting instances.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#UncertaintyDensity">
+        <rdfs:subClassOf rdf:resource="#DensityWeightedSampling"/>
+        <rdfs:comment>This class represents uncertainty-density sampling, balancing uncertainty and representativeness of instances.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ClusterCentroidSampling">
+        <rdfs:subClassOf rdf:resource="#DensityWeightedSampling"/>
+        <rdfs:comment>This class represents cluster centroid sampling, selecting instances closest to cluster centroids in a dataset.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DiverseDensitySampling">
+        <rdfs:subClassOf rdf:resource="#DensityWeightedSampling"/>
+        <rdfs:comment>This class represents diverse density sampling, focusing on selecting diverse and representative instances in dense regions of the data.</rdfs:comment>
+    </owl:Class>
+		
+    <!-- Data Class as a Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#Data">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents the data used in Active Learning, including datasets and instances.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Dataset Class -->
+    <owl:Class rdf:about="#Dataset">
+        <rdfs:subClassOf rdf:resource="#Data"/>
+        <rdfs:comment>This class represents datasets used for training, labeling, or testing in an Active Learning pipeline.</rdfs:comment>
+    </owl:Class>
+
+    <!-- LabeledDataset -->
+    <owl:Class rdf:about="#LabeledDataset">
+        <rdfs:subClassOf rdf:resource="#Dataset"/>
+        <rdfs:comment>This class represents a dataset where each instance is associated with a label.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#FullyLabeledDataset">
+        <rdfs:subClassOf rdf:resource="#LabeledDataset"/>
+        <rdfs:comment>This class represents a fully labeled dataset where all instances have labels.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PartiallyLabeledDataset">
+        <rdfs:subClassOf rdf:resource="#LabeledDataset"/>
+        <rdfs:comment>This class represents a partially labeled dataset where only some instances have labels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- UnlabeledDataset -->
+    <owl:Class rdf:about="#UnlabeledDataset">
+        <rdfs:subClassOf rdf:resource="#Dataset"/>
+        <rdfs:comment>This class represents a dataset where instances do not have labels and are candidates for labeling.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PoolDataset">
+        <rdfs:subClassOf rdf:resource="#UnlabeledDataset"/>
+        <rdfs:comment>This class represents a static pool of unlabeled instances, used in pool-based scenarios.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#StreamDataset">
+        <rdfs:subClassOf rdf:resource="#UnlabeledDataset"/>
+        <rdfs:comment>This class represents a dynamic stream of unlabeled instances, used in stream-based scenarios.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Optional: MetadataEnhancedDataset -->
+    <owl:Class rdf:about="#MetadataEnhancedDataset">
+        <rdfs:subClassOf rdf:resource="#Dataset"/>
+        <rdfs:comment>This optional class represents datasets where instances are enhanced with metadata (e.g., timestamps, quality scores).</rdfs:comment>
+    </owl:Class>
+
+    <!-- Instance Class -->
+    <owl:Class rdf:about="#Instance">
+        <rdfs:subClassOf rdf:resource="#Data"/>
+        <rdfs:comment>This class represents an individual data point within a dataset, either labeled or unlabeled.</rdfs:comment>
+    </owl:Class>
+
+    <!-- LabeledInstance -->
+    <owl:Class rdf:about="#LabeledInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+        <rdfs:comment>This class represents an instance that has been assigned a label by a human annotator.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PreLabeledInstance">
+        <rdfs:subClassOf rdf:resource="#LabeledInstance"/>
+        <rdfs:comment>This class represents instances that were labeled prior to the start of the Active Learning process.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#FullyLabeledInstance">
+        <rdfs:subClassOf rdf:resource="#LabeledInstance"/>
+        <rdfs:comment>This class represents fully labeled instances with definitive labels.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AmbiguousLabeledInstance">
+        <rdfs:subClassOf rdf:resource="#LabeledInstance"/>
+        <rdfs:comment>This class represents instances with conflicting or uncertain labels, which may need further review.</rdfs:comment>
+    </owl:Class>
+
+    <!-- UnlabeledInstance -->
+    <owl:Class rdf:about="#UnlabeledInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+        <rdfs:comment>This class represents an instance that has not yet been assigned a label and is a candidate for labeling.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#QueriedInstance">
+        <rdfs:subClassOf rdf:resource="#UnlabeledInstance"/>
+        <rdfs:comment>This class represents an instance that has been selected by the Active Learning system for labeling.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RejectedInstance">
+        <rdfs:subClassOf rdf:resource="#UnlabeledInstance"/>
+        <rdfs:comment>This class represents an instance that was reviewed by the model but not selected for labeling.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Optional: MetadataEnhancedInstance -->
+    <owl:Class rdf:about="#MetadataEnhancedInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+        <rdfs:comment>This optional class represents instances that are enhanced with metadata such as timestamps or confidence scores.</rdfs:comment>
+    </owl:Class>
+
+    <!-- SyntheticInstance -->
+    <owl:Class rdf:about="#SyntheticInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+        <rdfs:comment>This class represents an instance generated artificially by the system during query synthesis.</rdfs:comment>
+    </owl:Class>
+
+    <!-- OutlierInstance -->
+    <owl:Class rdf:about="#OutlierInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+        <rdfs:comment>This class represents an instance that deviates significantly from the majority of the data.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#HighUncertaintyOutlier">
+        <rdfs:subClassOf rdf:resource="#OutlierInstance"/>
+        <rdfs:comment>This class represents an outlier instance with high uncertainty in predictions.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LowUncertaintyOutlier">
+        <rdfs:subClassOf rdf:resource="#OutlierInstance"/>
+        <rdfs:comment>This class represents an outlier instance with low uncertainty but significant deviation from the data distribution.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Optional: AugmentedInstance -->
+    <owl:Class rdf:about="#AugmentedInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+        <rdfs:comment>This optional class represents an instance that has been artificially modified through data augmentation techniques.</rdfs:comment>
+    </owl:Class>
+	
+	<!-- HumanAnnotator Class as a Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#HumanAnnotator">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents human annotators responsible for labeling instances in the Active Learning process.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ExpertAnnotator -->
+    <owl:Class rdf:about="#ExpertAnnotator">
+        <rdfs:subClassOf rdf:resource="#HumanAnnotator"/>
+        <rdfs:comment>This class represents expert annotators who are highly skilled and experienced in labeling tasks.</rdfs:comment>
+    </owl:Class>
+
+    <!-- NoviceAnnotator -->
+    <owl:Class rdf:about="#NoviceAnnotator">
+        <rdfs:subClassOf rdf:resource="#HumanAnnotator"/>
+        <rdfs:comment>This class represents novice annotators who have limited experience in labeling tasks.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CrowdsourcedAnnotator -->
+    <owl:Class rdf:about="#CrowdsourcedAnnotator">
+        <rdfs:subClassOf rdf:resource="#HumanAnnotator"/>
+        <rdfs:comment>This class represents annotators from a crowdsourcing platform, typically used for large-scale labeling tasks.</rdfs:comment>
+    </owl:Class>
+
+    <!-- AssistedAnnotator -->
+    <owl:Class rdf:about="#AssistedAnnotator">
+        <rdfs:subClassOf rdf:resource="#HumanAnnotator"/>
+        <rdfs:comment>This class represents human annotators who work in conjunction with automated tools to label instances.</rdfs:comment>
+    </owl:Class>
+	
+	    <!-- Model Class as a Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#Model">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents machine learning models used in the Active Learning process.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ClassificationModel -->
+    <owl:Class rdf:about="#ClassificationModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+        <rdfs:comment>This class represents models used for classification tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#BinaryClassificationModel">
+        <rdfs:subClassOf rdf:resource="#ClassificationModel"/>
+        <rdfs:comment>This class represents models used for binary classification tasks.</rdfs:comment>
+    </owl:Class>
+	
+  <owl:Class rdf:about="#SupportVectorMachine">
+        <rdfs:subClassOf rdf:resource="#BinaryClassificationModel"/>
+        <rdfs:comment>This class represents a Support Vector Machine used for binary classification.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LogisticRegression">
+        <rdfs:subClassOf rdf:resource="#BinaryClassificationModel"/>
+        <rdfs:comment>This class represents a Logistic Regression model used for binary classification.</rdfs:comment>
+    </owl:Class> 
+
+    <owl:Class rdf:about="#MultiClassClassificationModel">
+        <rdfs:subClassOf rdf:resource="#ClassificationModel"/>
+        <rdfs:comment>This class represents models used for multi-class classification tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RandomForest">
+        <rdfs:subClassOf rdf:resource="#MultiClassClassificationModel"/>
+        <rdfs:comment>This class represents a Random Forest model used for multi-class classification.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#NeuralNetworkClassifier">
+        <rdfs:subClassOf rdf:resource="#MultiClassClassificationModel"/>
+        <rdfs:comment>This class represents a Neural Network classifier used for multi-class classification tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MultiLabelClassificationModel">
+        <rdfs:subClassOf rdf:resource="#ClassificationModel"/>
+        <rdfs:comment>This class represents models used for multi-label classification tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#kNearestNeighbors">
+        <rdfs:subClassOf rdf:resource="#MultiLabelClassificationModel"/>
+        <rdfs:comment>This class represents a k-Nearest Neighbors model used for multi-label classification tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#NeuralNetworkMultiLabel">
+        <rdfs:subClassOf rdf:resource="#MultiLabelClassificationModel"/>
+        <rdfs:comment>This class represents a Neural Network model used for multi-label classification tasks.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ClusteringModel -->
+    <owl:Class rdf:about="#ClusteringModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+        <rdfs:comment>This class represents models used for clustering tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#HardClusteringModel">
+        <rdfs:subClassOf rdf:resource="#ClusteringModel"/>
+        <rdfs:comment>This class represents hard clustering models where each instance belongs to exactly one cluster.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#KMeans">
+        <rdfs:subClassOf rdf:resource="#HardClusteringModel"/>
+        <rdfs:comment>This class represents a K-Means model used for hard clustering tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DBSCAN">
+        <rdfs:subClassOf rdf:resource="#HardClusteringModel"/>
+        <rdfs:comment>This class represents a DBSCAN model used for density-based clustering tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SoftClusteringModel">
+        <rdfs:subClassOf rdf:resource="#ClusteringModel"/>
+        <rdfs:comment>This class represents soft clustering models where instances can belong to multiple clusters.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GaussianMixtureModel">
+        <rdfs:subClassOf rdf:resource="#SoftClusteringModel"/>
+        <rdfs:comment>This class represents a Gaussian Mixture Model used for soft clustering tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#FuzzyCMeans">
+        <rdfs:subClassOf rdf:resource="#SoftClusteringModel"/>
+        <rdfs:comment>This class represents a Fuzzy C-Means model used for soft clustering tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#HierarchicalClusteringModel">
+        <rdfs:subClassOf rdf:resource="#ClusteringModel"/>
+        <rdfs:comment>This class represents hierarchical clustering models where clusters are arranged in a hierarchy.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AgglomerativeClustering">
+        <rdfs:subClassOf rdf:resource="#HierarchicalClusteringModel"/>
+        <rdfs:comment>This class represents an agglomerative clustering model, where clusters are recursively merged.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DivisiveClustering">
+        <rdfs:subClassOf rdf:resource="#HierarchicalClusteringModel"/>
+        <rdfs:comment>This class represents a divisive clustering model, where clusters are recursively split.</rdfs:comment>
+    </owl:Class>
+
+    <!-- RegressionModel -->
+    <owl:Class rdf:about="#RegressionModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+        <rdfs:comment>This class represents models used for regression tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SimpleRegressionModel">
+        <rdfs:subClassOf rdf:resource="#RegressionModel"/>
+        <rdfs:comment>This class represents models used for simple regression tasks, predicting a single continuous output.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LinearRegression">
+        <rdfs:subClassOf rdf:resource="#SimpleRegressionModel"/>
+        <rdfs:comment>This class represents a Linear Regression model used for simple regression tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DecisionTreeRegression">
+        <rdfs:subClassOf rdf:resource="#SimpleRegressionModel"/>
+        <rdfs:comment>This class represents a Decision Tree Regression model used for simple regression tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MultiOutputRegressionModel">
+        <rdfs:subClassOf rdf:resource="#RegressionModel"/>
+        <rdfs:comment>This class represents models used for multi-output regression tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MultiOutputLinearRegression">
+        <rdfs:subClassOf rdf:resource="#MultiOutputRegressionModel"/>
+        <rdfs:comment>This class represents a Multi-Output Linear Regression model.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MultiTaskNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="#MultiOutputRegressionModel"/>
+        <rdfs:comment>This class represents a Multi-Task Neural Network model used for multi-output regression tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RobustRegressionModel">
+        <rdfs:subClassOf rdf:resource="#RegressionModel"/>
+        <rdfs:comment>This class represents models designed to be robust against outliers in regression tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RANSACRegression">
+        <rdfs:subClassOf rdf:resource="#RobustRegressionModel"/>
+        <rdfs:comment>This class represents a RANSAC Regression model designed to handle outliers.</rdfs:comment>
+    </owl:Class>
+
+ <!-- HuberRegression -->
+    <owl:Class rdf:about="#HuberRegression">
+        <rdfs:subClassOf rdf:resource="#RobustRegressionModel"/>
+        <rdfs:comment>This class represents a Huber Regression model that is robust to outliers, combining the strengths of linear regression and robust regression.</rdfs:comment>
+    </owl:Class>
+
+    <!-- EnsembleModel -->
+    <owl:Class rdf:about="#EnsembleModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+        <rdfs:comment>This class represents ensemble models that combine multiple base models to improve performance and robustness.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#BaggingModel">
+        <rdfs:subClassOf rdf:resource="#EnsembleModel"/>
+        <rdfs:comment>This class represents bagging models, such as RandomForest, that are based on training multiple models on random subsets of the data.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#BoostingModel">
+        <rdfs:subClassOf rdf:resource="#EnsembleModel"/>
+        <rdfs:comment>This class represents boosting models, such as XGBoost and AdaBoost, where models are trained sequentially to correct the errors of previous models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#StackingModel">
+        <rdfs:subClassOf rdf:resource="#EnsembleModel"/>
+        <rdfs:comment>This class represents stacking models, where the predictions of multiple models are combined using a meta-model.</rdfs:comment>
+    </owl:Class>
+
+    <!-- HybridModel -->
+    <owl:Class rdf:about="#HybridModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+        <rdfs:comment>This class represents hybrid models that combine different types of models to leverage their strengths.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DeepLearningHybrid">
+        <rdfs:subClassOf rdf:resource="#HybridModel"/>
+        <rdfs:comment>This class represents hybrid models that combine deep learning models with other types of models (e.g., decision trees or probabilistic models).</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ProbabilisticHybrid">
+        <rdfs:subClassOf rdf:resource="#HybridModel"/>
+        <rdfs:comment>This class represents hybrid models that combine probabilistic models (e.g., Bayesian networks) with other learning models.</rdfs:comment>
+    </owl:Class>
+
+    <!-- TransferLearningModel -->
+    <owl:Class rdf:about="#TransferLearningModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+        <rdfs:comment>This class represents models that use transfer learning to adapt pre-trained models for new tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PreTrainedNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="#TransferLearningModel"/>
+        <rdfs:comment>This class represents pre-trained neural networks that are fine-tuned for a new task.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#FineTunedModel">
+        <rdfs:subClassOf rdf:resource="#TransferLearningModel"/>
+        <rdfs:comment>This class represents models that are fine-tuned on a specific task after being pre-trained on a different dataset or task.</rdfs:comment>
+    </owl:Class>
+	
+ <!-- EvaluationMetrics Class as a Subclass of ActiveLearning -->
+	  
+   <owl:Class rdf:about="#EvaluationMetrics">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents the metrics used to evaluate model performance in Active Learning tasks.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Task-Specific Metrics -->
+
+    <!-- ClassificationMetrics -->
+    <owl:Class rdf:about="#ClassificationMetrics">
+        <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+        <rdfs:comment>This class represents the metrics used to evaluate classification models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Accuracy">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents the accuracy metric for classification models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Precision">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents the precision metric for classification models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Recall">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents the recall metric for classification models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#F1Score">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents the F1 Score metric for classification models, which is the harmonic mean of precision and recall.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AUC_ROC">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents the Area Under the ROC Curve (AUC-ROC) metric for classification models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LogLoss">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents the Logarithmic Loss (LogLoss) metric for probabilistic classification models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCC">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents the Matthews Correlation Coefficient (MCC) metric, especially useful for imbalanced datasets.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CohenKappa">
+        <rdfs:subClassOf rdf:resource="#ClassificationMetrics"/>
+        <rdfs:comment>This class represents Cohen's Kappa metric, which measures agreement between predicted and actual labels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ClusteringMetrics -->
+    <owl:Class rdf:about="#ClusteringMetrics">
+        <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+        <rdfs:comment>This class represents the metrics used to evaluate clustering models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SilhouetteScore">
+        <rdfs:subClassOf rdf:resource="#ClusteringMetrics"/>
+        <rdfs:comment>This class represents the Silhouette Score metric, which measures how well instances are clustered.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#IntraClusterDistance">
+        <rdfs:subClassOf rdf:resource="#ClusteringMetrics"/>
+        <rdfs:comment>This class represents the Intra-Cluster Distance metric, which measures the compactness of clusters.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#InterClusterDistance">
+        <rdfs:subClassOf rdf:resource="#ClusteringMetrics"/>
+        <rdfs:comment>This class represents the Inter-Cluster Distance metric, which measures the separation between clusters.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DaviesBouldinIndex">
+        <rdfs:subClassOf rdf:resource="#ClusteringMetrics"/>
+        <rdfs:comment>This class represents the Davies-Bouldin Index metric, which measures the ratio of intra-cluster and inter-cluster distances.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ARI">
+        <rdfs:subClassOf rdf:resource="#ClusteringMetrics"/>
+        <rdfs:comment>This class represents the Adjusted Rand Index (ARI), which measures clustering similarity by adjusting for random chance.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#NMI">
+        <rdfs:subClassOf rdf:resource="#ClusteringMetrics"/>
+        <rdfs:comment>This class represents the Normalized Mutual Information (NMI) metric, which measures the shared information between clustering assignments.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CalinskiHarabaszIndex">
+        <rdfs:subClassOf rdf:resource="#ClusteringMetrics"/>
+        <rdfs:comment>This class represents the Calinski-Harabasz Index metric, which evaluates the ratio of between-cluster and within-cluster dispersion.</rdfs:comment>
+    </owl:Class>
+
+    <!-- RegressionMetrics -->
+    <owl:Class rdf:about="#RegressionMetrics">
+        <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+        <rdfs:comment>This class represents the metrics used to evaluate regression models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MeanSquaredError">
+        <rdfs:subClassOf rdf:resource="#RegressionMetrics"/>
+        <rdfs:comment>This class represents the Mean Squared Error (MSE) metric for regression models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#R2Score">
+        <rdfs:subClassOf rdf:resource="#RegressionMetrics"/>
+        <rdfs:comment>This class represents the R² Score metric for regression models, which measures the proportion of variance explained by the model.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MeanAbsoluteError">
+        <rdfs:subClassOf rdf:resource="#RegressionMetrics"/>
+        <rdfs:comment>This class represents the Mean Absolute Error (MAE) metric for regression models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RootMeanSquaredError">
+        <rdfs:subClassOf rdf:resource="#RegressionMetrics"/>
+        <rdfs:comment>This class represents the Root Mean Squared Error (RMSE) metric for regression models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ExplainedVariance">
+        <rdfs:subClassOf rdf:resource="#RegressionMetrics"/>
+        <rdfs:comment>This class represents the Explained Variance metric for regression models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MBD">
+        <rdfs:subClassOf rdf:resource="#RegressionMetrics"/>
+        <rdfs:comment>This class represents the Mean Bias Deviation (MBD) metric, which measures the bias in a model’s predictions.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#HeteroscedasticityScore">
+        <rdfs:subClassOf rdf:resource="#RegressionMetrics"/>
+        <rdfs:comment>This class represents the Heteroscedasticity Score, which measures variability in prediction errors across different levels of the target variable.</rdfs:comment>
+    </owl:Class>
+
+    <!-- GeneralMetrics -->
+    <owl:Class rdf:about="#GeneralMetrics">
+        <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+        <rdfs:comment>This class represents general evaluation metrics that apply across various models and tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CrossValidationScore">
+        <rdfs:subClassOf rdf:resource="#GeneralMetrics"/>
+        <rdfs:comment>This class represents the Cross-Validation Score metric, which measures the model’s performance across multiple splits of the data.</rdfs:comment>
+    </owl:Class>
+
+   <owl:Class rdf:about="#ComputationalEfficiency">
+        <rdfs:subClassOf rdf:resource="#GeneralMetrics"/>
+        <rdfs:comment>This class represents the Computational Efficiency metric, which measures the computational resources consumed during model training and evaluation.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LearningCurve">
+        <rdfs:subClassOf rdf:resource="#GeneralMetrics"/>
+        <rdfs:comment>This class represents the Learning Curve metric, which tracks the model's performance over time as more data is labeled and the model is updated.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AnnotationEfficiency">
+        <rdfs:subClassOf rdf:resource="#GeneralMetrics"/>
+        <rdfs:comment>This class represents the Annotation Efficiency metric, which measures the number of human annotations required to achieve a specific model performance level.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Scenario-Specific Metrics -->
+    <owl:Class rdf:about="#ScenarioSpecificMetrics">
+        <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+        <rdfs:comment>This class represents evaluation metrics specific to different Active Learning scenarios.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#QueryEfficiency">
+        <rdfs:subClassOf rdf:resource="#ScenarioSpecificMetrics"/>
+        <rdfs:comment>This class represents the Query Efficiency metric, which measures how effectively the selected instances improve the model’s performance relative to the number of queries made.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LabelingCost">
+        <rdfs:subClassOf rdf:resource="#ScenarioSpecificMetrics"/>
+        <rdfs:comment>This class represents the Labeling Cost metric, which quantifies the cost (monetary, time, or effort) associated with labeling instances in Active Learning scenarios.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#InstanceDiversity">
+        <rdfs:subClassOf rdf:resource="#ScenarioSpecificMetrics"/>
+        <rdfs:comment>This class represents the Instance Diversity metric, which measures the diversity of the instances selected for labeling in Active Learning scenarios.</rdfs:comment>
+    </owl:Class>
+
+<!-- SystemInfrastructure Class as a Subclass of ActiveLearning -->
+    <owl:Class rdf:about="#SystemInfrastructure">
+        <rdfs:subClassOf rdf:resource="#ActiveLearning"/>
+        <rdfs:comment>This class represents the system infrastructure that supports the Active Learning pipeline, including data storage, computation, GUI, communication protocols, and middleware.</rdfs:comment>
+    </owl:Class>
+
+    <!-- DataStorage -->
+    <owl:Class rdf:about="#DataStorage">
+        <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+        <rdfs:comment>This class represents the infrastructure responsible for storing datasets, models, and logs.</rdfs:comment>
+    </owl:Class>
+
+    <!-- LocalStorage -->
+    <owl:Class rdf:about="#LocalStorage">
+        <rdfs:subClassOf rdf:resource="#DataStorage"/>
+        <rdfs:comment>This class represents data storage on local servers or physical machines.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ServerStorage">
+        <rdfs:subClassOf rdf:resource="#LocalStorage"/>
+        <rdfs:comment>This class represents storage on dedicated servers in on-premise systems.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PersonalMachineStorage">
+        <rdfs:subClassOf rdf:resource="#LocalStorage"/>
+        <rdfs:comment>This class represents data stored on personal machines or workstations.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CloudStorage -->
+    <owl:Class rdf:about="#CloudStorage">
+        <rdfs:subClassOf rdf:resource="#DataStorage"/>
+        <rdfs:comment>This class represents cloud-based storage, such as AWS S3 or Google Cloud Storage.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ObjectStorage">
+        <rdfs:subClassOf rdf:resource="#CloudStorage"/>
+        <rdfs:comment>This class represents object storage in cloud environments.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RelationalStorage">
+        <rdfs:subClassOf rdf:resource="#CloudStorage"/>
+        <rdfs:comment>This class represents relational database storage in cloud environments.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ModelStorage -->
+    <owl:Class rdf:about="#ModelStorage">
+        <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+        <rdfs:comment>This class represents infrastructure for storing machine learning models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LocalModelStorage">
+        <rdfs:subClassOf rdf:resource="#ModelStorage"/>
+        <rdfs:comment>This class represents model storage on local servers.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CloudModelStorage">
+        <rdfs:subClassOf rdf:resource="#ModelStorage"/>
+        <rdfs:comment>This class represents model storage in cloud environments.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#VersionControlledModelStorage">
+        <rdfs:subClassOf rdf:resource="#ModelStorage"/>
+        <rdfs:comment>This class represents model storage with version control to track changes and updates to models over time.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ComputationalInfrastructure -->
+    <owl:Class rdf:about="#ComputationalInfrastructure">
+        <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+        <rdfs:comment>This class represents computational resources for training, evaluating, and updating models.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OnPremiseComputation">
+        <rdfs:subClassOf rdf:resource="#ComputationalInfrastructure"/>
+        <rdfs:comment>This class represents computation performed on physical machines located on-premise.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GPUCluster">
+        <rdfs:subClassOf rdf:resource="#OnPremiseComputation"/>
+        <rdfs:comment>This class represents a cluster of GPUs used for model training, especially in deep learning tasks.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CPUCluster">
+        <rdfs:subClassOf rdf:resource="#OnPremiseComputation"/>
+        <rdfs:comment>This class represents a cluster of CPUs used for general computational tasks in Active Learning.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CloudComputation">
+        <rdfs:subClassOf rdf:resource="#ComputationalInfrastructure"/>
+        <rdfs:comment>This class represents computational resources in cloud environments, such as AWS EC2 or Google Cloud Compute.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AutoScalingComputation">
+        <rdfs:subClassOf rdf:resource="#CloudComputation"/>
+        <rdfs:comment>This class represents cloud-based computation systems that scale automatically with demand.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DedicatedInstanceComputation">
+        <rdfs:subClassOf rdf:resource="#CloudComputation"/>
+        <rdfs:comment>This class represents cloud-based systems that use dedicated hardware instances for computation.</rdfs:comment>
+    </owl:Class>
+
+    <!-- GUIInfrastructure -->
+    <owl:Class rdf:about="#GUIInfrastructure">
+        <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+        <rdfs:comment>This class represents the infrastructure that provides user interfaces for human annotators to interact with the Active Learning system.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#WebBasedGUI">
+        <rdfs:subClassOf rdf:resource="#GUIInfrastructure"/>
+        <rdfs:comment>This class represents a web-based interface for annotators to interact with the Active Learning system.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DesktopGUI">
+        <rdfs:subClassOf rdf:resource="#GUIInfrastructure"/>
+        <rdfs:comment>This class represents a desktop-based interface for annotators, often used in specialized environments.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CommunicationProtocol -->
+    <owl:Class rdf:about="#CommunicationProtocol">
+        <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+        <rdfs:comment>This class represents communication protocols that handle interactions between different components of the system.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RESTfulAPI">
+        <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+        <rdfs:comment>This class represents communication using REST (Representational State Transfer), commonly used in web services.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MessageQueue">
+        <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+        <rdfs:comment>This class represents communication using message queues like RabbitMQ or Kafka for distributed systems.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#gRPCProtocol">
+        <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+        <rdfs:comment>This class represents communication using gRPC (Remote Procedure Call) for high-performance interactions between services.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Middleware -->
+    <owl:Class rdf:about="#Middleware">
+        <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+        <rdfs:comment>This class represents the middleware that facilitates communication and coordination between system components.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DataPipelineMiddleware">
+        <rdfs:subClassOf rdf:resource="#Middleware"/>
+        <rdfs:comment>This class represents middleware responsible for managing data flow between different parts of the Active Learning system.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#TaskSchedulingMiddleware">
+        <rdfs:subClassOf rdf:resource="#Middleware"/>
+        <rdfs:comment>This class represents middleware that handles task scheduling, including retraining and evaluation tasks in the Active Learning workflow.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AnnotationManagementMiddleware">
+        <rdfs:subClassOf rdf:resource="#Middleware"/>
+        <rdfs:comment>This class represents middleware responsible for managing the interactions between human annotators and the system, ensuring that labeling queries are efficiently routed for annotation.</rdfs:comment>
+    </owl:Class>
+	 
+	 <!-- Property: for Active Learning supportedByInfrastructure (Consolidated) -->
+	 <!-- Property: supportedByInfrastructure (Consolidated) -->
+<owl:ObjectProperty rdf:about="#supportedByInfrastructure">
+    <rdfs:domain rdf:resource="#ActiveLearning"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:comment>This property links ALPipeline, models, and data to the system infrastructure that supports their execution.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Restrict the use of supportedByInfrastructure for ALPipeline -->
+<owl:Class rdf:about="#ALPipeline">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#supportedByInfrastructure"/>
+            <owl:someValuesFrom rdf:resource="#SystemInfrastructure"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!-- Restrict the use of supportedByInfrastructure for Model -->
+<owl:Class rdf:about="#Model">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#supportedByInfrastructure"/>
+            <owl:someValuesFrom rdf:resource="#SystemInfrastructure"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!-- Restrict the use of supportedByInfrastructure for Data (Dataset specifically) -->
+<owl:Class rdf:about="#Dataset">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#supportedByInfrastructure"/>
+            <owl:someValuesFrom rdf:resource="#SystemInfrastructure"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+	 <!-- WHERE IS THIS FROM???? -->
+	
+    <!-- Property: hasMultipleLabels -->
+    <owl:DatatypeProperty rdf:about="#hasMultipleLabels">
+        <rdfs:domain rdf:resource="#ClassificationTask"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>This property indicates whether an instance can belong to multiple labels simultaneously.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasLabelStatus -->
+    <owl:DatatypeProperty rdf:about="#hasLabelStatus">
+        <rdfs:domain rdf:resource="#LabeledInstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property describes the label status of an instance (e.g., complete, ambiguous).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasQueryStatus -->
+    <owl:DatatypeProperty rdf:about="#hasQueryStatus">
+        <rdfs:domain rdf:resource="#UnlabeledInstance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property indicates whether an instance has been queried for labeling.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasUncertaintyMeasure -->
+    <owl:DatatypeProperty rdf:about="#hasUncertaintyMeasure">
+        <rdfs:domain rdf:resource="#UncertaintySampling"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property represents the measure of uncertainty used in instance selection (e.g., least-confidence).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasSource -->
+    <owl:DatatypeProperty rdf:about="#hasSource">
+        <rdfs:domain rdf:resource="#FeedbackLoop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property indicates the source of feedback in the pipeline (e.g., model performance or user feedback).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasLocation -->
+    <owl:DatatypeProperty rdf:about="#hasLocation">
+        <rdfs:domain rdf:resource="#DataStorage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property specifies the location of data storage (e.g., on-premise or cloud).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasEvaluationType -->
+    <owl:DatatypeProperty rdf:about="#hasEvaluationType">
+        <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property represents the type of evaluation metric used (e.g., cross-validation).</rdfs:comment>
+    </owl:DatatypeProperty>
+	
+	<!-- Disjointness Axioms for Top-Level Classes -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#ALPipeline"/>
+        <rdf:Description rdf:about="#ALScenario"/>
+        <rdf:Description rdf:about="#ALTask"/>
+        <rdf:Description rdf:about="#QueryStrategy"/>
+        <rdf:Description rdf:about="#Data"/>
+        <rdf:Description rdf:about="#HumanAnnotator"/>
+        <rdf:Description rdf:about="#Model"/>
+        <rdf:Description rdf:about="#EvaluationMetrics"/>
+        <rdf:Description rdf:about="#SystemInfrastructure"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for ALPipeline Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#DataCollection"/>
+        <rdf:Description rdf:about="#ModelTraining"/>
+        <rdf:Description rdf:about="#Annotation"/>
+        <rdf:Description rdf:about="#ModelUpdate"/>
+        <rdf:Description rdf:about="#FeedbackLoop"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for ALScenario Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#PoolBasedScenario"/>
+        <rdf:Description rdf:about="#StreamBasedScenario"/>
+        <rdf:Description rdf:about="#QuerySynthesisScenario"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for ALTask Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#ClassificationTask"/>
+        <rdf:Description rdf:about="#ClusteringTask"/>
+        <rdf:Description rdf:about="#RegressionTask"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for QueryStrategy Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#UncertaintySampling"/>
+        <rdf:Description rdf:about="#QueryByCommittee"/>
+        <rdf:Description rdf:about="#ExpectedModelChange"/>
+        <rdf:Description rdf:about="#ExpectedErrorReduction"/>
+        <rdf:Description rdf:about="#DensityWeightedSampling"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for Data Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#LabeledDataset"/>
+        <rdf:Description rdf:about="#UnlabeledDataset"/>
+        <rdf:Description rdf:about="#Instance"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for HumanAnnotator Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#ExpertAnnotator"/>
+        <rdf:Description rdf:about="#NoviceAnnotator"/>
+        <rdf:Description rdf:about="#CrowdsourcedAnnotator"/>
+        <rdf:Description rdf:about="#AssistedAnnotator"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for Model Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#ClassificationModel"/>
+        <rdf:Description rdf:about="#ClusteringModel"/>
+        <rdf:Description rdf:about="#RegressionModel"/>
+        <rdf:Description rdf:about="#EnsembleModel"/>
+        <rdf:Description rdf:about="#HybridModel"/>
+        <rdf:Description rdf:about="#TransferLearningModel"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for EvaluationMetrics Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#ClassificationMetrics"/>
+        <rdf:Description rdf:about="#ClusteringMetrics"/>
+        <rdf:Description rdf:about="#RegressionMetrics"/>
+        <rdf:Description rdf:about="#GeneralMetrics"/>
+        <rdf:Description rdf:about="#ScenarioSpecificMetrics"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjointness for SystemInfrastructure Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#DataStorage"/>
+        <rdf:Description rdf:about="#ModelStorage"/>
+        <rdf:Description rdf:about="#ComputationalInfrastructure"/>
+        <rdf:Description rdf:about="#GUIInfrastructure"/>
+        <rdf:Description rdf:about="#CommunicationProtocol"/>
+        <rdf:Description rdf:about="#Middleware"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+  <!-- Equivalence Axioms -->
+ <!-- MultiLabelClassificationTask -->
+    <owl:Class rdf:about="#MultiLabelClassificationTask">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#ClassificationTask"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasMultipleLabels"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- FullyLabeledInstance -->
+    <owl:Class rdf:about="#FullyLabeledInstance">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LabeledInstance"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasLabelStatus"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complete</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- AmbiguousLabeledInstance -->
+    <owl:Class rdf:about="#AmbiguousLabeledInstance">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#LabeledInstance"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasLabelStatus"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ambiguous</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- QueriedInstance -->
+    <owl:Class rdf:about="#QueriedInstance">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#UnlabeledInstance"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasQueryStatus"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">queried</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- LeastConfidenceSampling -->
+    <owl:Class rdf:about="#LeastConfidenceSampling">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#UncertaintySampling"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasUncertaintyMeasure"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">least-confidence</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- ModelPerformanceFeedback -->
+    <owl:Class rdf:about="#ModelPerformanceFeedback">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#FeedbackLoop"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasSource"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model-performance</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- CloudStorage -->
+    <owl:Class rdf:about="#CloudStorage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#DataStorage"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasLocation"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cloud</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- LocalStorage -->
+    <owl:Class rdf:about="#LocalStorage">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#DataStorage"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasLocation"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">on-premise</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- CrossValidationScore -->
+    <owl:Class rdf:about="#CrossValidationScore">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#GeneralMetrics"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasEvaluationType"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cross-validation</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+	
+	 <!-- Refined Object Properties for ALPipeline class -->
+
+<!-- Property: hasInstanceSelection -->
+<owl:ObjectProperty rdf:about="#hasInstanceSelection">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>Links the ALPipeline to the instance selection process based on a specific query strategy.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasEvaluation -->
+<owl:ObjectProperty rdf:about="#hasEvaluation">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>Links the ALPipeline to the evaluation process, specifying the metrics used to assess the performance of the pipeline and the model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Refined Property: hasFeedback -->
+<owl:ObjectProperty rdf:about="#hasFeedback">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#FeedbackLoop"/>
+    <rdfs:comment>Links the ALPipeline to feedback loops, which incorporate feedback from model performance and human annotators for continuous improvement.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: usesHumanAnnotator -->
+<owl:ObjectProperty rdf:about="#usesHumanAnnotator">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>Links the ALPipeline to human annotators, who are involved in labeling instances or providing feedback on uncertain cases.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: hasData -->
+<owl:ObjectProperty rdf:about="#hasData">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:comment>Links the ALPipeline to the data used for training, evaluating, and querying in the active learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: managesTask -->
+<owl:ObjectProperty rdf:about="#managesTask">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>Links the ALPipeline to the specific tasks (classification, clustering, or regression) that are managed within the pipeline.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: includesModel -->
+<owl:ObjectProperty rdf:about="#includesModel">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>Links the ALPipeline to the model used in the active learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: supportsALScenario -->
+<owl:ObjectProperty rdf:about="#supportsALScenario">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>Links the ALPipeline to the specific scenarios supported, such as pool-based or stream-based scenarios.</rdfs:comment>
+</owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <!-- Property: hasAnnotationEfficiency -->
+    <owl:DatatypeProperty rdf:about="#hasAnnotationEfficiency">
+        <rdfs:domain rdf:resource="#Annotation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>This property represents the efficiency of annotation in the Active Learning process.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasModelPerformance -->
+    <owl:DatatypeProperty rdf:about="#hasModelPerformance">
+        <rdfs:domain rdf:resource="#ModelTraining"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>This property represents the performance of the model during training, typically measured by evaluation metrics.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: hasQueryEfficiency -->
+    <owl:DatatypeProperty rdf:about="#hasQueryEfficiency">
+        <rdfs:domain rdf:resource="#ALPipeline"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>This property represents the efficiency of the query process in Active Learning.</rdfs:comment>
+    </owl:DatatypeProperty>
+	
+	<!-- Property: hasInstanceSelectionCriteria -->
+<owl:ObjectProperty rdf:about="#hasInstanceSelectionCriteria">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property links the query strategy to the criteria used for selecting instances, such as uncertainty, diversity, or representativeness.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: isPartOfPipeline -->
+<owl:ObjectProperty rdf:about="#isPartOfPipeline">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>This property links the query strategy to the active learning pipeline in which it is used.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: isUsedForTask -->
+<owl:ObjectProperty rdf:about="#isUsedForTask">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>This property links the query strategy to the specific active learning task (classification, clustering, regression).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: hasPerformanceImpact -->
+<owl:ObjectProperty rdf:about="#hasPerformanceImpact">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>This property links the query strategy to performance evaluation metrics.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: queriesData -->
+<owl:ObjectProperty rdf:about="#queriesData">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:comment>This property links the query strategy to the data (dataset or instances) it selects for labeling or review.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: assistedByHumanAnnotator -->
+<owl:ObjectProperty rdf:about="#assistedByHumanAnnotator">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links the query strategy to the human annotator, if human input is required for certain selections.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: optimizedByModel -->
+<owl:ObjectProperty rdf:about="#optimizedByModel">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links the query strategy to the model used to optimize or guide the instance selection process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: implementedInScenario -->
+<owl:ObjectProperty rdf:about="#implementedInScenario">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>This property links the query strategy to the specific active learning scenario where it is implemented (e.g., pool-based, stream-based).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasCommittee -->
+<owl:ObjectProperty rdf:about="#hasCommittee">
+    <rdfs:domain rdf:resource="#QueryByCommittee"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links the QueryByCommittee strategy to the committee of models used for instance selection.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties -->
+<!-- Property: hasUncertaintyMeasure -->
+<owl:DatatypeProperty rdf:about="#hasUncertaintyMeasure">
+    <rdfs:domain rdf:resource="#UncertaintySampling"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property represents the uncertainty measure used in uncertainty sampling (e.g., least-confidence, margin, entropy).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasDiversityMeasure -->
+<owl:DatatypeProperty rdf:about="#hasDiversityMeasure">
+    <rdfs:domain rdf:resource="#DensityWeightedSampling"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property represents the diversity measure used in density-weighted sampling.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasImpactScore -->
+<owl:DatatypeProperty rdf:about="#hasImpactScore">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the estimated impact of the query strategy on model performance.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasNumberOfQueries -->
+<owl:DatatypeProperty rdf:about="#hasNumberOfQueries">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of queries made by the strategy.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasExpectedModelChange -->
+<owl:DatatypeProperty rdf:about="#hasExpectedModelChange">
+    <rdfs:domain rdf:resource="#ExpectedModelChange"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property quantifies the expected model change from the query strategy.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasRiskReduction -->
+<owl:DatatypeProperty rdf:about="#hasRiskReduction">
+    <rdfs:domain rdf:resource="#ExpectedErrorReduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property quantifies the expected risk reduction from the strategy in terms of error reduction.</rdfs:comment>
+</owl:DatatypeProperty>
+
+ <!-- Object Properties Evaluation metrics class -->
+<!-- Refined Property: hasEvaluatedModel -->
+<owl:ObjectProperty rdf:about="#hasEvaluatedModel">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>Links the evaluation metric to the specific model being evaluated.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Refined Property: hasEvaluationStrategy -->
+<owl:ObjectProperty rdf:about="#hasEvaluationStrategy">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>Links the evaluation metric to the query strategy used during the evaluation process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Refined Property: hasEvaluationScenario -->
+<owl:ObjectProperty rdf:about="#hasEvaluationScenario">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>Links the evaluation metric to the scenario under which the evaluation was performed (e.g., pool-based, stream-based).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Refined Property: evaluatesTask -->
+<owl:ObjectProperty rdf:about="#evaluatesTask">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>Links the evaluation metric to the specific Active Learning task being evaluated (e.g., classification, clustering, regression).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: isDerivedFromDataset -->
+<owl:ObjectProperty rdf:about="#isDerivedFromDataset">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>Links the evaluation metric to the dataset from which the performance metrics are derived.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: isInformedByHumanAnnotator -->
+<owl:ObjectProperty rdf:about="#isInformedByHumanAnnotator">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>Links the evaluation metric to the human annotators who contributed annotations used in the evaluation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: measuresPipelinePerformance -->
+<owl:ObjectProperty rdf:about="#measuresPipelinePerformance">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>Links the evaluation metric to the overall pipeline performance it is assessing.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: supportsInfrastructureRequirements -->
+<owl:ObjectProperty rdf:about="#supportsInfrastructureRequirements">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:comment>Links the evaluation metric to the system infrastructure requirements it measures, ensuring the model's scalability and operational capabilities.</rdfs:comment>
+</owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="#hasAccuracy">
+        <rdfs:domain rdf:resource="#ClassificationMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the accuracy of the classification model.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPrecision">
+        <rdfs:domain rdf:resource="#ClassificationMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the precision of the classification model.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasRecall">
+        <rdfs:domain rdf:resource="#ClassificationMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the recall of the classification model.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasF1Score">
+        <rdfs:domain rdf:resource="#ClassificationMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the F1 score of the classification model.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMSE">
+        <rdfs:domain rdf:resource="#RegressionMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the Mean Squared Error of the regression model.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasR2Score">
+        <rdfs:domain rdf:resource="#RegressionMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the R² score of the regression model.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSilhouetteScore">
+        <rdfs:domain rdf:resource="#ClusteringMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the silhouette score of the clustering model.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAnnotationCost">
+        <rdfs:domain rdf:resource="#ScenarioSpecificMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the cost of human annotation.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasQueryEfficiency">
+        <rdfs:domain rdf:resource="#ScenarioSpecificMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the efficiency of the query process in Active Learning.</rdfs:comment>
+    </owl:DatatypeProperty>
+	
+	<!-- Object Properties for ALTask -->
+<!-- Property: hasRegressionModel -->
+<owl:ObjectProperty rdf:about="#hasRegressionModel">
+    <rdfs:domain rdf:resource="#RegressionTask"/>
+    <rdfs:range rdf:resource="#RegressionModel"/>
+    <rdfs:comment>Links a regression task to the specific regression model used.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasClusteringModel -->
+<owl:ObjectProperty rdf:about="#hasClusteringModel">
+    <rdfs:domain rdf:resource="#ClusteringTask"/>
+    <rdfs:range rdf:resource="#ClusteringModel"/>
+    <rdfs:comment>Links a clustering task to the specific clustering model used.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasClassificationModel -->
+<owl:ObjectProperty rdf:about="#hasClassificationModel">
+    <rdfs:domain rdf:resource="#ClassificationTask"/>
+    <rdfs:range rdf:resource="#ClassificationModel"/>
+    <rdfs:comment>Links a classification task to the specific classification model used.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canUseEnsembleModel">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#EnsembleModel"/>
+    <rdfs:comment>Allows any Active Learning task to use an ensemble model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: canUseHybridModel -->
+<owl:ObjectProperty rdf:about="#canUseHybridModel">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#HybridModel"/>
+    <rdfs:comment>Allows any Active Learning task to use a hybrid model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: canUseTransferLearningModel -->
+<owl:ObjectProperty rdf:about="#canUseTransferLearningModel">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#TransferLearningModel"/>
+    <rdfs:comment>Allows any Active Learning task to use a transfer learning model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: hasDataset -->
+<owl:ObjectProperty rdf:about="#hasDataset">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>Links an Active Learning task to the dataset used to train or evaluate the task.</rdfs:comment>
+</owl:ObjectProperty>
+
+
+
+<!-- Existing Property: hasQueryStrategy -->
+<owl:ObjectProperty rdf:about="#hasQueryStrategy">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>Links the ALTask to the query strategy used for selecting instances to be labeled.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: executedInPipeline -->
+<owl:ObjectProperty rdf:about="#executedInPipeline">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>Links an Active Learning task to the pipeline where it is executed.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: evaluatesUsingMetric -->
+<owl:ObjectProperty rdf:about="#evaluatesUsingMetric">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>This property links an Active Learning task to the evaluation metrics used to measure model performance.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: processesData -->
+<owl:ObjectProperty rdf:about="#processesData">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:comment>This property links an Active Learning task to the data it processes, such as instances being labeled or predicted.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: requiresHumanAnnotator -->
+<owl:ObjectProperty rdf:about="#requiresHumanAnnotator">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links an Active Learning task to the human annotators required for labeling the selected instances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: supportedBySystemInfrastructure -->
+<owl:ObjectProperty rdf:about="#supportedBySystemInfrastructure">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:comment>This property links an Active Learning task to the system infrastructure necessary for task execution.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: performedInScenario -->
+<owl:ObjectProperty rdf:about="#performedInScenario">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>This property links an Active Learning task to the scenario where it is performed.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for ALTask -->
+<owl:DatatypeProperty rdf:about="#hasTaskType">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Represents the type of task being performed (e.g., classification, clustering, regression).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasFeatureCount">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>Represents the number of features or variables used in the task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPerformanceScore">
+    <rdfs:domain rdf:resource="#ALTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the overall performance score of the task, measured by appropriate evaluation metrics.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for ClassificationTask -->--
+<owl:ObjectProperty rdf:about="#hasModel">
+    <rdfs:domain rdf:resource="#ClassificationTask"/>
+    <rdfs:range rdf:resource="#ClassificationModel"/>
+    <rdfs:comment>Links the classification task to the classification model used.</rdfs:comment>
+</owl:ObjectProperty> -->
+
+<!-- Data Properties for ClassificationTask -->
+<owl:DatatypeProperty rdf:about="#hasClassCount">
+    <rdfs:domain rdf:resource="#ClassificationTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>Represents the number of classes in a classification task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPrecision">
+    <rdfs:domain rdf:resource="#ClassificationTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the precision score of the classification task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRecall">
+    <rdfs:domain rdf:resource="#ClassificationTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the recall score of the classification task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasF1Score">
+    <rdfs:domain rdf:resource="#ClassificationTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the F1-score of the classification task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for ClusteringTask -->
+
+<!-- Data Properties for ClusteringTask -->
+<owl:DatatypeProperty rdf:about="#hasClusterCount">
+    <rdfs:domain rdf:resource="#ClusteringTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>Represents the number of clusters in a clustering task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSilhouetteScore">
+    <rdfs:domain rdf:resource="#ClusteringTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the silhouette score of the clustering task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasIntraClusterDistance">
+    <rdfs:domain rdf:resource="#ClusteringTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the intra-cluster distance of the clustering task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasInterClusterDistance">
+    <rdfs:domain rdf:resource="#ClusteringTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the inter-cluster distance of the clustering task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for RegressionTask -->
+
+<!-- Data Properties for RegressionTask -->
+<owl:DatatypeProperty rdf:about="#hasTargetVariable">
+    <rdfs:domain rdf:resource="#RegressionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Represents the target variable in a regression task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMeanSquaredError">
+    <rdfs:domain rdf:resource="#RegressionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the mean squared error of the regression task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasR2Score">
+    <rdfs:domain rdf:resource="#RegressionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the R² score of the regression task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMeanAbsoluteError">
+    <rdfs:domain rdf:resource="#RegressionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>Represents the mean absolute error of the regression task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for Model Class -->
+
+<!-- Existing Property: isTrainedOn -->
+<owl:ObjectProperty rdf:about="#isTrainedOn">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>Links a model to the dataset it has been trained on.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: usesQueryStrategy -->
+<owl:ObjectProperty rdf:about="#usesQueryStrategy">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>Links a model to the query strategy used for instance selection in active learning.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: receivesFeedbackFrom -->
+<owl:ObjectProperty rdf:about="#receivesFeedbackFrom">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#FeedbackLoop"/>
+    <rdfs:comment>Links a model to the feedback loop from which it receives feedback for performance improvement.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: isEvaluatedBy -->
+<owl:ObjectProperty rdf:about="#isEvaluatedBy">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>Links a model to the evaluation metrics used to assess its performance.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Existing Property: isUpdatedWith -->
+<owl:ObjectProperty rdf:about="#isUpdatedWith">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#LabeledDataset"/>
+    <rdfs:comment>Links a model to the labeled dataset used for updating the model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- New Property: operatesInScenario -->
+<owl:ObjectProperty rdf:about="#operatesInScenario">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>Links a model to the Active Learning scenario in which it operates, such as pool-based or stream-based scenarios.</rdfs:comment>
+</owl:ObjectProperty>
+<!-- New Property: receivesAnnotationsFrom -->
+<owl:ObjectProperty rdf:about="#receivesAnnotationsFrom">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>Links a model to the human annotator responsible for providing annotations during the learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- ObjectProperty: usesPreTrainedModel -->
+<owl:ObjectProperty rdf:about="#usesPreTrainedModel">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links a model to a pre-trained model it uses.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Restrict the use of usesPreTrainedModel to TransferLearningModel -->
+<owl:Class rdf:about="#TransferLearningModel">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#usesPreTrainedModel"/>
+            <owl:someValuesFrom rdf:resource="#Model"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!-- Restrict the use of usesPreTrainedModel to TransferLearningHybrid -->
+<owl:Class rdf:about="#TransferLearningHybrid">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#usesPreTrainedModel"/>
+            <owl:someValuesFrom rdf:resource="#Model"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!-- Data Properties for Model Class -->
+<!-- Property: hasTrainingTime -->
+<owl:DatatypeProperty rdf:about="#hasTrainingTime">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the time taken to train the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAccuracy -->
+<owl:DatatypeProperty rdf:about="#hasAccuracy">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the accuracy of the model, typically measured on a test set.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasParameterCount -->
+<owl:DatatypeProperty rdf:about="#hasParameterCount">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of parameters in the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasLearningRate -->
+<owl:DatatypeProperty rdf:about="#hasLearningRate">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the learning rate of the model during training.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasLossValue -->
+<owl:DatatypeProperty rdf:about="#hasLossValue">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the loss value of the model, typically minimized during training.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Data Property: isWeakLearner -->
+<owl:DatatypeProperty rdf:about="#isWeakLearner">
+    <rdfs:domain rdf:resource="#Model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>This property indicates whether a model is acting as a weak learner in the context of an ensemble method, such as boosting.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for ClassificationModel and Subclasses -->
+<!-- Property: usesBinaryClassifier -->
+<owl:ObjectProperty rdf:about="#usesBinaryClassifier">
+    <rdfs:domain rdf:resource="#BinaryClassificationModel"/>
+    <rdfs:range rdf:resource="#BinaryClassificationModel"/>
+    <rdfs:comment>Links a binary classification model to a specific binary classifier, such as Logistic Regression or Support Vector Machine.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- An instance of LogisticRegression -->
+<owl:NamedIndividual rdf:about="#MyLogisticModel">
+    <rdf:type rdf:resource="#LogisticRegression"/>
+</owl:NamedIndividual>
+
+<!-- An instance of SupportVectorMachine -->
+<owl:NamedIndividual rdf:about="#MySVMModel">
+    <rdf:type rdf:resource="#SupportVectorMachine"/>
+</owl:NamedIndividual>
+
+<!-- Property: handlesMultipleLabels -->
+<owl:ObjectProperty rdf:about="#handlesMultipleLabels">
+    <rdfs:domain rdf:resource="#MultiLabelClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Indicates whether the model is capable of handling multiple labels per instance.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for ClassificationModel and Subclasses -->
+<!-- Property: hasClassCount -->
+<owl:DatatypeProperty rdf:about="#hasClassCount">
+    <rdfs:domain rdf:resource="#ClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of classes in a classification model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Data Property: hasMulticlassClassifier for MultiClassClassificationModel -->
+
+<owl:DatatypeProperty rdf:about="#hasMulticlassClassifier">
+    <rdfs:domain rdf:resource="#MultiClassClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property specifies the type of multiclass classifier used by the model (e.g., Random Forest, Neural Network, Decision Tree).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasPrecision -->
+<owl:DatatypeProperty rdf:about="#hasPrecision">
+    <rdfs:domain rdf:resource="#ClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the precision of the classification model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasRecall -->
+<owl:DatatypeProperty rdf:about="#hasRecall">
+    <rdfs:domain rdf:resource="#ClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the recall of the classification model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasF1Score -->
+<owl:DatatypeProperty rdf:about="#hasF1Score">
+    <rdfs:domain rdf:resource="#ClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the F1 score of the classification model, combining precision and recall.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAUC -->
+<owl:DatatypeProperty rdf:about="#hasAUC">
+    <rdfs:domain rdf:resource="#ClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the Area Under the ROC Curve (AUC) of the classification model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: handlesImbalancedData -->
+<owl:DatatypeProperty rdf:about="#handlesImbalancedData">
+    <rdfs:domain rdf:resource="#ClassificationModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>This property indicates whether the classification model is designed to handle imbalanced datasets.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for ClusteringModel and Subclasses -->
+
+<!-- Property: usesClusteringModel -->
+<owl:ObjectProperty rdf:about="#usesClusteringModel">
+    <rdfs:domain rdf:resource="#ClusteringTask"/>
+    <rdfs:range rdf:resource="#ClusteringModel"/>
+    <rdfs:comment>Links a clustering task to the clustering model being used, such as KMeans or DBSCAN.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for ClusteringModel -->
+<!-- Property: hasNumberOfClusters -->
+<owl:DatatypeProperty rdf:about="#hasNumberOfClusters">
+    <rdfs:domain rdf:resource="#ClusteringModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of clusters the model generates or expects.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasClusterInertia -->
+<owl:DatatypeProperty rdf:about="#hasClusterInertia">
+    <rdfs:domain rdf:resource="#ClusteringModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the inertia (or within-cluster sum of squares) of the clustering model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasSilhouetteScore -->
+<owl:DatatypeProperty rdf:about="#hasSilhouetteScore">
+    <rdfs:domain rdf:resource="#ClusteringModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the silhouette score of the clustering model, measuring how well instances are clustered.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: supportsSoftClustering -->
+<owl:DatatypeProperty rdf:about="#supportsSoftClustering">
+    <rdfs:domain rdf:resource="#ClusteringModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>This property indicates whether the clustering model supports soft clustering, where instances can belong to multiple clusters.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for HardClusteringModel -->
+
+<!-- Property: usesHardClusteringModel -->
+<owl:ObjectProperty rdf:about="#usesHardClusteringModel">
+    <rdfs:domain rdf:resource="#HardClusteringTask"/>
+    <rdfs:range rdf:resource="#HardClusteringModel"/>
+    <rdfs:comment>Links a hard clustering task to the specific hard clustering model (e.g., KMeans, DBSCAN).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Object Properties for SoftClusteringModel -->
+
+<!-- Property: usesSoftClusteringModel -->
+<owl:ObjectProperty rdf:about="#usesSoftClusteringModel">
+    <rdfs:domain rdf:resource="#SoftClusteringTask"/>
+    <rdfs:range rdf:resource="#SoftClusteringModel"/>
+    <rdfs:comment>Links a soft clustering task to the specific soft clustering model (e.g., Gaussian Mixture Model, FuzzyCMeans).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for SoftClusteringModel -->
+
+<!-- Property: hasMembershipProbability -->
+<owl:DatatypeProperty rdf:about="#hasMembershipProbability">
+    <rdfs:domain rdf:resource="#SoftClusteringModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the membership probability of instances in each cluster, specific to soft clustering models.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for HierarchicalClusteringModel -->
+
+<!-- Property: usesHierarchicalClusteringModel -->
+<owl:ObjectProperty rdf:about="#usesHierarchicalClusteringModel">
+    <rdfs:domain rdf:resource="#HierarchicalClusteringTask"/>
+    <rdfs:range rdf:resource="#HierarchicalClusteringModel"/>
+    <rdfs:comment>Links a hierarchical clustering task to the specific hierarchical clustering model (e.g., Agglomerative Clustering, Divisive Clustering).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for HierarchicalClusteringModel -->
+<!-- Property: hasLinkageCriterion -->
+<owl:DatatypeProperty rdf:about="#hasLinkageCriterion">
+    <rdfs:domain rdf:resource="#HierarchicalClusteringModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property represents the linkage criterion used in hierarchical clustering (e.g., single, complete, average linkage).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasDendrogramDepth -->
+<owl:DatatypeProperty rdf:about="#hasDendrogramDepth">
+    <rdfs:domain rdf:resource="#HierarchicalClusteringModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the depth of the dendrogram generated by the hierarchical clustering model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for RegressionModel -->
+<!-- Data Property: hasRegressionAlgorithm for RegressionModel -->
+<owl:DatatypeProperty rdf:about="#hasRegressionAlgorithm">
+    <rdfs:domain rdf:resource="#RegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This data property represents the type of regression algorithm used by the model (e.g., Linear Regression, Decision Tree Regression).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasMeanSquaredError -->
+<owl:DatatypeProperty rdf:about="#hasMeanSquaredError">
+    <rdfs:domain rdf:resource="#RegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the Mean Squared Error (MSE) of the regression model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasR2Score -->
+<owl:DatatypeProperty rdf:about="#hasR2Score">
+    <rdfs:domain rdf:resource="#RegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the R² score of the regression model, indicating the proportion of variance explained.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasRootMeanSquaredError -->
+<owl:DatatypeProperty rdf:about="#hasRootMeanSquaredError">
+    <rdfs:domain rdf:resource="#RegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the Root Mean Squared Error (RMSE) of the regression model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasMeanAbsoluteError -->
+<owl:DatatypeProperty rdf:about="#hasMeanAbsoluteError">
+    <rdfs:domain rdf:resource="#RegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the Mean Absolute Error (MAE) of the regression model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for SimpleRegressionModel -->
+<!-- Data Property: hasSimpleRegressionAlgorithm for SimpleRegressionModel -->
+<owl:DatatypeProperty rdf:about="#hasSimpleRegressionAlgorithm">
+    <rdfs:domain rdf:resource="#SimpleRegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This data property specifies the algorithm type for a simple regression model (e.g., Linear Regression).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for MultiOutputRegressionModel -->
+
+<!-- Data Properties for MultiOutputRegressionModel -->
+<!-- Data Property: hasMultiOutputRegressionAlgorithm for MultiOutputRegressionModel -->
+<owl:DatatypeProperty rdf:about="#hasMultiOutputRegressionAlgorithm">
+    <rdfs:domain rdf:resource="#MultiOutputRegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This data property specifies the type of regression algorithm used in the multi-output regression model (e.g., Multi-Task Neural Network, Multi-Output Linear Regression).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasNumberOfOutputs -->
+<owl:DatatypeProperty rdf:about="#hasNumberOfOutputs">
+    <rdfs:domain rdf:resource="#MultiOutputRegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of output variables predicted by the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for RobustRegressionModel -->
+
+<!-- Data Properties for RobustRegressionModel -->
+
+<!-- Data Property: hasRobustRegressionAlgorithm for RobustRegressionModel -->
+<owl:DatatypeProperty rdf:about="#hasRobustRegressionAlgorithm">
+    <rdfs:domain rdf:resource="#RobustRegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This data property specifies the type of robust regression algorithm used in the model (e.g., RANSAC, Huber Regression).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasOutlierHandlingCapability -->
+<owl:DatatypeProperty rdf:about="#hasOutlierHandlingCapability">
+    <rdfs:domain rdf:resource="#RobustRegressionModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>This property indicates whether the regression model is capable of handling outliers effectively.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for HybridModel -->
+
+<!-- Property: combinesModels -->
+<owl:ObjectProperty rdf:about="#combinesModels">
+    <rdfs:domain rdf:resource="#HybridModel"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links the hybrid model to the individual models it combines, which may be of different types (e.g., decision tree, neural network).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for HybridModel -->
+<!-- Data Property: hasEnsembleStrategy for HybridModel -->
+<owl:DatatypeProperty rdf:about="#hasEnsembleStrategy">
+    <rdfs:domain rdf:resource="#HybridModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property specifies the ensemble strategy (e.g., stacking, voting, bagging) used by the hybrid model to combine the outputs of individual models.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasModelDiversity -->
+<owl:DatatypeProperty rdf:about="#hasModelDiversity">
+    <rdfs:domain rdf:resource="#HybridModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the diversity of models in the hybrid model, measured by the number of different types of models combined (e.g., decision tree, neural network).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasCombiningEfficiency -->
+<owl:DatatypeProperty rdf:about="#hasCombiningEfficiency">
+    <rdfs:domain rdf:resource="#HybridModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the efficiency of combining models in the hybrid approach, often reflected in terms of resource usage or speed.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for DeepLearningHybrid -->
+
+<!-- Property: combinesDeepLearningAndTraditionalModels -->
+<owl:ObjectProperty rdf:about="#combinesDeepLearningAndTraditionalModels">
+    <rdfs:domain rdf:resource="#DeepLearningHybrid"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links a deep learning hybrid model to the traditional and deep learning models it combines.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for DeepLearningHybrid -->
+
+<!-- Property: hasTrainingTime -->
+<owl:DatatypeProperty rdf:about="#hasTrainingTime">
+    <rdfs:domain rdf:resource="#DeepLearningHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the time taken to train the deep learning component of the hybrid model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Object Properties for ProbabilisticHybrid -->
+
+<!-- Property: usesProbabilisticAndOtherModels -->
+<owl:ObjectProperty rdf:about="#usesProbabilisticAndOtherModels">
+    <rdfs:domain rdf:resource="#ProbabilisticHybrid"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links the probabilistic hybrid model to both probabilistic and non-probabilistic models it combines.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for ProbabilisticHybrid -->
+
+<!-- Property: hasProbabilityEstimationAccuracy -->
+<owl:DatatypeProperty rdf:about="#hasProbabilityEstimationAccuracy">
+    <rdfs:domain rdf:resource="#ProbabilisticHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the accuracy of probability estimations made by the probabilistic component of the hybrid model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- TransferLearningHybrid Subclass -->
+<owl:Class rdf:about="#TransferLearningHybrid">
+    <rdfs:subClassOf rdf:resource="#HybridModel"/>
+    <rdfs:comment>This class represents hybrid models that combine transfer learning techniques with other models.</rdfs:comment>
+</owl:Class>
+
+<!-- Object Properties for TransferLearningHybrid -->
+
+<!-- Data Properties for TransferLearningHybrid -->
+
+<!-- Data Property: hasTransferMechanism for TransferLearningHybrid -->
+<owl:DatatypeProperty rdf:about="#hasTransferMechanism">
+    <rdfs:domain rdf:resource="#TransferLearningHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property specifies the transfer mechanism used (e.g., fine-tuning, feature extraction) for transferring knowledge from the pre-trained model to the new task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasFineTuningLevel -->
+<owl:DatatypeProperty rdf:about="#hasFineTuningLevel">
+    <rdfs:domain rdf:resource="#TransferLearningHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the degree of fine-tuning applied to the pre-trained model in the transfer learning process.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasTransferAccuracy -->
+<owl:DatatypeProperty rdf:about="#hasTransferAccuracy">
+    <rdfs:domain rdf:resource="#TransferLearningHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the accuracy achieved after transfer learning and fine-tuning of the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- EnsembleHybrid Subclass -->
+<owl:Class rdf:about="#EnsembleHybrid">
+    <rdfs:subClassOf rdf:resource="#HybridModel"/>
+    <rdfs:comment>This class represents hybrid models that combine ensemble techniques with other models.</rdfs:comment>
+</owl:Class>
+
+<!-- Object Properties for EnsembleHybrid -->
+
+<!-- Data Properties for EnsembleHybrid -->
+
+<!-- Data Property: hasCombinationMethod for EnsembleHybrid -->
+<owl:DatatypeProperty rdf:about="#hasCombinationMethod">
+    <rdfs:domain rdf:resource="#EnsembleHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This data property describes the method used to combine the predictions of the base models in the ensemble hybrid model (e.g., voting, averaging).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasVotingStrategy -->
+<owl:DatatypeProperty rdf:about="#hasVotingStrategy">
+    <rdfs:domain rdf:resource="#EnsembleHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property defines the voting strategy (e.g., majority voting, weighted voting) used by the ensemble hybrid model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasEnsembleDiversity -->
+<owl:DatatypeProperty rdf:about="#hasEnsembleDiversity">
+    <rdfs:domain rdf:resource="#EnsembleHybrid"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property measures the diversity of the base models in the ensemble hybrid, often important for improving robustness.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- EnsembleModel Subclass -->
+<owl:Class rdf:about="#EnsembleModel">
+    <rdfs:subClassOf rdf:resource="#Model"/>
+    <rdfs:comment>This class represents models that combine multiple base models to improve performance and robustness.</rdfs:comment>
+</owl:Class>
+
+<!-- Object Properties for EnsembleModel -->
+
+<!-- Property: usesBaseModels -->
+<owl:ObjectProperty rdf:about="#usesBaseModels">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="#Model"/> <!-- Directly linking to Model -->
+    <rdfs:comment>This property links the ensemble model to the individual base models it uses.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for EnsembleModel -->
+
+<!-- Data Property: hasCombinationMethod for EnsembleModel -->
+<owl:DatatypeProperty rdf:about="#hasCombinationMethod">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This data property describes the method used to combine the predictions of the base models in the ensemble model (e.g., voting, averaging).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasEnsembleDiversity -->
+<owl:DatatypeProperty rdf:about="#hasEnsembleDiversity">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property measures the diversity of the base models in the ensemble, which is important for robustness.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasVotingStrategy -->
+<owl:DatatypeProperty rdf:about="#hasVotingStrategy">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property defines the voting strategy (e.g., majority voting, weighted voting) used by the ensemble model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasBaggingFraction -->
+<owl:DatatypeProperty rdf:about="#hasBaggingFraction">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property defines the fraction of training data used for each base model in bagging methods.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasBoostingRate -->
+<owl:DatatypeProperty rdf:about="#hasBoostingRate">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property defines the rate at which the boosting method learns from misclassified instances.</rdfs:comment>
+</owl:DatatypeProperty>
+	
+	<!-- BaggingModel Subclass -->
+<owl:Class rdf:about="#BaggingModel">
+    <rdfs:subClassOf rdf:resource="#EnsembleModel"/>
+    <rdfs:comment>This class represents bagging models, such as Random Forest, that train multiple models on random subsets of the data.</rdfs:comment>
+</owl:Class>
+
+<!-- Object Properties for BaggingModel -->
+
+<!-- Property: usesRandomSubset -->
+<owl:ObjectProperty rdf:about="#usesRandomSubset">
+    <rdfs:domain rdf:resource="#BaggingModel"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>This property links a bagging model to the random subsets of the data it uses for training base models.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for BaggingModel -->
+
+<!-- Property: hasBaggingFraction -->
+<owl:DatatypeProperty rdf:about="#hasBaggingFraction">
+    <rdfs:domain rdf:resource="#BaggingModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property defines the fraction of the training data used for each base model in the bagging model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- BoostingModel Subclass -->
+<owl:Class rdf:about="#BoostingModel">
+    <rdfs:subClassOf rdf:resource="#EnsembleModel"/>
+    <rdfs:comment>This class represents boosting models, such as XGBoost and AdaBoost, where models are trained sequentially to correct the errors of previous models.</rdfs:comment>
+</owl:Class>
+
+<!-- Refined Object Property: usesWeakLearners -->
+
+<owl:ObjectProperty rdf:about="#usesWeakLearners">
+    <rdfs:domain rdf:resource="#BoostingModel"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links a boosting model to the models used as weak learners for sequential training.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for BoostingModel -->
+
+<!-- Property: hasBoostingRate -->
+<owl:DatatypeProperty rdf:about="#hasBoostingRate">
+    <rdfs:domain rdf:resource="#BoostingModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property defines the learning rate for adjusting the weights of misclassified instances in the boosting model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- StackingModel Subclass -->
+<owl:Class rdf:about="#StackingModel">
+    <rdfs:subClassOf rdf:resource="#EnsembleModel"/>
+    <rdfs:comment>This class represents stacking models, where the predictions of multiple models are combined using a meta-model (also known as a meta-learner).</rdfs:comment>
+</owl:Class>
+
+<!-- Object Properties for StackingModel -->
+
+<!-- Property: usesBaseModels -->
+<owl:ObjectProperty rdf:about="#usesBaseModels">
+    <rdfs:domain rdf:resource="#StackingModel"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links the stacking model to the base models whose predictions are combined by the meta-model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for StackingModel -->
+
+<!-- Property: hasMetaModelDetails -->
+<owl:DatatypeProperty rdf:about="#hasMetaModelDetails">
+    <rdfs:domain rdf:resource="#StackingModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property provides further details about the meta-model (e.g., its specific configuration or hyperparameters).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasBaseModelCount -->
+<owl:DatatypeProperty rdf:about="#hasBaseModelCount">
+    <rdfs:domain rdf:resource="#StackingModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of base models used in the stacking model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasCrossValidationFolds -->
+<owl:DatatypeProperty rdf:about="#hasCrossValidationFolds">
+    <rdfs:domain rdf:resource="#StackingModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property defines the number of cross-validation folds used during the training of the stacking model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- TransferLearningModel Subclass -->
+<owl:Class rdf:about="#TransferLearningModel">
+    <rdfs:subClassOf rdf:resource="#Model"/>
+    <rdfs:comment>This class represents models that use transfer learning to adapt pre-trained models for new tasks.</rdfs:comment>
+</owl:Class>
+
+<!-- FineTunedModel Subclass -->
+<owl:Class rdf:about="#FineTunedModel">
+    <rdfs:subClassOf rdf:resource="#TransferLearningModel"/>
+    <rdfs:comment>This class represents models that are fine-tuned on a specific task after being pre-trained on a different dataset or task.</rdfs:comment>
+</owl:Class>
+
+<!-- PreTrainedNeuralNetwork Subclass -->
+<owl:Class rdf:about="#PreTrainedNeuralNetwork">
+    <rdfs:subClassOf rdf:resource="#TransferLearningModel"/>
+    <rdfs:comment>This class represents pre-trained neural networks that are fine-tuned for a new task.</rdfs:comment>
+</owl:Class>
+
+<!-- Property: usesBaseTask -->
+<owl:ObjectProperty rdf:about="#usesBaseTask">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>This property links the transfer learning model to the original task or domain it was trained on before transfer learning.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: adaptedForNewTask -->
+<owl:ObjectProperty rdf:about="#adaptedForNewTask">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>This property links the transfer learning model to the new task or domain it is fine-tuned or adapted for.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasPreTrainingAccuracy -->
+<owl:DatatypeProperty rdf:about="#hasPreTrainingAccuracy">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the accuracy of the model on the original pre-training task or domain.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasFineTuningAccuracy -->
+<owl:DatatypeProperty rdf:about="#hasFineTuningAccuracy">
+    <rdfs:domain rdf:resource="#FineTunedModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the accuracy of the fine-tuned model on the new task or domain.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasPreTrainingDatasetSize -->
+<owl:DatatypeProperty rdf:about="#hasPreTrainingDatasetSize">
+    <rdfs:domain rdf:resource="#PreTrainedNeuralNetwork"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the size of the dataset used to pre-train the neural network.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasTransferLearningIterations -->
+<owl:DatatypeProperty rdf:about="#hasTransferLearningIterations">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of iterations or epochs used for fine-tuning the model on the new task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+
+<!-- Object Properties for QueryStrategy Class -->
+
+<!-- Property: isPartOfALPipeline -->
+<owl:ObjectProperty rdf:about="#isPartOfALPipeline">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>This property links the query strategy to the ALPipeline, indicating that the strategy is part of the pipeline process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: isUsedInScenario -->
+<owl:ObjectProperty rdf:about="#isUsedInScenario">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>This property links a query strategy to specific Active Learning scenarios where it is applied.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: evaluatedByMetric -->
+<owl:ObjectProperty rdf:about="#evaluatedByMetric">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>This property links the query strategy to the evaluation metrics used to measure its effectiveness.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: collaboratesWithAnnotator -->
+<owl:ObjectProperty rdf:about="#collaboratesWithAnnotator">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links a query strategy to human annotators involved in the labeling process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: operatesWithinInfrastructure -->
+<owl:ObjectProperty rdf:about="#operatesWithinInfrastructure">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:comment>This property links the query strategy to the system infrastructure it operates within, potentially impacting its real-time or resource-limited application.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsInstance -->
+<owl:ObjectProperty rdf:about="#selectsInstance">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links a query strategy to the instances it selects for labeling in Active Learning.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: evaluatesUncertainty -->
+<owl:ObjectProperty rdf:about="#evaluatesUncertainty">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links the query strategy to the model for uncertainty evaluation, as in uncertainty-based strategies.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: usesCommittee -->
+<owl:ObjectProperty rdf:about="#usesCommittee">
+    <rdfs:domain rdf:resource="#QueryByCommittee"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links a query-by-committee strategy to the set of models (committee) used for selecting instances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: reducesError -->
+<owl:ObjectProperty rdf:about="#reducesError">
+    <rdfs:domain rdf:resource="#ExpectedErrorReduction"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links an expected error reduction strategy to the model where error reduction is targeted.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for QueryStrategy Class -->
+
+<!-- Property: hasConfidenceThreshold -->
+<owl:DatatypeProperty rdf:about="#hasConfidenceThreshold">
+    <rdfs:domain rdf:resource="#QueryStrategy"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the confidence threshold used by the strategy for selecting uncertain instances.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasCommitteeDisagreement -->
+<owl:DatatypeProperty rdf:about="#hasCommitteeDisagreement">
+    <rdfs:domain rdf:resource="#QueryByCommittee"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the level of disagreement among committee members in query-by-committee strategies.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasExpectedErrorReduction -->
+<owl:DatatypeProperty rdf:about="#hasExpectedErrorReduction">
+    <rdfs:domain rdf:resource="#ExpectedErrorReduction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the expected reduction in error that the strategy aims to achieve with selected instances.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasUncertaintyMargin -->
+<owl:DatatypeProperty rdf:about="#hasUncertaintyMargin">
+    <rdfs:domain rdf:resource="#UncertaintySampling"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the margin between top class probabilities in margin sampling strategies.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasEntropy -->
+<owl:DatatypeProperty rdf:about="#hasEntropy">
+    <rdfs:domain rdf:resource="#UncertaintySampling"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the entropy of the model’s predictions in entropy-based sampling strategies.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasUncertaintyMargin for MarginSampling -->
+<owl:DatatypeProperty rdf:about="#hasUncertaintyMargin">
+    <rdfs:domain rdf:resource="#MarginSampling"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the uncertainty margin between the top two class probabilities used in margin sampling.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasEntropy for EntropySampling -->
+<owl:DatatypeProperty rdf:about="#hasEntropy">
+    <rdfs:domain rdf:resource="#EntropySampling"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the entropy score used for selecting instances in entropy-based sampling.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasCommitteeDisagreement for VoteEntropy -->
+<owl:DatatypeProperty rdf:about="#hasCommitteeDisagreement">
+    <rdfs:domain rdf:resource="#VoteEntropy"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the level of disagreement among committee models in vote entropy.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasKLScore for KLDivergence -->
+<owl:DatatypeProperty rdf:about="#hasKLScore">
+    <rdfs:domain rdf:resource="#KLDivergence"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the KL-divergence score used in query-by-committee strategies to measure disagreement.</rdfs:comment>
+</owl:DatatypeProperty>
+	
+	<!-- Property: selectsLowConfidenceInstance -->
+<owl:ObjectProperty rdf:about="#selectsLowConfidenceInstance">
+    <rdfs:domain rdf:resource="#LeastConfidenceSampling"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links least confidence sampling to instances where the model has the lowest prediction confidence.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsSmallMarginInstance -->
+<owl:ObjectProperty rdf:about="#selectsSmallMarginInstance">
+    <rdfs:domain rdf:resource="#MarginSampling"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links margin sampling to instances with the smallest margin between the top two predicted class probabilities.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsHighEntropyInstance -->
+<owl:ObjectProperty rdf:about="#selectsHighEntropyInstance">
+    <rdfs:domain rdf:resource="#EntropySampling"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links entropy sampling to instances with the highest prediction entropy.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<!-- Property: selectsHighVoteEntropyInstance -->
+<owl:ObjectProperty rdf:about="#selectsHighVoteEntropyInstance">
+    <rdfs:domain rdf:resource="#VoteEntropy"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links vote entropy-based sampling to instances where committee members' votes are highly divergent.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsHighKLDivergenceInstance -->
+<owl:ObjectProperty rdf:about="#selectsHighKLDivergenceInstance">
+    <rdfs:domain rdf:resource="#KLDivergence"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links KL-divergence-based sampling to instances where the KL-divergence between committee members is high.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsHighGradientMagnitudeInstance -->
+<owl:ObjectProperty rdf:about="#selectsHighGradientMagnitudeInstance">
+    <rdfs:domain rdf:resource="#GradientMagnitude"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links gradient magnitude-based sampling to instances expected to cause the largest gradient changes.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsHighFisherInformationInstance -->
+<owl:ObjectProperty rdf:about="#selectsHighFisherInformationInstance">
+    <rdfs:domain rdf:resource="#FisherInformation"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links Fisher Information-based sampling to instances that have high Fisher Information.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsHighInfluenceInstance -->
+<owl:ObjectProperty rdf:about="#selectsHighInfluenceInstance">
+    <rdfs:domain rdf:resource="#InfluenceFunction"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links influence function-based sampling to instances expected to have the most influence on model parameters.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsRiskReducingInstance -->
+<owl:ObjectProperty rdf:about="#selectsRiskReducingInstance">
+    <rdfs:domain rdf:resource="#RiskReduction"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links risk-reduction-based sampling to instances expected to reduce future prediction risk.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsVarianceReducingInstance -->
+<owl:ObjectProperty rdf:about="#selectsVarianceReducingInstance">
+    <rdfs:domain rdf:resource="#VarianceReduction"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links variance reduction-based sampling to instances that reduce prediction variance.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsPosteriorRiskReducingInstance -->
+<owl:ObjectProperty rdf:about="#selectsPosteriorRiskReducingInstance">
+    <rdfs:domain rdf:resource="#PosteriorRiskReduction"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links posterior risk reduction strategies to instances that reduce posterior risk in a Bayesian model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsHighUncertaintyDensityInstance -->
+<owl:ObjectProperty rdf:about="#selectsHighUncertaintyDensityInstance">
+    <rdfs:domain rdf:resource="#UncertaintyDensity"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links uncertainty-density sampling to instances that balance uncertainty and density.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: selectsClusterCentroidInstance -->
+<owl:ObjectProperty rdf:about="#selectsClusterCentroidInstance">
+    <rdfs:domain rdf:resource="#ClusterCentroidSampling"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links cluster centroid-based sampling to instances closest to the cluster centroids in the dataset.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--General Properties for ALScenario -->
+<!-- Property: usesDataset -->
+<owl:ObjectProperty rdf:about="#usesDataset">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>This property links an Active Learning scenario to the dataset being used for instance selection.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: appliesQueryStrategy -->
+<owl:ObjectProperty rdf:about="#appliesQueryStrategy">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>This property links an Active Learning scenario to the query strategy it applies for selecting instances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: involvesFeedbackLoop -->
+<owl:ObjectProperty rdf:about="#involvesFeedbackLoop">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#FeedbackLoop"/>
+    <rdfs:comment>This property links an Active Learning scenario to the feedback loop mechanism used to evaluate and refine the model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: usesEvaluationMetric -->
+<owl:ObjectProperty rdf:about="#usesEvaluationMetric">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>This property links an Active Learning scenario to the evaluation metric used to measure its effectiveness.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Core Data Properties for ALScenario -->
+
+<!-- Property: hasSelectionFrequency -->
+<owl:DatatypeProperty rdf:about="#hasSelectionFrequency">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents how frequently instances are selected for labeling in an Active Learning scenario.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasBatchSize -->
+<owl:DatatypeProperty rdf:about="#hasBatchSize">
+    <rdfs:domain rdf:resource="#BatchSelectionScenario"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property defines the size of the batch selected for labeling in batch selection scenarios.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!--Properties for Pool-Based Scenarios-->
+<!-- Property: usesPoolDataset -->
+<owl:ObjectProperty rdf:about="#usesPoolDataset">
+    <rdfs:domain rdf:resource="#PoolBasedScenario"/>
+    <rdfs:range rdf:resource="#PoolDataset"/>
+    <rdfs:comment>This property links a pool-based Active Learning scenario to the dataset used as the pool of unlabeled instances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasFixedPool -->
+<owl:ObjectProperty rdf:about="#hasFixedPool">
+    <rdfs:domain rdf:resource="#FixedPoolScenario"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>This property indicates that the pool of unlabeled data remains fixed throughout the Active Learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasDynamicPool -->
+<owl:ObjectProperty rdf:about="#hasDynamicPool">
+    <rdfs:domain rdf:resource="#DynamicPoolScenario"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>This property indicates that the pool of unlabeled data changes dynamically during the Active Learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Properties for Stream-Based Scenarios-->
+
+<!-- Property: usesStreamDataset -->
+<owl:ObjectProperty rdf:about="#usesStreamDataset">
+    <rdfs:domain rdf:resource="#StreamBasedScenario"/>
+    <rdfs:range rdf:resource="#StreamDataset"/>
+    <rdfs:comment>This property links a stream-based Active Learning scenario to the dataset used as the stream of unlabeled instances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: updatesModelPeriodically -->
+<owl:ObjectProperty rdf:about="#updatesModelPeriodically">
+    <rdfs:domain rdf:resource="#PeriodicUpdateScenario"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links the periodic update scenario to the model, which is updated periodically as new data arrives.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Properties for Query Synthesis Scenarios-->
+
+<!-- Property: generatesSyntheticInstances -->
+<owl:ObjectProperty rdf:about="#generatesSyntheticInstances">
+    <rdfs:domain rdf:resource="#QuerySynthesisScenario"/>
+    <rdfs:range rdf:resource="#SyntheticInstance"/>
+    <rdfs:comment>This property links a query synthesis scenario to the synthetic instances generated for labeling.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: challengesModelWithAdversarialQueries -->
+<owl:ObjectProperty rdf:about="#challengesModelWithAdversarialQueries">
+    <rdfs:domain rdf:resource="#AdversarialQueryScenario"/>
+    <rdfs:range rdf:resource="#SyntheticInstance"/>
+    <rdfs:comment>This property links an adversarial query synthesis scenario to the synthetic instances generated to challenge the model’s decision boundaries.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: exploresUncertaintyInSynthesis -->
+<owl:ObjectProperty rdf:about="#exploresUncertaintyInSynthesis">
+    <rdfs:domain rdf:resource="#UncertaintyBasedQueryScenario"/>
+    <rdfs:range rdf:resource="#SyntheticInstance"/>
+    <rdfs:comment>This property links uncertainty-based query synthesis to synthetic instances generated in areas where the model is least confident.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: expandsModelKnowledge -->
+<owl:ObjectProperty rdf:about="#expandsModelKnowledge">
+    <rdfs:domain rdf:resource="#DomainExpansionScenario"/>
+    <rdfs:range rdf:resource="#SyntheticInstance"/>
+    <rdfs:comment>This property links domain expansion scenarios to synthetic instances generated to expand the model's knowledge of the data space.</rdfs:comment>
+</owl:ObjectProperty>
+	
+<!--Interaction between ALScenario and ALPipeline -->
+
+<!-- Property: usesScenario -->
+<owl:ObjectProperty rdf:about="#usesScenario">
+    <rdfs:domain rdf:resource="#ALPipeline"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>This property links an Active Learning pipeline to the scenario defining how instances are selected and labeled.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Interaction between ALScenario and ALTask  -->
+
+<!-- Property: handlesTask -->
+<owl:ObjectProperty rdf:about="#handlesTask">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>This property links an Active Learning scenario to the specific task (classification, clustering, regression) it handles.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Interaction between ALScenario  and QueryStrategy-->
+
+<!-- Property: appliesQueryStrategy -->
+<owl:ObjectProperty rdf:about="#appliesQueryStrategy">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>This property links an Active Learning scenario to the query strategy it uses for instance selection.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Interaction between ALScenario and Model -->
+
+<!-- Property: updatesModel -->
+<owl:ObjectProperty rdf:about="#updatesModel">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links an Active Learning scenario to the model being updated based on selected instances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Interaction between ALScenario  and EvaluationMetrics -->
+
+<!-- Property: usesEvaluationMetric -->
+<owl:ObjectProperty rdf:about="#usesEvaluationMetric">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>This property links an Active Learning scenario to the evaluation metrics used to assess model performance.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Interaction between ALScenario  and Data-->
+
+<!-- Property: usesDataset -->
+<owl:ObjectProperty rdf:about="#usesDataset">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>This property links an Active Learning scenario to the dataset or instances it uses for labeling.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Interaction between ALScenario  and HumanAnnotator-->
+	
+	<!-- Property: involvesHumanAnnotator -->
+<owl:ObjectProperty rdf:about="#involvesHumanAnnotator">
+    <rdfs:domain rdf:resource="#ALScenario"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links an Active Learning scenario to the human annotators responsible for labeling instances.</rdfs:comment>
+</owl:ObjectProperty>
+		
+<!-- Refined Object Properties for HumanAnnotator -->
+
+<!-- Property: providesFeedback -->
+<owl:ObjectProperty rdf:about="#providesFeedback">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#FeedbackLoop"/>
+    <rdfs:comment>Links the human annotator to the feedback loop, representing the feedback provided by the annotator for improving the model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: labelsInstance -->
+<owl:ObjectProperty rdf:about="#labelsInstance">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#LabeledInstance"/>
+    <rdfs:comment>Links the human annotator to the instances they label during the Active Learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: collaboratesWithModel -->
+<owl:ObjectProperty rdf:about="#collaboratesWithModel">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>Links the human annotator to the model they provide annotations for, representing the interaction between the annotator and the machine learning model.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: involvedInTask -->
+<owl:ObjectProperty rdf:about="#involvedInTask">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>Links the human annotator to the specific Active Learning tasks (e.g., classification, clustering, regression) they are involved in.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: annotatesDataset -->
+<owl:ObjectProperty rdf:about="#annotatesDataset">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>Links the human annotator to the datasets they work on, indicating which datasets they contribute to by providing labels.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: impactsQueryStrategy -->
+<owl:ObjectProperty rdf:about="#impactsQueryStrategy">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>Links the human annotator to the query strategy, indicating that annotator feedback can influence the selection strategy used in future iterations.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: evaluatedByMetrics -->
+<owl:ObjectProperty rdf:about="#evaluatedByMetrics">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#EvaluationMetrics"/>
+    <rdfs:comment>Links the human annotator to evaluation metrics, which assess the quality and efficiency of the annotations provided.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: isAssistedBy -->
+<owl:ObjectProperty rdf:about="#isAssistedBy">
+    <rdfs:domain rdf:resource="#AssistedAnnotator"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links an assisted annotator to the machine learning model that assists in their labeling process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: participatesInScenario -->
+<owl:ObjectProperty rdf:about="#participatesInScenario">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>This property links a human annotator to the specific Active Learning scenario in which they participate.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for HumanAnnotator Class -->
+
+<!-- Property: hasAnnotationExperience -->
+<owl:DatatypeProperty rdf:about="#hasAnnotationExperience">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the amount of annotation experience an annotator has, measured in years or similar units.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAccuracyScore -->
+<owl:DatatypeProperty rdf:about="#hasAccuracyScore">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the average accuracy of the human annotator, reflecting the quality of annotations provided.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAnnotationSpeed -->
+<owl:DatatypeProperty rdf:about="#hasAnnotationSpeed">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the speed at which the annotator completes annotation tasks, typically measured in annotations per hour.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasDomainKnowledge -->
+<owl:DatatypeProperty rdf:about="#hasDomainKnowledge">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>This property indicates whether the human annotator has domain-specific knowledge relevant to the labeling task.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Properties of Data Class -->
+<!-- Interactions of Data with Other Top Classes -->
+<!-- Interactions of Data with ALPipeline -->
+<!-- Property: isPartOfPipeline 
+<owl:ObjectProperty rdf:about="#isPartOfPipeline">
+    <rdfs:domain rdf:resource="#Dataset"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>This property links a dataset to the Active Learning pipeline where it is utilized for training or evaluation.</rdfs:comment>
+</owl:ObjectProperty> -->
+
+<!-- Interactions of Data with ALScenario -->
+<!-- Property: usedInScenario -->
+<owl:ObjectProperty rdf:about="#usedInScenario">
+    <rdfs:domain rdf:resource="#Dataset"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>This property links a dataset to the Active Learning scenario in which it is used (e.g., pool-based or stream-based scenario).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Interactions of Data with ALTask -->
+<!-- Interactions of Data with QueryStrategy -->
+<!-- Property: queriedByStrategy -->
+<owl:ObjectProperty rdf:about="#queriedByStrategy">
+    <rdfs:domain rdf:resource="#Dataset"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>This property links a dataset to the query strategy used to select instances for labeling.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--Interactions with Model-->
+
+<!-- Property: isUsedForModelUpdate -->
+<owl:ObjectProperty rdf:about="#isUsedForModelUpdate">
+    <rdfs:domain rdf:resource="#LabeledDataset"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links a labeled dataset to a model that is updated with newly labeled data.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Interactions with HumanAnnotator -->
+
+<!-- Property: labeledBy -->
+<owl:ObjectProperty rdf:about="#labeledBy">
+    <rdfs:domain rdf:resource="#LabeledDataset"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links a labeled dataset to the human annotators responsible for labeling the data.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--  Interactions with SystemInfrastructure-->
+
+<!-- Property: storedIn -->
+<owl:ObjectProperty rdf:about="#storedIn">
+    <rdfs:domain rdf:resource="#Dataset"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:comment>This property links a dataset to the system infrastructure where it is stored and managed during the Active Learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Properties of Data Class and subclasses-->
+<!-- Object Properties for Data Class -->
+<!-- Property: isUsedIn -->
+<owl:ObjectProperty rdf:about="#isUsedIn">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>This property links the data to the Active Learning pipeline in which it is used.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: containsInstance -->
+<owl:ObjectProperty rdf:about="#containsInstance">
+    <rdfs:domain rdf:resource="#Dataset"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links a dataset to the instances it contains.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Object Properties for LabeledDataset -->
+
+<!-- Property: hasLabel 
+<owl:ObjectProperty rdf:about="#hasLabel">
+    <rdfs:domain rdf:resource="#LabeledDataset"/>
+    <rdfs:range rdf:resource="#Label"/>
+    <rdfs:comment>This property links a labeled dataset to the labels assigned to instances within it.</rdfs:comment>
+</owl:ObjectProperty> -->
+
+<!-- Property: isLabeledBy
+<owl:ObjectProperty rdf:about="#isLabeledBy">
+    <rdfs:domain rdf:resource="#LabeledDataset"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links the labeled dataset to the human annotators who assigned labels.</rdfs:comment>
+</owl:ObjectProperty> -->
+ 
+<!-- Object Properties for UnlabeledDataset -->
+
+<!-- Property: isCandidateForLabeling -->
+<owl:ObjectProperty rdf:about="#isCandidateForLabeling">
+    <rdfs:domain rdf:resource="#UnlabeledDataset"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>This property links an unlabeled dataset to the query strategy used for selecting instances for labeling.</rdfs:comment>
+</owl:ObjectProperty>
+ 
+<!-- Object Properties for Instance Class -->
+
+<!-- Property: belongsToDataset -->
+<owl:ObjectProperty rdf:about="#belongsToDataset">
+    <rdfs:domain rdf:resource="#Instance"/>
+    <rdfs:range rdf:resource="#Dataset"/>
+    <rdfs:comment>This property links an instance to the dataset it belongs to.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: isLabeledBy -->
+<owl:ObjectProperty rdf:about="#isLabeledBy">
+    <rdfs:domain rdf:resource="#LabeledInstance"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links a labeled instance to the human annotator who labeled it.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties for the Data class and its subclasses -->
+
+<!-- Data Properties for Data Class -->
+<!-- Property: hasSize -->
+<owl:DatatypeProperty rdf:about="#hasSize">
+    <rdfs:domain rdf:resource="#Dataset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the size of a dataset, measured as the number of instances it contains.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasNumberOfInstances -->
+<owl:DatatypeProperty rdf:about="#hasNumberOfInstances">
+    <rdfs:domain rdf:resource="#Dataset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property represents the number of instances in the dataset.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Data Properties for LabeledInstance -->
+<!-- Property: hasLabel -->
+<owl:DatatypeProperty rdf:about="#hasLabel">
+    <rdfs:domain rdf:resource="#LabeledInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property represents the label assigned to an instance by the human annotator or model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasConfidenceScore -->
+<owl:DatatypeProperty rdf:about="#hasConfidenceScore">
+    <rdfs:domain rdf:resource="#LabeledInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the confidence score associated with the label assigned to a labeled instance.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasLabelingTimestamp -->
+<owl:DatatypeProperty rdf:about="#hasLabelingTimestamp">
+    <rdfs:domain rdf:resource="#LabeledInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment>This property represents the timestamp when an instance was labeled by a human annotator.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Properties for MetadataEnhancedDataset and MetadataEnhancedInstance Object Properties -->
+
+<!-- Property: hasMetadata -->
+
+<owl:ObjectProperty rdf:about="#hasMetadata">
+    <rdfs:domain rdf:resource="#MetadataEnhancedDataset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property links a metadata-enhanced dataset to a string-based metadata entry.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMetadata">
+    <rdfs:domain rdf:resource="#MetadataEnhancedInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property links a metadata-enhanced instance to a string-based metadata entry (e.g., timestamps or quality scores).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: isStoredIn -->
+<owl:ObjectProperty rdf:about="#isStoredIn">
+    <rdfs:domain rdf:resource="#MetadataEnhancedDataset"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:comment>This property links a metadata-enhanced dataset to the system infrastructure where it is stored.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties -->
+
+<!-- Property: hasTimestamp -->
+<owl:DatatypeProperty rdf:about="#hasTimestamp">
+    <rdfs:domain rdf:resource="#MetadataEnhancedInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment>This property represents the timestamp when the instance was processed or labeled.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasConfidenceScore -->
+<owl:DatatypeProperty rdf:about="#hasConfidenceScore">
+    <rdfs:domain rdf:resource="#MetadataEnhancedInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the confidence score of the instance in terms of its labeling or prediction.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasDataQuality -->
+<owl:DatatypeProperty rdf:about="#hasDataQuality">
+    <rdfs:domain rdf:resource="#MetadataEnhancedDataset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>This property represents the quality of the dataset, based on the metadata associated with it.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Properties for SyntheticInstance Object Properties -->
+
+<!-- Property: generatedBy -->
+<owl:ObjectProperty rdf:about="#generatedBy">
+    <rdfs:domain rdf:resource="#SyntheticInstance"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>This property links a synthetic instance to the query strategy used to generate it (e.g., query synthesis strategies).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: hasOriginalInstance -->
+<owl:ObjectProperty rdf:about="#hasOriginalInstance">
+    <rdfs:domain rdf:resource="#SyntheticInstance"/>
+    <rdfs:range rdf:resource="#Instance"/>
+    <rdfs:comment>This property links a synthetic instance to its original instance, from which it was derived or generated.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties -->
+
+<!-- Property: hasGenerationScore -->
+<owl:DatatypeProperty rdf:about="#hasGenerationScore">
+    <rdfs:domain rdf:resource="#SyntheticInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the score or probability that an instance was generated as part of the query synthesis process.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Properties for OutlierInstance Object Properties -->
+
+<!-- Property: detectedBy -->
+<owl:ObjectProperty rdf:about="#detectedBy">
+    <rdfs:domain rdf:resource="#OutlierInstance"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links an outlier instance to the model that detected it as an outlier.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Data Properties -->
+
+<!-- Property: hasOutlierScore -->
+<owl:DatatypeProperty rdf:about="#hasOutlierScore">
+    <rdfs:domain rdf:resource="#OutlierInstance"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property represents the score or confidence that the instance is an outlier.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Properties for PoolDataset and StreamDataset Object Properties -->
+ 
+<!-- Property: isQueriedBy -->
+<owl:ObjectProperty rdf:about="#isQueriedBy">
+    <rdfs:domain rdf:resource="#PoolDataset"/>
+    <rdfs:range rdf:resource="#QueryStrategy"/>
+    <rdfs:comment>This property links a pool dataset to the query strategy that selects instances from it for labeling.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isStreamedThrough">
+    <rdfs:domain rdf:resource="#StreamDataset"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:comment>This property links a stream dataset to the system infrastructure responsible for streaming the data during the Active Learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+ <!-- Object Properties for SystemInfrastructure and its Subclasses -->
+ 
+ <!-- Interaction Properties between SystemInfrastructure and Other Top Classes -->
+
+<!-- Property: supportsALPipeline -->
+<owl:ObjectProperty rdf:about="#supportsALPipeline">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>Links the system infrastructure to the Active Learning pipeline it supports.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: storesDataForTask -->
+<owl:ObjectProperty rdf:about="#storesDataForTask">
+    <rdfs:domain rdf:resource="#DataStorage"/>
+    <rdfs:range rdf:resource="#ALTask"/>
+    <rdfs:comment>This property links data storage to the specific Active Learning task for which data is being stored.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: trainsModel -->
+<owl:ObjectProperty rdf:about="#trainsModel">
+    <rdfs:domain rdf:resource="#ComputationalInfrastructure"/>
+    <rdfs:range rdf:resource="#Model"/>
+    <rdfs:comment>This property links computational resources to the machine learning model being trained.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: supportsHumanAnnotator -->
+<owl:ObjectProperty rdf:about="#supportsHumanAnnotator">
+    <rdfs:domain rdf:resource="#GUIInfrastructure"/>
+    <rdfs:range rdf:resource="#HumanAnnotator"/>
+    <rdfs:comment>This property links the GUI infrastructure to the human annotators who use it for labeling tasks.</rdfs:comment>
+</owl:ObjectProperty>
+	
+<!-- Property: supportsScenario -->
+<owl:ObjectProperty rdf:about="#supportsScenario">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#ALScenario"/>
+    <rdfs:comment>This property links the system infrastructure to the specific Active Learning scenarios it supports, such as pool-based or stream-based scenarios.</rdfs:comment>
+</owl:ObjectProperty>
+
+ <!-- Object Properties for SystemInfrastructure and its Subclasses -->
+
+<!-- Property: supportsPipeline -->
+<owl:ObjectProperty rdf:about="#supportsPipeline">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#ALPipeline"/>
+    <rdfs:comment>This property links the system infrastructure to the Active Learning pipeline it supports.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: handlesDataStorage -->
+<owl:ObjectProperty rdf:about="#handlesDataStorage">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#DataStorage"/>
+    <rdfs:comment>This property indicates the infrastructure responsible for handling data storage within the system.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: handlesModelStorage -->
+<owl:ObjectProperty rdf:about="#handlesModelStorage">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#ModelStorage"/>
+    <rdfs:comment>This property links the system infrastructure to the model storage facilities it provides.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: providesComputation -->
+<owl:ObjectProperty rdf:about="#providesComputation">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#ComputationalInfrastructure"/>
+    <rdfs:comment>This property links the system infrastructure to the computational resources it provides for model training and evaluation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: enablesAnnotationInterface -->
+<owl:ObjectProperty rdf:about="#enablesAnnotationInterface">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#GUIInfrastructure"/>
+    <rdfs:comment>This property links the system infrastructure to the GUI that supports human annotators in the Active Learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: facilitatesCommunication -->
+<owl:ObjectProperty rdf:about="#facilitatesCommunication">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#CommunicationProtocol"/>
+    <rdfs:comment>This property links the system infrastructure to the communication protocols used to handle interactions between different components of the system.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: managesMiddleware -->
+<owl:ObjectProperty rdf:about="#managesMiddleware">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#Middleware"/>
+    <rdfs:comment>This property links the system infrastructure to the middleware components that manage coordination and data flow within the system.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--  Data Properties for SystemInfrastructure and its Subclasses -->
+ 
+<!-- Property: hasStorageCapacity -->
+<owl:DatatypeProperty rdf:about="#hasStorageCapacity">
+    <rdfs:domain rdf:resource="#DataStorage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property defines the storage capacity (in terabytes) available in the data storage infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasComputationPower -->
+<owl:DatatypeProperty rdf:about="#hasComputationPower">
+    <rdfs:domain rdf:resource="#ComputationalInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property defines the computational power (in TFLOPS) available in the computational infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasMaxConcurrentTasks -->
+<owl:DatatypeProperty rdf:about="#hasMaxConcurrentTasks">
+    <rdfs:domain rdf:resource="#TaskSchedulingMiddleware"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment>This property defines the maximum number of tasks that can be concurrently scheduled by the task scheduling middleware.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAnnotationEfficiency -->
+<owl:DatatypeProperty rdf:about="#hasAnnotationEfficiency">
+    <rdfs:domain rdf:resource="#AnnotationManagementMiddleware"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment>This property defines the efficiency of the annotation management system, measured as the average time taken per annotation.</rdfs:comment>
+</owl:DatatypeProperty>
+
+</rdf:RDF>
+

@@ -1,0 +1,2134 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns="http://www.example.org/activelearningontology#">
+		 
+		  <!-- Ontology Header -->
+    <owl:Ontology rdf:about="http://www.example.org/SwarmLearningOntology">
+        <rdfs:comment>Initial version of the formal ontology representing generic concepts and processes in Swarm Learning systems. Developed within HumAIne progect</rdfs:comment>
+    </owl:Ontology>
+
+<owl:Class rdf:about="#SwarmLearning">
+    <rdfs:label xml:lang="en">SwarmLearning</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the top-level class for the entire Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Classes -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+ 
+<owl:Class rdf:about="#SLPipeline">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">SLPipeline</rdfs:label>
+    <rdfs:comment xml:lang="en">Defines the pipeline or workflow that guides the entire Swarm Learning process.</rdfs:comment>
+</owl:Class>
+
+<!-- SLPipeline SubClasses -->
+
+<!-- LocalTraining SubClass -->
+
+<owl:Class rdf:about="#LocalTraining">
+    <rdfs:subClassOf rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">LocalTraining</rdfs:label>
+    <rdfs:comment xml:lang="en">The stage in the Swarm Learning pipeline where models are trained locally on each node's data.</rdfs:comment>
+</owl:Class>
+
+<!-- DataCollection SubClass -->
+
+<owl:Class rdf:about="#DataCollection">
+    <rdfs:subClassOf rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">DataCollection</rdfs:label>
+    <rdfs:comment xml:lang="en">The initial stage in the Swarm Learning pipeline where data is collected at each node.</rdfs:comment>
+</owl:Class>
+
+<!-- ModelAggregation SubClass -->
+
+<owl:Class rdf:about="#ModelAggregation">
+    <rdfs:subClassOf rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">ModelAggregation</rdfs:label>
+    <rdfs:comment xml:lang="en">The stage where local models are aggregated into a global model, combining the knowledge from each node.</rdfs:comment>
+</owl:Class>
+
+<!--  Evaluation SubClass -->
+
+<owl:Class rdf:about="#Evaluation">
+    <rdfs:subClassOf rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">Evaluation</rdfs:label>
+    <rdfs:comment xml:lang="en">The stage where the aggregated model is evaluated using predefined metrics.</rdfs:comment>
+</owl:Class>
+
+<!--  FeedbackLoop SubClass -->
+
+<owl:Class rdf:about="#FeedbackLoop">
+    <rdfs:subClassOf rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">FeedbackLoop</rdfs:label>
+    <rdfs:comment xml:lang="en">A stage in the Swarm Learning pipeline that feeds evaluation results back into the system for continuous improvement.</rdfs:comment>
+</owl:Class>
+
+<!--  DataPreprocessing SubClass (optional) -->
+
+<owl:Class rdf:about="#DataPreprocessing">
+    <rdfs:subClassOf rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">DataPreprocessing</rdfs:label>
+    <rdfs:comment xml:lang="en">An optional stage where raw data is cleaned, normalized, or transformed before local training.</rdfs:comment>
+</owl:Class>
+
+<!--  ModelDeployment SubClass (optional) -->
+
+<owl:Class rdf:about="#ModelDeployment">
+    <rdfs:subClassOf rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">ModelDeployment</rdfs:label>
+    <rdfs:comment xml:lang="en">An optional stage where the final aggregated model is deployed for production use or further tasks.</rdfs:comment>
+</owl:Class>
+
+
+<!-- SLModel class representing different types of models in Swarm Learning -->
+<owl:Class rdf:about="#SLModel">
+<rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">SLModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents different types of models used or produced in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for HybridModel -->
+<owl:Class rdf:about="#HybridModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">HybridModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models that combine multiple techniques, such as transfer learning or ensemble methods.</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for NeuralNetworkModel -->
+<owl:Class rdf:about="#NeuralNetworkModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">NeuralNetworkModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models based on neural network architectures.</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for EnsembleModel -->
+<owl:Class rdf:about="#EnsembleModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">EnsembleModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models created using ensemble learning techniques (e.g., bagging, boosting).</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for TransferLearningModel -->
+<owl:Class rdf:about="#TransferLearningModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">TransferLearningModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models that apply transfer learning techniques, leveraging knowledge from one task to improve another.</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for BayesianModel -->
+<owl:Class rdf:about="#BayesianModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">BayesianModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models based on Bayesian inference, useful for probabilistic reasoning.</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for SupportVectorModel -->
+<owl:Class rdf:about="#SupportVectorModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">SupportVectorModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models based on support vector machines, often used for classification and regression.</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for DecisionTreeModel -->
+<owl:Class rdf:about="#DecisionTreeModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">DecisionTreeModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models that use decision tree algorithms, common in ensemble methods.</rdfs:comment>
+</owl:Class>
+
+<!-- Subclass for ReinforcementLearningModel -->
+<owl:Class rdf:about="#ReinforcementLearningModel">
+    <rdfs:subClassOf rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">ReinforcementLearningModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents models trained using reinforcement learning.</rdfs:comment>
+</owl:Class>
+
+
+<!--  SLNode Class -->
+
+<owl:Class rdf:about="#SLNode">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">SLNode</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents individual nodes that participate in the Swarm Learning process.</rdfs:comment>
+</owl:Class>
+
+
+<owl:Class rdf:about="#SLNode">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#processesData"/>
+            <owl:someValuesFrom rdf:resource="#ProcessedData"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+
+<!-- TrainingNode subclass -->
+<owl:Class rdf:about="#TrainingNode">
+    <rdfs:subClassOf rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">TrainingNode</rdfs:label>
+    <rdfs:comment xml:lang="en">A node responsible for training local models using its dataset.</rdfs:comment>
+</owl:Class>
+
+<!-- AggregatorNode subclass -->
+<owl:Class rdf:about="#AggregatorNode">
+    <rdfs:subClassOf rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">AggregatorNode</rdfs:label>
+    <rdfs:comment xml:lang="en">A node responsible for aggregating models from multiple TrainingNodes.</rdfs:comment>
+</owl:Class>
+
+<!-- ValidationNode subclass (optional, if applicable) -->
+<owl:Class rdf:about="#ValidationNode">
+    <rdfs:subClassOf rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">ValidationNode</rdfs:label>
+    <rdfs:comment xml:lang="en">A node focused on evaluating the aggregated model.</rdfs:comment>
+</owl:Class>
+
+
+<!--  class representing datasets in the Swarm Learning process -->
+<owl:Class rdf:about="#Data">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">Data</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents datasets used at various stages in the Swarm Learning process.</rdfs:comment>
+</owl:Class>
+
+<!-- RawData subclass -->
+<owl:Class rdf:about="#RawData">
+    <rdfs:subClassOf rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">RawData</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents raw, unprocessed data collected at each node in the system.</rdfs:comment>
+</owl:Class>
+
+<!-- ProcessedData subclass -->
+<owl:Class rdf:about="#ProcessedData">
+    <rdfs:subClassOf rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">ProcessedData</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents data that has undergone preprocessing before being used in training.</rdfs:comment>
+</owl:Class>
+
+<!-- TrainingData subclass -->
+<owl:Class rdf:about="#TrainingData">
+    <rdfs:subClassOf rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">TrainingData</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the dataset used for training models at each node.</rdfs:comment>
+</owl:Class>
+
+<!-- ValidationData subclass -->
+<owl:Class rdf:about="#ValidationData">
+    <rdfs:subClassOf rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">ValidationData</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the dataset used for validating models, either at the node level or the aggregation stage.</rdfs:comment>
+</owl:Class>
+
+<!-- AggregatedData subclass (optional) -->
+<owl:Class rdf:about="#AggregatedData">
+    <rdfs:subClassOf rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">AggregatedData</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents data resulting from the aggregation of multiple datasets, if relevant.</rdfs:comment>
+</owl:Class>
+
+<!-- TestingData subclass -->
+<owl:Class rdf:about="#TestingData">
+    <rdfs:subClassOf rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">TestingData</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the dataset used for testing models after training and validation.</rdfs:comment>
+</owl:Class>
+
+<!-- MetadataEnhancedData subclass -->
+<owl:Class rdf:about="#MetadataEnhancedData">
+    <rdfs:subClassOf rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">MetadataEnhancedData</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents datasets enriched with metadata, such as annotations or additional features.</rdfs:comment>
+</owl:Class>
+
+
+<!-- CommunicationProtocol class representing protocols for communication between nodes in Swarm Learning -->
+<!-- CommunicationProtocol as the main protocol class -->
+<owl:Class rdf:about="#CommunicationProtocol">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">CommunicationProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the communication protocols used between nodes in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- MessagePassingProtocol remains as a subclass -->
+<owl:Class rdf:about="#MessagePassingProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">MessagePassingProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents communication protocols based on message passing.</rdfs:comment>
+</owl:Class>
+
+<!-- FederatedLearningProtocol remains as a subclass -->
+<owl:Class rdf:about="#FederatedLearningProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">FederatedLearningProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols specific to federated learning.</rdfs:comment>
+</owl:Class>
+
+<!-- PeerToPeerProtocol remains as a subclass -->
+<owl:Class rdf:about="#PeerToPeerProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">PeerToPeerProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents communication protocols where nodes communicate directly in a decentralized manner.</rdfs:comment>
+</owl:Class>
+
+<!-- New ProvenanceProtocol class under CommunicationProtocol -->
+<owl:Class rdf:about="#ProvenanceProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">ProvenanceProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols for ensuring data provenance and integrity.</rdfs:comment>
+</owl:Class>
+
+<!-- ProvenanceTrackingProtocol now as a subclass of ProvenanceProtocol -->
+<owl:Class rdf:about="#ProvenanceTrackingProtocol">
+    <rdfs:subClassOf rdf:resource="#ProvenanceProtocol"/>
+    <rdfs:label xml:lang="en">ProvenanceTrackingProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols designed to track the provenance of data.</rdfs:comment>
+</owl:Class>
+
+<!-- BlockchainProtocol now as a subclass of ProvenanceProtocol -->
+<owl:Class rdf:about="#BlockchainProtocol">
+    <rdfs:subClassOf rdf:resource="#ProvenanceProtocol"/>
+    <rdfs:label xml:lang="en">BlockchainProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents blockchain-based protocols for tracking provenance.</rdfs:comment>
+</owl:Class>
+
+<!-- SecureCommunicationProtocol remains a subclass of CommunicationProtocol -->
+<owl:Class rdf:about="#SecureCommunicationProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">SecureCommunicationProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols that ensure secure communication between nodes.</rdfs:comment>
+</owl:Class>
+
+<!-- TLSProtocol remains a subclass of SecureCommunicationProtocol -->
+<owl:Class rdf:about="#TLSProtocol">
+    <rdfs:subClassOf rdf:resource="#SecureCommunicationProtocol"/>
+    <rdfs:label xml:lang="en">TLSProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols relying on TLS for encryption and security.</rdfs:comment>
+</owl:Class>
+
+<!-- EndToEndEncryptionProtocol remains a subclass of SecureCommunicationProtocol -->
+<owl:Class rdf:about="#EndToEndEncryptionProtocol">
+    <rdfs:subClassOf rdf:resource="#SecureCommunicationProtocol"/>
+    <rdfs:label xml:lang="en">EndToEndEncryptionProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents end-to-end encryption protocols for secure communication.</rdfs:comment>
+</owl:Class>
+
+<!-- PointToPointProtocol subclass of CommunicationProtocol -->
+<owl:Class rdf:about="#PointToPointProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">PointToPointProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols for direct communication between specific pairs of nodes in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- BroadcastProtocol subclass of CommunicationProtocol -->
+<owl:Class rdf:about="#BroadcastProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">BroadcastProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols that broadcast messages or updates to all nodes in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- SynchronizationProtocol subclass of CommunicationProtocol -->
+<owl:Class rdf:about="#SynchronizationProtocol">
+    <rdfs:subClassOf rdf:resource="#CommunicationProtocol"/>
+    <rdfs:label xml:lang="en">SynchronizationProtocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents protocols that ensure data or model synchronization between nodes, particularly in asynchronous learning environments.</rdfs:comment>
+</owl:Class>
+
+<!-- EvaluationMetrics class representing the metrics used to evaluate models in the Swarm Learning process -->
+
+<owl:Class rdf:about="#EvaluationMetrics">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">EvaluationMetrics</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the metrics used to evaluate the performance of models in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- AccuracyMetric subclass -->
+<owl:Class rdf:about="#AccuracyMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">AccuracyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents evaluation metrics based on the accuracy of the model.</rdfs:comment>
+</owl:Class>
+
+<!-- LatencyMetric subclass -->
+<owl:Class rdf:about="#LatencyMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">LatencyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents time-based performance metrics, such as latency in model training or inference.</rdfs:comment>
+</owl:Class>
+
+<!-- ResourceUsageMetric subclass -->
+<owl:Class rdf:about="#ResourceUsageMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">ResourceUsageMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents metrics related to the usage of resources, such as CPU, memory, or network bandwidth.</rdfs:comment>
+</owl:Class>
+
+<!-- F1ScoreMetric subclass (optional) -->
+<owl:Class rdf:about="#F1ScoreMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">F1ScoreMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the F1 score, combining precision and recall in classification tasks.</rdfs:comment>
+</owl:Class>
+
+<!-- PrecisionMetric subclass (optional) -->
+<owl:Class rdf:about="#PrecisionMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">PrecisionMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the precision of a model, indicating how many predicted positives are correct.</rdfs:comment>
+</owl:Class>
+
+<!-- RecallMetric subclass (optional) -->
+<owl:Class rdf:about="#RecallMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">RecallMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the recall of a model, indicating how many actual positives are correctly predicted.</rdfs:comment>
+</owl:Class>
+
+<!-- AUCMetric subclass -->
+<owl:Class rdf:about="#AUCMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">AUCMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the area under the ROC curve (AUC), a performance metric for binary classification.</rdfs:comment>
+</owl:Class>
+
+<!-- ThroughputMetric subclass -->
+<owl:Class rdf:about="#ThroughputMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">ThroughputMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the throughput of data processing or model inference, useful for high-performance or real-time systems.</rdfs:comment>
+</owl:Class>
+
+<!-- ErrorRateMetric subclass -->
+<owl:Class rdf:about="#ErrorRateMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">ErrorRateMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the error rate of a model, often used to track the rate of incorrect predictions.</rdfs:comment>
+</owl:Class>
+
+<!-- DiversityMetric subclass for Ensemble or Hybrid models -->
+<owl:Class rdf:about="#DiversityMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">DiversityMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the diversity among models in an ensemble or hybrid model, indicating how independently they contribute to the final outcome.</rdfs:comment>
+</owl:Class>
+
+<!-- ConvergenceMetric subclass for Neural Networks -->
+<owl:Class rdf:about="#ConvergenceMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">ConvergenceMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the convergence metric for neural networks, measuring how fast the model stabilizes during training.</rdfs:comment>
+</owl:Class>
+
+<!-- RewardMetric subclass for Reinforcement Learning -->
+<owl:Class rdf:about="#RewardMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">RewardMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the cumulative rewards obtained during the training of a reinforcement learning model.</rdfs:comment>
+</owl:Class>
+
+<!-- LearningEfficiencyMetric subclass for Reinforcement Learning -->
+<owl:Class rdf:about="#LearningEfficiencyMetric">
+    <rdfs:subClassOf rdf:resource="#EvaluationMetrics"/>
+    <rdfs:label xml:lang="en">LearningEfficiencyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the efficiency of learning in a reinforcement learning model, indicating how effectively the agent balances exploration and exploitation.</rdfs:comment>
+</owl:Class>
+
+
+
+<!-- SystemInfrastructure class representing physical and virtual resources supporting Swarm Learning -->
+<owl:Class rdf:about="#SystemInfrastructure">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">SystemInfrastructure</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the physical and virtual resources supporting the Swarm Learning system, such as servers, cloud instances, and networks.</rdfs:comment>
+</owl:Class>
+
+<!-- PhysicalInfrastructure subclass -->
+<owl:Class rdf:about="#PhysicalInfrastructure">
+    <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+    <rdfs:label xml:lang="en">PhysicalInfrastructure</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents physical resources, such as servers, networking hardware, and data centers, that support Swarm Learning.</rdfs:comment>
+</owl:Class>
+
+<!-- VirtualInfrastructure subclass -->
+<owl:Class rdf:about="#VirtualInfrastructure">
+    <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+    <rdfs:label xml:lang="en">VirtualInfrastructure</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents virtualized resources, such as cloud instances or containers, that support Swarm Learning.</rdfs:comment>
+</owl:Class>
+
+<!-- NetworkInfrastructure subclass -->
+<owl:Class rdf:about="#NetworkInfrastructure">
+    <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+    <rdfs:label xml:lang="en">NetworkInfrastructure</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents networking components like switches, routers, and links that enable communication between Swarm Learning nodes.</rdfs:comment>
+</owl:Class>
+
+<!-- StorageInfrastructure subclass -->
+<owl:Class rdf:about="#StorageInfrastructure">
+    <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+    <rdfs:label xml:lang="en">StorageInfrastructure</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents storage systems for datasets, models, or logs in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- CloudInfrastructure subclass (optional) -->
+<owl:Class rdf:about="#CloudInfrastructure">
+    <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+    <rdfs:label xml:lang="en">CloudInfrastructure</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents cloud-based resources, such as cloud computing services or storage, used in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- EdgeInfrastructure subclass -->
+<owl:Class rdf:about="#EdgeInfrastructure">
+    <rdfs:subClassOf rdf:resource="#SystemInfrastructure"/>
+    <rdfs:label xml:lang="en">EdgeInfrastructure</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents edge computing resources, such as IoT devices or local servers, that support Swarm Learning close to data sources.</rdfs:comment>
+</owl:Class>
+
+
+
+<!-- Property: latency -->
+
+<!-- HumanParticipant class representing humans involved in the Swarm Learning system -->
+<owl:Class rdf:about="#HumanParticipant">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">HumanParticipant</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents humans involved in various stages of the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!-- HumanAnnotator subclass -->
+<owl:Class rdf:about="#HumanAnnotator">
+    <rdfs:subClassOf rdf:resource="#HumanParticipant"/>
+    <rdfs:label xml:lang="en">HumanAnnotator</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents humans involved in annotating or labeling data in the Swarm Learning process.</rdfs:comment>
+</owl:Class>
+
+<!-- HumanMonitor subclass -->
+<owl:Class rdf:about="#HumanMonitor">
+    <rdfs:subClassOf rdf:resource="#HumanParticipant"/>
+    <rdfs:label xml:lang="en">HumanMonitor</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents humans monitoring the system's operation and model performance.</rdfs:comment>
+</owl:Class>
+
+<!-- HumanOperator subclass (optional) -->
+<owl:Class rdf:about="#HumanOperator">
+    <rdfs:subClassOf rdf:resource="#HumanParticipant"/>
+    <rdfs:label xml:lang="en">HumanOperator</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents humans managing or configuring system components, such as pipelines or infrastructure.</rdfs:comment>
+</owl:Class>
+
+<!-- HumanEvaluator subclass (optional) -->
+<owl:Class rdf:about="#HumanEvaluator">
+    <rdfs:subClassOf rdf:resource="#HumanParticipant"/>
+    <rdfs:label xml:lang="en">HumanEvaluator</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents humans responsible for evaluating models or system performance based on their judgment.</rdfs:comment>
+</owl:Class>
+
+<!-- HumanDecisionMaker subclass -->
+<owl:Class rdf:about="#HumanDecisionMaker">
+    <rdfs:subClassOf rdf:resource="#HumanParticipant"/>
+    <rdfs:label xml:lang="en">HumanDecisionMaker</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents humans responsible for making decisions based on model outputs or system processes in the Swarm Learning system.</rdfs:comment>
+</owl:Class>
+
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Disjoint axioms -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+
+<!-- Disjoint Classes for Top-Level Classes -->
+
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SLModel"/>
+        <rdf:Description rdf:about="#HumanParticipant"/>
+<!-- <rdf:Description rdf:about="#CommunicationProtocol"/> -->
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjoint Classes for Data Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#RawData"/>
+        <rdf:Description rdf:about="#ProcessedData"/>
+        <rdf:Description rdf:about="#TrainingData"/>
+        <rdf:Description rdf:about="#ValidationData"/>
+        <rdf:Description rdf:about="#TestingData"/>
+        <rdf:Description rdf:about="#MetadataEnhancedData"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjoint Classes for HumanParticipant Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#HumanAnnotator"/>
+        <rdf:Description rdf:about="#HumanMonitor"/>
+        <rdf:Description rdf:about="#HumanOperator"/>
+        <rdf:Description rdf:about="#HumanEvaluator"/>
+        <rdf:Description rdf:about="#HumanDecisionMaker"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjoint Classes for SystemInfrastructure Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#PhysicalInfrastructure"/>
+        <rdf:Description rdf:about="#VirtualInfrastructure"/>
+        <rdf:Description rdf:about="#NetworkInfrastructure"/>
+        <rdf:Description rdf:about="#StorageInfrastructure"/>
+        <rdf:Description rdf:about="#CloudInfrastructure"/>
+        <rdf:Description rdf:about="#EdgeInfrastructure"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!-- Disjoint Classes for CommunicationProtocol Subclasses -->
+<owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+        <rdf:Description rdf:about="#MessagePassingProtocol"/>
+        <rdf:Description rdf:about="#FederatedLearningProtocol"/>
+        <rdf:Description rdf:about="#BroadcastProtocol"/>
+        <rdf:Description rdf:about="#PointToPointProtocol"/>
+        <rdf:Description rdf:about="#PeerToPeerProtocol"/>
+        <rdf:Description rdf:about="#SecureCommunicationProtocol"/>
+    </owl:members>
+</owl:AllDisjointClasses>
+
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Object Properties -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+
+<!-- Object Properties for SwarmLearning -->
+<owl:ObjectProperty rdf:about="#hasPipeline">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">hasPipeline</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SwarmLearning to the SLPipeline that defines the learning workflow.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- hasPipeline Inverse Property -->
+
+<owl:ObjectProperty rdf:about="#pipelineOf">
+    <rdfs:domain rdf:resource="#SLPipeline"/>
+    <rdfs:range rdf:resource="#SwarmLearning"/>
+    <owl:inverseOf rdf:resource="#hasPipeline"/>
+    <rdfs:label xml:lang="en">pipelineOf</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLPipeline to the SwarmLearning system it is part of.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#includesModel">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">includesModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SwarmLearning to models being used or aggregated in the process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- includesModel Inverse Property -->
+<owl:ObjectProperty rdf:about="#modelOf">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="#SwarmLearning"/>
+    <owl:inverseOf rdf:resource="#includesModel"/>
+    <rdfs:label xml:lang="en">modelOf</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLModel to the SwarmLearning system that includes it.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasNode">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">hasNode</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SwarmLearning to its participating SLNodes.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- hasNode Inverse Property -->
+<owl:ObjectProperty rdf:about="#nodeOf">
+    <rdfs:domain rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#SwarmLearning"/>
+    <owl:inverseOf rdf:resource="#hasNode"/>
+    <rdfs:label xml:lang="en">nodeOf</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLNode to the SwarmLearning system or SLPipeline it belongs to.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- usesData Property -->
+
+<owl:ObjectProperty rdf:about="#usesData">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">usesData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SwarmLearning to the datasets used across its nodes.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- usesData Inverse Property -->
+
+<owl:ObjectProperty rdf:about="#dataUsedBy">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="#SwarmLearning"/>
+    <owl:inverseOf rdf:resource="#usesData"/>
+    <rdfs:label xml:lang="en">dataUsedBy</rdfs:label>
+    <rdfs:comment xml:lang="en">Links Data to the SwarmLearning system or stages that use it.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#monitoredBy">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="#HumanParticipant"/>
+    <rdfs:label xml:lang="en">monitoredBy</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SwarmLearning to human participants monitoring or interacting with the system.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Object Properties for SLPipeline and its Subclasses -->
+
+<!-- Links the Swarm Learning pipeline to its various stages (e.g., DataCollection, LocalTraining, etc.) -->
+<owl:ObjectProperty rdf:about="#hasStage">
+    <rdfs:domain rdf:resource="#SLPipeline"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">hasStage</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the Swarm Learning pipeline to its various stages (DataCollection, LocalTraining, etc.).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links stages like DataCollection or LocalTraining to the datasets used during data collection or training -->
+<owl:ObjectProperty rdf:about="#usesData">
+    <rdfs:domain rdf:resource="#DataCollection"/>
+    <rdfs:domain rdf:resource="#LocalTraining"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">usesData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links stages of the Swarm Learning pipeline to the datasets used during data collection or training.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Definition of hasFeedbackLoop as an Object Property -->
+<owl:ObjectProperty rdf:about="#hasFeedbackLoop">
+    <rdfs:domain rdf:resource="#SLPipeline"/>
+    <rdfs:range rdf:resource="#FeedbackLoop"/>
+    <rdfs:label xml:lang="en">hasFeedbackLoop</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the SLPipeline to its associated FeedbackLoop instances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links the  LocalTraining or TrainingNode to the models being trained -->
+
+<owl:ObjectProperty rdf:about="#trainsModel">
+    <rdfs:domain>
+        <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#LocalTraining"/>
+                <rdf:Description rdf:about="#TrainingNode"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">trainsModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Links LocalTraining or TrainingNode to the models being trained.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- trainsModel Inverse Property -->
+<owl:ObjectProperty rdf:about="#trainedBy">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range>
+        <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#LocalTraining"/>
+                <rdf:Description rdf:about="#TrainingNode"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#trainsModel"/>
+    <rdfs:label xml:lang="en">trainedBy</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLModel to the LocalTraining stage or TrainingNode that trained it.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links the ModelAggregation stage and AggregatorNode to the models being aggregated into a global model -->
+<owl:ObjectProperty rdf:about="#aggregatesModel">
+    <rdfs:domain>
+        <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#ModelAggregation"/>
+                <rdf:Description rdf:about="#AggregatorNode"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">aggregatesModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Links ModelAggregation or AggregatorNode to the models being aggregated.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- aggregatesModel Inverse Property -->
+<owl:ObjectProperty rdf:about="#aggregatedBy">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range>
+        <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#ModelAggregation"/>
+                <rdf:Description rdf:about="#AggregatorNode"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#aggregatesModel"/>
+    <rdfs:label xml:lang="en">aggregatedBy</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLModel to the ModelAggregation stage or AggregatorNode that aggregated it.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links Evaluation, ValidationNode, HumanEvaluator, and EvaluationMetrics to the SLModel they evaluate.-->
+
+<owl:ObjectProperty rdf:about="#evaluatesModel">
+    <rdfs:domain>
+        <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#Evaluation"/>
+                <rdf:Description rdf:about="#ValidationNode"/>
+                <rdf:Description rdf:about="#HumanEvaluator"/>
+                <rdf:Description rdf:about="#EvaluationMetrics"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">evaluatesModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Links Evaluation, ValidationNode, HumanEvaluator, and EvaluationMetrics to the SLModel they evaluate.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links the FeedbackLoop stage to the models or stages that receive feedback for improvement -->
+<owl:ObjectProperty rdf:about="#feedbackTo">
+    <rdfs:domain rdf:resource="#FeedbackLoop"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">feedbackTo</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the FeedbackLoop stage to the models or stages that receive feedback for improvement.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links each pipeline stage to the nodes performing the operation (e.g., data collection, training) -->
+<owl:ObjectProperty rdf:about="#hasNode">
+    <rdfs:domain rdf:resource="#SLPipeline"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">hasNode</rdfs:label>
+    <rdfs:comment xml:lang="en">Links each pipeline stage to the nodes performing the operation (e.g., data collection, training).</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#collectedAt">
+    <rdfs:domain rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#RawData"/>
+    <rdfs:label xml:lang="en">collectedAt</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLNode to the RawData it collects.</rdfs:comment>
+</owl:ObjectProperty> 
+
+<!-- Links TrainingData to SLModel, indicating which models are trained on this data -->
+<owl:ObjectProperty rdf:about="#usedForTraining">
+    <rdfs:domain rdf:resource="#TrainingData"/>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">usedForTraining</rdfs:label>
+    <rdfs:comment xml:lang="en">Links TrainingData to the SLModel that uses it for training.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Inverse for usedForTraining-->
+<owl:ObjectProperty rdf:about="#trainedOn">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="#TrainingData"/>
+    <owl:inverseOf rdf:resource="#usedForTraining"/>
+    <rdfs:label xml:lang="en">trainedOn</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLModel to the TrainingData it was trained on.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links ValidationData to SLModel, indicating which models are validated on this data -->
+<owl:ObjectProperty rdf:about="#usedForValidation">
+    <rdfs:domain rdf:resource="#ValidationData"/>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">usedForValidation</rdfs:label>
+    <rdfs:comment xml:lang="en">Links ValidationData to the SLModel that uses it for validation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Inverse of usedForValidation -->
+
+<owl:ObjectProperty rdf:about="#validatedOn">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="#ValidationData"/>
+    <owl:inverseOf rdf:resource="#usedForValidation"/>
+    <rdfs:label xml:lang="en">validatedOn</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLModel to the ValidationData it was validated on.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links ProcessedData to the RawData from which it was generated -->
+<owl:ObjectProperty rdf:about="#processedFrom">
+    <rdfs:domain rdf:resource="#ProcessedData"/>
+    <rdfs:range rdf:resource="#RawData"/>
+    <rdfs:label xml:lang="en">processedFrom</rdfs:label>
+    <rdfs:comment xml:lang="en">Links ProcessedData to the RawData it was generated from.</rdfs:comment>
+</owl:ObjectProperty>
+
+ <!-- Inverse for processedFrom -->
+
+<owl:ObjectProperty rdf:about="#producedProcessedData">
+    <rdfs:domain rdf:resource="#RawData"/>
+    <rdfs:range rdf:resource="#ProcessedData"/>
+    <owl:inverseOf rdf:resource="#processedFrom"/>
+    <rdfs:label xml:lang="en">producedProcessedData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links RawData to the ProcessedData it produced.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: processesData link SLNode with ProcessedData, indicating that an SLNode processes some data.-->
+<owl:ObjectProperty rdf:about="#processesData">
+    <rdfs:domain rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#ProcessedData"/>
+    <rdfs:label xml:lang="en">processesData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLNode to the ProcessedData it processes.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#processesRawData">
+    <rdfs:domain rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#RawData"/>
+    <rdfs:label xml:lang="en">processesRawData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLNode to the RawData it processes.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links TestingData to SLModel, indicating which models are tested on this data -->
+<owl:ObjectProperty rdf:about="#usedForTesting">
+    <rdfs:domain rdf:resource="#TestingData"/>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">usedForTesting</rdfs:label>
+    <rdfs:comment xml:lang="en">Links TestingData to the SLModel that uses it for testing.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Inverse of usedForTesting -->
+
+<owl:ObjectProperty rdf:about="#testedOn">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="#TestingData"/>
+    <owl:inverseOf rdf:resource="#usedForTesting"/>
+    <rdfs:label xml:lang="en">testedOn</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLModel to the TestingData it was tested on.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links MetadataEnhancedData to the base Data it enhances with additional features or metadata -->
+<owl:ObjectProperty rdf:about="#metadataOf">
+    <rdfs:domain rdf:resource="#MetadataEnhancedData"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">metadataOf</rdfs:label>
+    <rdfs:comment xml:lang="en">Links MetadataEnhancedData to the base Data it enhances.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--  Inverse for metadataOf -->
+
+<owl:ObjectProperty rdf:about="#enhancesData">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="#MetadataEnhancedData"/>
+    <owl:inverseOf rdf:resource="#metadataOf"/>
+    <rdfs:label xml:lang="en">enhancesData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links Data to the MetadataEnhancedData that enhances it.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links Data to labels associated with it (for labeled data in supervised learning) -->
+<owl:ObjectProperty rdf:about="#hasLabel">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasLabel</rdfs:label>
+    <rdfs:comment xml:lang="en">Links Data to labels associated with it (for labeled data used in supervised learning).</rdfs:comment>
+</owl:ObjectProperty>
+
+
+<!-- Links EvaluationMetrics to the SLPipeline stage where the metric is measured -->
+<owl:ObjectProperty rdf:about="#measuredIn">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">measuredIn</rdfs:label>
+    <rdfs:comment xml:lang="en">Links EvaluationMetrics to the SLPipeline stage where the metric is measured.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links EvaluationMetrics to FeedbackLoop, showing how evaluation feeds into system improvement -->
+<owl:ObjectProperty rdf:about="#feedbackOf">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#FeedbackLoop"/>
+    <rdfs:label xml:lang="en">feedbackOf</rdfs:label>
+    <rdfs:comment xml:lang="en">Links EvaluationMetrics to the FeedbackLoop, indicating how evaluation informs improvements.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links EvaluationMetrics to the SLNode where the metric was calculated -->
+<owl:ObjectProperty rdf:about="#calculatedForNode">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">calculatedForNode</rdfs:label>
+    <rdfs:comment xml:lang="en">Links EvaluationMetrics to the SLNode where the metric was calculated, allowing for node-specific performance tracking.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links CommunicationProtocol to the SLNode that uses the protocol -->
+<owl:ObjectProperty rdf:about="#usedByNode">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">usedByNode</rdfs:label>
+    <rdfs:comment xml:lang="en">Links CommunicationProtocol to the SLNode that uses the protocol for communication.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links CommunicationProtocol to ModelAggregation to specify how aggregation is conducted -->
+<owl:ObjectProperty rdf:about="#usedInAggregation">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resource="#ModelAggregation"/>
+    <rdfs:label xml:lang="en">usedInAggregation</rdfs:label>
+    <rdfs:comment xml:lang="en">Links CommunicationProtocol to the ModelAggregation process, specifying how nodes exchange models during aggregation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links one SLNode to another node with which it communicates, via a protocol -->
+<owl:ObjectProperty rdf:about="#communicatesWith">
+    <rdfs:domain rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">communicatesWith</rdfs:label>
+    <rdfs:comment xml:lang="en">Links one SLNode to another node with which it communicates via a communication protocol.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links one SLNode to SLModel it processes-->
+
+<owl:ObjectProperty rdf:about="#processesModel">
+    <rdfs:domain rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:label xml:lang="en">processesModel</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLNode to the SLModel it processes.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links an SLNode to the SystemInfrastructure it operates on -->
+<owl:ObjectProperty rdf:about="#runsOn">
+    <rdfs:domain rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:label xml:lang="en">runsOn</rdfs:label>
+    <rdfs:comment xml:lang="en">Links an SLNode to the SystemInfrastructure it runs on (e.g., a physical server, cloud instance, or container).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Inverse for runsOn -->
+<owl:ObjectProperty rdf:about="#hostsNode">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <owl:inverseOf rdf:resource="#runsOn"/>
+    <rdfs:label xml:lang="en">hostsNode</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SystemInfrastructure to the SLNodes that run on it.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links SystemInfrastructure to the Data it hosts or stores -->
+<owl:ObjectProperty rdf:about="#hostsData">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">hostsData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SystemInfrastructure to the Data it hosts or stores, such as datasets or models.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Inverse for hostsData -->
+
+<owl:ObjectProperty rdf:about="#storedIn">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <owl:inverseOf rdf:resource="#hostsData"/>
+    <rdfs:label xml:lang="en">storedIn</rdfs:label>
+    <rdfs:comment xml:lang="en">Links Data to the SystemInfrastructure it is stored in.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links NetworkInfrastructure to the SLNode or SLPipeline stages it supports -->
+<owl:ObjectProperty rdf:about="#providesNetworkFor">
+    <rdfs:domain rdf:resource="#NetworkInfrastructure"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">providesNetworkFor</rdfs:label>
+    <rdfs:comment xml:lang="en">Links NetworkInfrastructure to the SLNodes or SLPipeline stages it supports for communication.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--  Inverse for providesNetworkFor -->
+
+<owl:ObjectProperty rdf:about="#networkedBy">
+    <rdfs:domain>
+        <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#SLNode"/>
+                <rdf:Description rdf:about="#SLPipeline"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#NetworkInfrastructure"/>
+    <owl:inverseOf rdf:resource="#providesNetworkFor"/>
+    <rdfs:label xml:lang="en">networkedBy</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SLNodes or SLPipeline stages to the NetworkInfrastructure that supports them.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links SystemInfrastructure resources to the SLNode or process they are dynamically allocated to -->
+<owl:ObjectProperty rdf:about="#allocatedTo">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">allocatedTo</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SystemInfrastructure resources to the SLNode or process they are dynamically allocated to.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links HumanParticipant to system components they interact with -->
+<owl:ObjectProperty rdf:about="#interactsWith">
+    <rdfs:domain rdf:resource="#HumanParticipant"/>
+    <rdfs:range rdf:resource="#SwarmLearning"/>
+    <rdfs:label xml:lang="en">interactsWith</rdfs:label>
+    <rdfs:comment xml:lang="en">Links HumanParticipant to system components they interact with, such as SLNodes, Data, or SLModels.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links HumanAnnotator to the Data they annotate or label -->
+<owl:ObjectProperty rdf:about="#annotatesData">
+    <rdfs:domain rdf:resource="#HumanAnnotator"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">annotatesData</rdfs:label>
+    <rdfs:comment xml:lang="en">Links HumanAnnotator to the Data they annotate or label in the system.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links HumanMonitor to the system components they monitor (e.g., infrastructure or pipeline) -->
+<owl:ObjectProperty rdf:about="#monitorsSystem">
+    <rdfs:domain rdf:resource="#HumanMonitor"/>
+    <rdfs:range rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">monitorsSystem</rdfs:label>
+    <rdfs:comment xml:lang="en">Links HumanMonitor to the SystemInfrastructure or SLPipeline components they monitor.</rdfs:comment>
+</owl:ObjectProperty>
+
+
+<!-- Links HumanDecisionMaker to models or system processes they make decisions for -->
+<owl:ObjectProperty rdf:about="#makesDecisionFor">
+    <rdfs:domain rdf:resource="#HumanDecisionMaker"/>
+    <rdfs:range rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">makesDecisionFor</rdfs:label>
+    <rdfs:comment xml:lang="en">Links HumanDecisionMaker to the SLModel or SLPipeline they are making decisions for.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Links SLMOdel subclasses to their evaluation metrics -->
+
+<!-- Object Property linking HybridModel to DiversityMetric -->
+<owl:ObjectProperty rdf:about="#hasDiversityMetric">
+    <rdfs:domain rdf:resource="#HybridModel"/>
+    <rdfs:range rdf:resource="#DiversityMetric"/>
+    <rdfs:label xml:lang="en">hasDiversityMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a HybridModel to its DiversityMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Object Property linking EnsembleModel to DiversityMetric -->
+<owl:ObjectProperty rdf:about="#hasDiversityMetric">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="#DiversityMetric"/>
+    <rdfs:label xml:lang="en">hasDiversityMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links an EnsembleModel to its DiversityMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Object Property linking NeuralNetworkModel to ConvergenceMetric -->
+<owl:ObjectProperty rdf:about="#hasConvergenceMetric">
+    <rdfs:domain rdf:resource="#NeuralNetworkModel"/>
+    <rdfs:range rdf:resource="#ConvergenceMetric"/>
+    <rdfs:label xml:lang="en">hasConvergenceMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a NeuralNetworkModel to its ConvergenceMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Object Property linking ReinforcementLearningModel to RewardMetric -->
+<owl:ObjectProperty rdf:about="#hasRewardMetric">
+    <rdfs:domain rdf:resource="#ReinforcementLearningModel"/>
+    <rdfs:range rdf:resource="#RewardMetric"/>
+    <rdfs:label xml:lang="en">hasRewardMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a ReinforcementLearningModel to its RewardMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Object Property linking ReinforcementLearningModel to LearningEfficiencyMetric -->
+<owl:ObjectProperty rdf:about="#hasLearningEfficiencyMetric">
+    <rdfs:domain rdf:resource="#ReinforcementLearningModel"/>
+    <rdfs:range rdf:resource="#LearningEfficiencyMetric"/>
+    <rdfs:label xml:lang="en">hasLearningEfficiencyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a ReinforcementLearningModel to its LearningEfficiencyMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking CommunicationProtocol to SLNode -->
+<owl:ObjectProperty rdf:about="#usedByNode">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">usedByNode</rdfs:label>
+    <rdfs:comment xml:lang="en">Links CommunicationProtocol to the SLNode that uses it for communication.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking CommunicationProtocol to ModelAggregation -->
+<owl:ObjectProperty rdf:about="#usedInAggregation">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resensuresDataProvenanceource="#ModelAggregation"/>
+    <rdfs:label xml:lang="en">usedInAggregation</rdfs:label>
+    <rdfs:comment xml:lang="en">Links CommunicationProtocol to the ModelAggregation process, specifying how nodes exchange models during aggregation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking ProvenanceProtocol (which includes ProvenanceTrackingProtocol and BlockchainProtocol) to Data -->
+<!-- Property linking ProvenanceProtocol to Data -->
+<owl:ObjectProperty rdf:about="#ensuresDataProvenance">
+    <rdfs:domain rdf:resource="#ProvenanceProtocol"/>
+    <rdfs:range rdf:resource="#Data"/>
+    <rdfs:label xml:lang="en">ensuresDataProvenance</rdfs:label>
+    <rdfs:comment xml:lang="en">Links ProvenanceProtocol to the Data it tracks for provenance.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking SecureCommunicationProtocol, TLSProtocol, and EndToEndEncryptionProtocol to SLNode or SLPipeline -->
+<owl:ObjectProperty rdf:about="#providesSecureCommunication">
+    <rdfs:domain rdf:resource="#SecureCommunicationProtocol"/>
+    <rdfs:domain rdf:resource="#TLSProtocol"/>
+    <rdfs:domain rdf:resource="#EndToEndEncryptionProtocol"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:range rdf:resource="#SLPipeline"/>
+    <rdfs:label xml:lang="en">providesSecureCommunication</rdfs:label>
+    <rdfs:comment xml:lang="en">Links secure communication protocols to the SLNode or SLPipeline stages they secure.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking SynchronizationProtocol to SLNodes -->
+<owl:ObjectProperty rdf:about="#synchronizesNodes">
+    <rdfs:domain rdf:resource="#SynchronizationProtocol"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">synchronizesNodes</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SynchronizationProtocol to the SLNodes it synchronizes, ensuring that they are aligned in the learning process.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: allocatedResources (amount of resources allocated to a specific SLNode) -->
+<owl:ObjectProperty rdf:about="#allocatedResources">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">allocatedResources</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the resources allocated to a specific SLNode.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property: reallocatedTo (links SystemInfrastructure to a new SLNode if resources are reallocated) -->
+<owl:ObjectProperty rdf:about="#reallocatedTo">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="#SLNode"/>
+    <rdfs:label xml:lang="en">reallocatedTo</rdfs:label>
+    <rdfs:comment xml:lang="en">Links SystemInfrastructure to a new SLNode if its resources are reallocated dynamically.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Data Properties -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!-- Data Properties for SwarmLearning -->
+<owl:DatatypeProperty rdf:about="#SystemStatus">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">SystemStatus</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the current state of the Swarm Learning system (active, inactive, etc.).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#SystemVersion">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">SystemVersion</rdfs:label>
+    <rdfs:comment xml:lang="en">Tracks the version of the Swarm Learning system.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#StartDate">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">StartDate</rdfs:label>
+    <rdfs:comment xml:lang="en">Records the date the Swarm Learning system started its operation.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#EndDate">
+    <rdfs:domain rdf:resource="#SwarmLearning"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">EndDate</rdfs:label>
+    <rdfs:comment xml:lang="en">Records when the Swarm Learning process ended or is scheduled to end.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Data Properties for SLPipeline stages (if applicable) -->
+
+<!-- Tracks the time when a specific stage in the Swarm Learning pipeline starts -->
+<owl:DatatypeProperty rdf:about="#startTime">
+    <rdfs:domain rdf:resource="#SLPipeline"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">startTime</rdfs:label>
+    <rdfs:comment xml:lang="en">The time when a specific stage in the Swarm Learning pipeline starts.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Tracks the time when a specific stage in the Swarm Learning pipeline ends -->
+<owl:DatatypeProperty rdf:about="#endTime">
+    <rdfs:domain rdf:resource="#SLPipeline"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">endTime</rdfs:label>
+    <rdfs:comment xml:lang="en">The time when a specific stage in the Swarm Learning pipeline ends.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- General Properties for SLModel -->
+
+<!--  modelAccuracy tracks the accuracy of the model represented as a floating-point value between 0 and 1 -->
+<owl:DatatypeProperty rdf:about="#modelAccuracy">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">modelAccuracy</rdfs:label>
+    <rdfs:comment xml:lang="en">Tracks the accuracy of the model, typically represented as a floating-point value between 0 and 1.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- modelTrainingTime Indicates the amount of time spent training the model.-->
+<owl:DatatypeProperty rdf:about="#modelTrainingTime">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    <rdfs:label xml:lang="en">modelTrainingTime</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates the time spent training the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- hasPretrainedState applied to any of the model types to indicate whether a model has been pretrained. -->
+
+<owl:DatatypeProperty rdf:about="#hasPretrainedState">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">hasPretrainedState</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates whether the model is pretrained (true/false).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- assign roles (like LocalModel or AggregatedModel) to each model instance -->
+
+<owl:DatatypeProperty rdf:about="#hasModelRole">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasModelRole</rdfs:label>
+    <rdfs:comment xml:lang="en">Assigns a role to the model in the Swarm Learning pipeline. Possible values:"LocalModel", "AggregatedModel", "PretrainedModel", "ValidationModel", "TestModel".</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Indicates if a model is trained using federated learning. -->
+
+<owl:DatatypeProperty rdf:about="#hasFederatedTraining">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">hasFederatedTraining</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates whether the model was trained using federated learning (true/false).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Properties for HybridModel -->
+<!--  usesTechniques specifies the techniques used in a HybridModel, such as transfer learning or ensemble learning. -->
+<owl:DatatypeProperty rdf:about="#usesTechniques">
+    <rdfs:domain rdf:resource="#HybridModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">usesTechniques</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the techniques used in a HybridModel, such as transfer learning or ensemble learning.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Properties for TransferLearningModel -->
+<!--pretrainedTask for TransferLearningModel Specifies the task for which the TransferLearningModel was pretrained before being used in the Swarm Learning pipeline.-->
+<owl:DatatypeProperty rdf:about="#pretrainedTask">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">pretrainedTask</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the task for which the model was pretrained, prior to being used in Swarm Learning.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!--Properties for NeuralNetworkModel -->
+<!-- numberOfLayers Indicates the number of layers in a NeuralNetworkModel -->
+<owl:DatatypeProperty rdf:about="#numberOfLayers">
+    <rdfs:domain rdf:resource="#NeuralNetworkModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">numberOfLayers</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates the number of layers in a neural network model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Hyperparameters as Properties of SLModel -->
+
+<!-- Property: hasLearningRate -->
+<owl:DatatypeProperty rdf:about="#hasLearningRate">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasLearningRate</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the learning rate for the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasBatchSize -->
+<owl:DatatypeProperty rdf:about="#hasBatchSize">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">hasBatchSize</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the batch size for the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasNumberOfEpochs -->
+<owl:DatatypeProperty rdf:about="#hasNumberOfEpochs">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">hasNumberOfEpochs</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the number of epochs used for training the model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasDropoutRate -->
+<owl:DatatypeProperty rdf:about="#hasDropoutRate">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasDropoutRate</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the dropout rate for the model, typically used to prevent overfitting in neural networks.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasL2Regularization -->
+<owl:DatatypeProperty rdf:about="#hasL2Regularization">
+    <rdfs:domain rdf:resource="#SLModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasL2Regularization</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the L2 regularization parameter, used to prevent overfitting.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Example of Assigning Values to Model Instances
+
+<owl:NamedIndividual rdf:about="#NeuralNetworkModelA">
+    <rdf:type rdf:resource="#NeuralNetworkModel"/>
+    <hasLearningRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.01</hasLearningRate>
+    <hasBatchSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</hasBatchSize>
+    <hasNumberOfEpochs rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</hasNumberOfEpochs>
+    <hasDropoutRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</hasDropoutRate>
+</owl:NamedIndividual> -->
+
+<!--Additional Property for NeuralNetworkModel
+ Property: hasMomentum -->
+<!-- Property: hasMomentum (for NeuralNetworkModel) -->
+<owl:DatatypeProperty rdf:about="#hasMomentum">
+    <rdfs:domain rdf:resource="#NeuralNetworkModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasMomentum</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the momentum parameter used in optimization techniques like stochastic gradient descent.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: numberOfLayers (for NeuralNetworkModel) -->
+<owl:DatatypeProperty rdf:about="#numberOfLayers">
+    <rdfs:domain rdf:resource="#NeuralNetworkModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">numberOfLayers</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates the number of layers in a neural network model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Additional Property for HybridModel:
+ Property: hasWeightingCoefficient -->
+<owl:DatatypeProperty rdf:about="#hasWeightingCoefficient">
+    <rdfs:domain rdf:resource="#HybridModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasWeightingCoefficient</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the weighting coefficient used to balance multiple models in a HybridModel.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!--Additional Properties for EnsembleModel-->
+
+<!-- Property: hasNumberOfBaseModels (for EnsembleModel) -->
+<owl:DatatypeProperty rdf:about="#hasNumberOfBaseModels">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">hasNumberOfBaseModels</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the number of base models in an ensemble.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAggregationMethod (for EnsembleModel) -->
+<owl:DatatypeProperty rdf:about="#hasAggregationMethod">
+    <rdfs:domain rdf:resource="#EnsembleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasAggregationMethod</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the aggregation method used in the ensemble model (e.g., voting, averaging).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Additional Properties for TransferLearningModel -->
+
+<!-- Property: hasPretrainedModelPath (for TransferLearningModel) -->
+<owl:DatatypeProperty rdf:about="#hasPretrainedModelPath">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasPretrainedModelPath</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the file path or location of the pretrained model used in transfer learning.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasFineTuningLayers (for TransferLearningModel) -->
+<owl:DatatypeProperty rdf:about="#hasFineTuningLayers">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasFineTuningLayers</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies which layers of the model are fine-tuned during the transfer learning process.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Additional Properties for DecisionTreeModel -->
+
+<!-- Property: hasMaxDepth (for DecisionTreeModel) -->
+<owl:DatatypeProperty rdf:about="#hasMaxDepth">
+    <rdfs:domain rdf:resource="#DecisionTreeModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">hasMaxDepth</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the maximum depth of a decision tree.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasMinSamplesPerSplit (for DecisionTreeModel) -->
+<owl:DatatypeProperty rdf:about="#hasMinSamplesPerSplit">
+    <rdfs:domain rdf:resource="#DecisionTreeModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">hasMinSamplesPerSplit</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the minimum number of samples required to split an internal node in a decision tree.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasCriterion (for DecisionTreeModel) -->
+<owl:DatatypeProperty rdf:about="#hasCriterion">
+    <rdfs:domain rdf:resource="#DecisionTreeModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasCriterion</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the function to measure the quality of a split in a decision tree (e.g., Gini impurity, information gain).</rdfs:comment>
+</owl:DatatypeProperty>
+
+
+<!-- Additional Properties for ReinforcementLearningModel: -->
+
+<!-- Property: hasDiscountFactor (for ReinforcementLearningModel) -->
+<owl:DatatypeProperty rdf:about="#hasDiscountFactor">
+    <rdfs:domain rdf:resource="#ReinforcementLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasDiscountFactor</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the discount factor in reinforcement learning, determining how future rewards are weighed.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasExplorationRate (for ReinforcementLearningModel) -->
+<owl:DatatypeProperty rdf:about="#hasExplorationRate">
+    <rdfs:domain rdf:resource="#ReinforcementLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasExplorationRate</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the exploration rate in reinforcement learning, controlling the balance between exploration and exploitation.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasNumberOfEpisodes (for ReinforcementLearningModel) -->
+<owl:DatatypeProperty rdf:about="#hasNumberOfEpisodes">
+    <rdfs:domain rdf:resource="#ReinforcementLearningModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">hasNumberOfEpisodes</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the number of episodes in which the agent learns in a reinforcement learning model.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Additional Property for BayesianModel -->
+
+<!-- Property: hasPriorDistribution (for BayesianModel) -->
+<owl:DatatypeProperty rdf:about="#hasPriorDistribution">
+    <rdfs:domain rdf:resource="#BayesianModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasPriorDistribution</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the prior distribution for Bayesian models (e.g., Gaussian, uniform).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Additional Property for SupportVectorModel-->
+
+<!-- Property: hasKernelType (for SupportVectorModel) -->
+<owl:DatatypeProperty rdf:about="#hasKernelType">
+    <rdfs:domain rdf:resource="#SupportVectorModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">hasKernelType</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the type of kernel used in the support vector machine (e.g., linear, polynomial, RBF).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasRegularizationParameter (for SupportVectorModel) -->
+<owl:DatatypeProperty rdf:about="#hasRegularizationParameter">
+    <rdfs:domain rdf:resource="#SupportVectorModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">hasRegularizationParameter</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the regularization parameter for the support vector machine.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property linking TransferLearningModel to AccuracyMetric -->
+<owl:ObjectProperty rdf:about="#hasAccuracyMetric">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="#AccuracyMetric"/>
+    <rdfs:label xml:lang="en">hasAccuracyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a TransferLearningModel to its AccuracyMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking TransferLearningModel to PrecisionMetric -->
+<owl:ObjectProperty rdf:about="#hasPrecisionMetric">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="#PrecisionMetric"/>
+    <rdfs:label xml:lang="en">hasPrecisionMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a TransferLearningModel to its PrecisionMetric, measuring how many predicted positives are correct.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking TransferLearningModel to AUCMetric -->
+<owl:ObjectProperty rdf:about="#hasAUCMetric">
+    <rdfs:domain rdf:resource="#TransferLearningModel"/>
+    <rdfs:range rdf:resource="#AUCMetric"/>
+    <rdfs:label xml:lang="en">hasAUCMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a TransferLearningModel to its AUCMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking BayesianModel to AccuracyMetric -->
+<owl:ObjectProperty rdf:about="#hasAccuracyMetric">
+    <rdfs:domain rdf:resource="#BayesianModel"/>
+    <rdfs:range rdf:resource="#AccuracyMetric"/>
+    <rdfs:label xml:lang="en">hasAccuracyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a BayesianModel to its AccuracyMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking BayesianModel to PrecisionMetric -->
+<owl:ObjectProperty rdf:about="#hasPrecisionMetric">
+    <rdfs:domain rdf:resource="#BayesianModel"/>
+    <rdfs:range rdf:resource="#PrecisionMetric"/>
+    <rdfs:label xml:lang="en">hasPrecisionMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a BayesianModel to its PrecisionMetric, measuring how many predicted positives are correct.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking BayesianModel to ErrorRateMetric -->
+<owl:ObjectProperty rdf:about="#hasErrorRateMetric">
+    <rdfs:domain rdf:resource="#BayesianModel"/>
+    <rdfs:range rdf:resource="#ErrorRateMetric"/>
+    <rdfs:label xml:lang="en">hasErrorRateMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a BayesianModel to its ErrorRateMetric, tracking the rate of incorrect predictions.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking SupportVectorModel to AccuracyMetric -->
+<owl:ObjectProperty rdf:about="#hasAccuracyMetric">
+    <rdfs:domain rdf:resource="#SupportVectorModel"/>
+    <rdfs:range rdf:resource="#AccuracyMetric"/>
+    <rdfs:label xml:lang="en">hasAccuracyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a SupportVectorModel to its AccuracyMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking SupportVectorModel to AUCMetric -->
+<owl:ObjectProperty rdf:about="#hasAUCMetric">
+    <rdfs:domain rdf:resource="#SupportVectorModel"/>
+    <rdfs:range rdf:resource="#AUCMetric"/>
+    <rdfs:label xml:lang="en">hasAUCMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a SupportVectorModel to its AUCMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking SupportVectorModel to PrecisionMetric -->
+<owl:ObjectProperty rdf:about="#hasPrecisionMetric">
+    <rdfs:domain rdf:resource="#SupportVectorModel"/>
+    <rdfs:range rdf:resource="#PrecisionMetric"/>
+    <rdfs:label xml:lang="en">hasPrecisionMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a SupportVectorModel to its PrecisionMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking DecisionTreeModel to AccuracyMetric -->
+<owl:ObjectProperty rdf:about="#hasAccuracyMetric">
+    <rdfs:domain rdf:resource="#DecisionTreeModel"/>
+    <rdfs:range rdf:resource="#AccuracyMetric"/>
+    <rdfs:label xml:lang="en">hasAccuracyMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a DecisionTreeModel to its AccuracyMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking DecisionTreeModel to PrecisionMetric -->
+<owl:ObjectProperty rdf:about="#hasPrecisionMetric">
+    <rdfs:domain rdf:resource="#DecisionTreeModel"/>
+    <rdfs:range rdf:resource="#PrecisionMetric"/>
+    <rdfs:label xml:lang="en">hasPrecisionMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a DecisionTreeModel to its PrecisionMetric.</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Property linking DecisionTreeModel to ResourceUsageMetric -->
+<owl:ObjectProperty rdf:about="#hasResourceUsageMetric">
+    <rdfs:domain rdf:resource="#DecisionTreeModel"/>
+    <rdfs:range rdf:resource="#ResourceUsageMetric"/>
+    <rdfs:label xml:lang="en">hasResourceUsageMetric</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a DecisionTreeModel to its ResourceUsageMetric, tracking resource usage (e.g., memory, CPU).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Describes the size of the dataset -->
+<owl:DatatypeProperty rdf:about="#dataSize">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en">dataSize</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the size of the dataset (e.g., number of instances).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Represents the timestamp when the data was collected -->
+<owl:DatatypeProperty rdf:about="#collectionTime">
+    <rdfs:domain rdf:resource="#RawData"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">collectionTime</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the timestamp when the data was collected at the node.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Describes the format of the dataset (e.g., CSV, JSON, XML) -->
+<owl:DatatypeProperty rdf:about="#dataFormat">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">dataFormat</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the format of the dataset (e.g., CSV, JSON, XML).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Describes the source type of the dataset (e.g., sensor data, user logs, external API) -->
+<owl:DatatypeProperty rdf:about="#sourceType">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">sourceType</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the source of the dataset (e.g., sensor data, user logs, external API).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Describes the quality of the dataset (e.g., noise level, percentage of missing values) -->
+<owl:DatatypeProperty rdf:about="#dataQuality">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">dataQuality</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the quality of the dataset (e.g., noise level, missing values).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAnonymization -->
+<owl:DatatypeProperty rdf:about="#hasAnonymization">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">hasAnonymization</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies whether the data has been anonymized (true/false).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: hasAugmentation -->
+<owl:DatatypeProperty rdf:about="#hasAugmentation">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">hasAugmentation</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies whether the data has been augmented (true/false).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: isFederated -->
+<owl:DatatypeProperty rdf:about="#isFederated">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">isFederated</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates whether the data is used in a federated learning scenario (true/false).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: isStreaming -->
+<owl:DatatypeProperty rdf:about="#isStreaming">
+    <rdfs:domain rdf:resource="#Data"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">isStreaming</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies whether the data is part of a continuous streaming process (true/false).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Represents the numeric result of an evaluation metric -->
+<owl:DatatypeProperty rdf:about="#metricValue">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">metricValue</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the numeric result of an evaluation metric (e.g., accuracy, F1 score).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Represents the time at which the evaluation was conducted -->
+<owl:DatatypeProperty rdf:about="#evaluationTime">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">evaluationTime</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the time at which the evaluation was conducted.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Defines the unit of the metric (e.g., ms for latency, percentage for accuracy) -->
+<owl:DatatypeProperty rdf:about="#metricUnit">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">metricUnit</rdfs:label>
+    <rdfs:comment xml:lang="en">Defines the unit of the metric (e.g., ms for latency, percentage for accuracy).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Represents the threshold for the metric, if applicable (e.g., minimum accuracy requirement) -->
+<owl:DatatypeProperty rdf:about="#threshold">
+    <rdfs:domain rdf:resource="#EvaluationMetrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">threshold</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the threshold for the metric, if applicable (e.g., minimum accuracy requirement for model acceptance).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Describes the type of communication protocol (e.g., synchronous, asynchronous) -->
+<owl:DatatypeProperty rdf:about="#protocolType">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">protocolType</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the type of communication protocol (e.g., synchronous, asynchronous).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Captures the average latency of the communication protocol -->
+<owl:DatatypeProperty rdf:about="#latency">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">latency</rdfs:label>
+    <rdfs:comment xml:lang="en">Captures the average latency of the communication protocol, useful for performance assessment.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Tracks the bandwidth consumption of the communication protocol (optional) -->
+<owl:DatatypeProperty rdf:about="#bandwidth">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">bandwidth</rdfs:label>
+    <rdfs:comment xml:lang="en">Tracks the bandwidth consumption of the communication protocol, useful in large-scale distributed systems.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Defines the type of encryption used by a secure communication protocol -->
+<owl:DatatypeProperty rdf:about="#encryptionType">
+    <rdfs:domain rdf:resource="#SecureCommunicationProtocol"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">encryptionType</rdfs:label>
+    <rdfs:comment xml:lang="en">Defines the type of encryption used by a secure communication protocol (e.g., AES, RSA).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Tracks the reliability of a communication protocol (e.g., in terms of packet loss or retries) -->
+<owl:DatatypeProperty rdf:about="#reliability">
+    <rdfs:domain rdf:resource="#CommunicationProtocol"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">reliability</rdfs:label>
+    <rdfs:comment xml:lang="en">Tracks the reliability of a communication protocol, such as packet loss or retries.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Describes the type of infrastructure (e.g., physical, virtual, cloud) -->
+<owl:DatatypeProperty rdf:about="#infrastructureType">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">infrastructureType</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the type of infrastructure, such as physical, virtual, or cloud.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Captures the capacity of the infrastructure (e.g., storage in GB, compute power in cores) -->
+<owl:DatatypeProperty rdf:about="#capacity">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">capacity</rdfs:label>
+    <rdfs:comment xml:lang="en">Captures the capacity of the infrastructure, such as storage in GB or compute power in cores.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Tracks the uptime or availability of the infrastructure -->
+<owl:DatatypeProperty rdf:about="#uptime">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">uptime</rdfs:label>
+    <rdfs:comment xml:lang="en">Tracks the uptime or availability of the infrastructure, usually represented as a percentage of time available.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Tracks the latency of communication between infrastructure components -->
+<owl:DatatypeProperty rdf:about="#latency">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">latency</rdfs:label>
+    <rdfs:comment xml:lang="en">Tracks the latency of communication between infrastructure components, especially in distributed or edge systems.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Describes the role of the human in the system (e.g., annotator, monitor, evaluator) -->
+<owl:DatatypeProperty rdf:about="#role">
+    <rdfs:domain rdf:resource="#HumanParticipant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">role</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the role of the human in the system (e.g., annotator, monitor, evaluator).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Represents the expertise level of the HumanParticipant (e.g., novice, expert) -->
+<owl:DatatypeProperty rdf:about="#expertiseLevel">
+    <rdfs:domain rdf:resource="#HumanParticipant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">expertiseLevel</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the expertise level of the HumanParticipant, such as novice, expert, or domain-specific knowledge.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Tracks the availability of HumanParticipant (e.g., for annotation, monitoring, or decision-making tasks) -->
+<owl:DatatypeProperty rdf:about="#availability">
+    <rdfs:domain rdf:resource="#HumanParticipant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">availability</rdfs:label>
+    <rdfs:comment xml:lang="en">Tracks whether the HumanParticipant is available for tasks, such as annotation, monitoring, or decision-making.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- SystemInfrastructure and its subclasses Properties -->
+<!-- Property: latency -->
+<owl:DatatypeProperty rdf:about="#latency">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">latency</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the communication latency for this infrastructure resource (in milliseconds).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: capacity -->
+<owl:DatatypeProperty rdf:about="#capacity">
+    <rdfs:domain rdf:resource="#StorageInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">capacity</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the storage capacity of the resource (in GB or TB).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: location -->
+<owl:DatatypeProperty rdf:about="#location">
+    <rdfs:domain rdf:resource="#PhysicalInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">location</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the physical location of the infrastructure (e.g., data center location).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: cpuUsage (percentage of CPU used) -->
+<owl:DatatypeProperty rdf:about="#cpuUsage">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">cpuUsage</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the percentage of CPU resources being used by this infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: memoryUsage (percentage of memory used) -->
+<owl:DatatypeProperty rdf:about="#memoryUsage">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">memoryUsage</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the percentage of memory resources being used by this infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: bandwidthCapacity (total available bandwidth in Mbps or Gbps) -->
+<owl:DatatypeProperty rdf:about="#bandwidthCapacity">
+    <rdfs:domain rdf:resource="#NetworkInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">bandwidthCapacity</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the total available bandwidth (in Mbps or Gbps) for network communication.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: networkLatency (latency in milliseconds for network connections) -->
+<owl:DatatypeProperty rdf:about="#networkLatency">
+    <rdfs:domain rdf:resource="#NetworkInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">networkLatency</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the latency (in milliseconds) for network connections within the infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: powerConsumption (measured in watts) -->
+<owl:DatatypeProperty rdf:about="#powerConsumption">
+    <rdfs:domain rdf:resource="#PhysicalInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">powerConsumption</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the amount of power consumed by the physical infrastructure (in watts).</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: carbonFootprint (CO2 emissions in kilograms) -->
+<owl:DatatypeProperty rdf:about="#carbonFootprint">
+    <rdfs:domain rdf:resource="#PhysicalInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">carbonFootprint</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the carbon footprint (in kilograms of CO2) associated with the infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: failureRate (percentage or number of failures in infrastructure) -->
+<owl:DatatypeProperty rdf:about="#failureRate">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">failureRate</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the rate of failures or outages experienced by this infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- Property: lastFailureTime (timestamp of the last failure) -->
+<owl:DatatypeProperty rdf:about="#lastFailureTime">
+    <rdfs:domain rdf:resource="#SystemInfrastructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">lastFailureTime</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the timestamp of the most recent failure for this infrastructure.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Existential Quantification for the specific cases  -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+
+<!-- every SLNode must run on at least one SystemInfrastructure -->
+
+<owl:Class rdf:about="#SLNode">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#runsOn"/>
+            <owl:someValuesFrom rdf:resource="#SystemInfrastructure"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+ <!-- Every TrainingData must be used by at least one SLModel for training -->
+<owl:Class rdf:about="#TrainingData">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#usedForTraining"/>
+            <owl:someValuesFrom rdf:resource="#SLModel"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+<!-- Every CommunicationProtocol must be used by at least one SLNode -->
+ <owl:Class rdf:about="#CommunicationProtocol">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#usedByNode"/>
+            <owl:someValuesFrom rdf:resource="#SLNode"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+<!--  Every HumanParticipant must interact with at least one component of SwarmLearning -->
+
+<owl:Class rdf:about="#HumanParticipant">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#interactsWith"/>
+            <owl:someValuesFrom rdf:resource="#SwarmLearning"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+
+<!-- Each SLModel must be trained on exactly one dataset 
+<owl:Class rdf:about="#SLModel">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#usedForTraining"/>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            <owl:onClass rdf:resource="#Data"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> -->
+
+
+<!-- Every SLModel should be evaluated using at least one EvaluationMetrics instance -->
+
+<owl:Class rdf:about="#SLModel">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#evaluatesModel"/>
+            <owl:someValuesFrom rdf:resource="#EvaluationMetrics"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+<owl:Class rdf:about="#SLModel">
+    <rdfs:subClassOf>
+        <!-- Restriction: Each SLModel can have exactly one role -->
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasModelRole"/>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+ <!--Every SLNode should collect or process at least one instance of RawData or ProcessedData -->
+
+<owl:Class rdf:about="#SLNode">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#collectedAt"/>
+            <owl:someValuesFrom rdf:resource="#RawData"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#processesData"/>
+            <owl:someValuesFrom rdf:resource="#ProcessedData"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#processesRawData"/>
+            <owl:someValuesFrom rdf:resource="#RawData"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!--Every SLNode should processes At Least One Model (Minimum Cardinality): -->
+
+<owl:Class rdf:about="#SLNode">
+    <rdfs:subClassOf>
+        <!-- Restriction: Each SLNode must process at least one SLModel -->
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#processesModel"/>
+            <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:onClass rdf:resource="#SLModel"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!-- Each SLPipeline should involve at least one SLNode -->
+
+<owl:Class rdf:about="#SLPipeline"> 
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasNode"/>
+            <owl:someValuesFrom rdf:resource="#SLNode"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+<!-- Each SLPipeline can have multiple feedback loops -->
+<owl:Class rdf:about="#SLPipeline">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasFeedbackLoop"/>
+            <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:onClass rdf:resource="#FeedbackLoop"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!-- Restriction: Each Data instance must have exactly one provenance tracking protocol 
+<owl:Class rdf:about="#Data">
+    <rdfs:subClassOf rdf:resource="#SwarmLearning"/>
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#ensuresDataProvenance"/>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            <owl:onClass rdf:resource="#ProvenanceProtocol"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>-->
+
+
+<!-- Every FeedbackLoop should be based on at least one EvaluationMetrics -->
+
+<owl:Class rdf:about="#FeedbackLoop">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#feedbackOf"/>
+            <owl:someValuesFrom rdf:resource="#EvaluationMetrics"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+<!-- Every HumanEvaluator must evaluate at least one SLModel -->
+
+<owl:Class rdf:about="#HumanEvaluator">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#evaluatesModel"/>
+            <owl:someValuesFrom rdf:resource="#SLModel"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+ <!--Every SecureCommunicationProtocol must be an instance of CommunicationProtocol -->
+<owl:Class rdf:about="#SecureCommunicationProtocol">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#usedInAggregation"/>
+            <owl:someValuesFrom rdf:resource="#CommunicationProtocol"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> 
+
+<!--If you have hybrid models in your ontology (such as TransferLearningHybrid or EnsembleHybrid), you can apply existential quantification to ensure that each SLModel has some hybrid form or structure 
+
+<owl:Class rdf:about="#SLModel">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasHybridStructure"/>
+            <owl:someValuesFrom rdf:resource="#HybridModel"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> -->
+
+<!-- Each SLNode must use exactly one CommunicationProtocol -->
+<owl:Class rdf:about="#SLNode">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#communicatesWith"/>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            <owl:onClass rdf:resource="#CommunicationProtocol"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<!-- If transfer learning is a concept in the ontology, you could express that SLModels must be linked to at least one TransferLearningHybrid instance to indicate hybridization for transfer learning
+
+<owl:Class rdf:about="#SLModel">
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasTransferLearningComponent"/>
+            <owl:someValuesFrom rdf:resource="#TransferLearningHybrid"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+</owl:Class> -->
+
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Individuals -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+
+</rdf:RDF>
